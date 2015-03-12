@@ -1,0 +1,31 @@
+<%= image_tag @hairdresser.image.url(:small) %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @hairdresser.name %>
+</p>
+ 
+<p>
+  <strong>telephone:</strong>
+  <%=  @hairdresser.telephone %>
+</p>
+
+ 
+<p>
+  <strong>mobile:</strong>
+  <%= @hairdresser.mobile %>
+</p>
+
+<p>
+  <strong>address:</strong>
+  <%= @hairdresser.address %>
+</p>
+
+<p>
+  <strong>email:</strong>
+  <%=  @hairdresser.email%><br>
+  
+  <%= link_to 'show packages', showp_hairdresser_path(@hairdresser) %> 
+  <%= link_to 'show sample pictures', showsample_hairdresser_path(@hairdresser) %> 
+
+

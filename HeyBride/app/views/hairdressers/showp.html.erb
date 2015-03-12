@@ -1,0 +1,35 @@
+ <% @hairdresser.packages.each do |package| %>
+
+ <strong>name:</strong>
+    <%=  package.name%><br>
+   <strong>price:</strong>
+<%=  package.price%><br>
+   <strong>decription:</strong>
+
+<%=  package.description%><br>
+<% end %>
+</p>
+
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= form_for([@hairdresser, @hairdresser.packages.build]) do |f| %>
+  <p>
+    <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_area :price %>
+  </p>
+   <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+  <%= f.submit %> 
+  </p>
+<% end %>
+<% end %>
+<% end %>
+
