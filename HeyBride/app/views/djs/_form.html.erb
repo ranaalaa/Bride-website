@@ -1,0 +1,43 @@
+<%= form_for @dj do |f| %>
+  <% if @dj.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dj.errors.count, "error") %> prohibited this dj from being saved:</h2>
+
+      <ul>
+      <% @dj.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Name %><br>
+    <%= f.text_field :Name %>
+  </div>
+  <div class="field">
+    <%= f.label :Address %><br>
+    <%= f.text_area :Address %>
+  </div>
+  <div class="field">
+    <%= f.label :Phone %><br>
+    <%= f.text_field :Phone %>
+  </div>
+  <div class="field">
+    <%= f.label :Email %><br>
+    <%= f.text_field :Email %>
+  </div>
+  <div> 
+  <%= f.file_field :photo %>
+  </div>
+  
+  
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+
+
+   
+<% end %>
