@@ -17,10 +17,10 @@
       <%= f.label :remember_me %>
     </div>
 <% end -%>
- 
+     <%= f.submit "Log in" %><br>
+
     <%= link_to 'sign in with facebook', user_omniauth_authorize_path(:facebook) %>
 
-    <%= f.submit "Log in" %>
    
 <% end %>
 

@@ -1,0 +1,22 @@
+<%= notice %>
+Make-up Artists <br>
+<% @makeups.each do |makeup| %>
+ <%= image_tag makeup.image.url(:small),{} %><br>
+<%= link_to makeup.name, makeup %> <br>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+<%= link_to 'Edit', edit_makeup_path(makeup) %> 
+<%= link_to 'Destroy', makeup, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+ <% end %>
+
+  <% end %>
+
+
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+ <%= link_to 'New Make-up Artist', new_makeup_path %> 
+ <% end %>
+ <% end %>
+
+

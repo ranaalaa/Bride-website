@@ -2,6 +2,16 @@ Rails.application.routes.draw do
   devise_for :views
   devise_for :users,controllers: {omniauth_callbacks: "omniauth_callbacks"}
   get 'welcome/index'
+  resources :makeups do
+      member do
+    get 'showp'
+    get 'showsample'
+
+  end
+    resources :mpackages
+        resources :msamples
+
+  end
   resources :hairdressers do
     member do
     get 'showp'

@@ -1,0 +1,35 @@
+ <% @makeup.mpackages.each do |mpackage| %>
+
+ <strong>name:</strong>
+    <%=  mpackage.name%><br>
+   <strong>price:</strong>
+<%=  mpackage.price%><br>
+   <strong>decription:</strong>
+
+<%=  mpackage.description%><br>
+<% end %>
+</p>
+
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= form_for([@makeup, @makeup.mpackages.build]) do |f| %>
+  <p>
+    <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_area :price %>
+  </p>
+   <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+  <%= f.submit %> 
+  </p>
+<% end %>
+<% end %>
+<% end %>
+
