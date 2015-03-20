@@ -73,6 +73,6 @@ class SuitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def suit_params
-      params.require(:suit).permit(:name, :address, :mobile, :email, :photo)
+      params.require(:suit).permit(:name, :address, :mobile, :email, :photo, :brand )
     end
 end

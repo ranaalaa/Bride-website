@@ -5,6 +5,7 @@ class CreateSuits < ActiveRecord::Migration
       t.text :address
       t.text :mobile
       t.string :email
+      t.text :brand
 
       t.timestamps
     end
