@@ -1,0 +1,22 @@
+<%= notice %>
+Photographers<br>
+<% @photographers.each do |photographer| %>
+ <%= image_tag photographer.image.url(:small),{} %><br>
+<%= link_to photographer.name, photographer %> <br>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+<%= link_to 'Edit', edit_photographer_path(photographer) %> 
+<%= link_to 'Destroy', photographer, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+<% end %>
+ <% end %>
+
+  <% end %>
+
+
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+ <%= link_to 'New Photographer', new_photographer_path %> 
+ <% end %>
+ <% end %>
+
+
