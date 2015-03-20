@@ -3,11 +3,21 @@ Rails.application.routes.draw do
   devise_for :users,controllers: {omniauth_callbacks: "omniauth_callbacks"}
   get 'welcome/index'
   get 'welcome/HomePage'
+    resources :photographers do
+          member do
+    get 'showsample'
+  end
+      resources :phpackages
+            resources :phsamples
+
+    end
+
   resources :makeups do
       member do
     get 'showsample'
 
   end
+
     resources :mpackages
         resources :msamples
 

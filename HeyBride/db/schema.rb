@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150319231333) do
+ActiveRecord::Schema.define(version: 20150320163810) do
 
   create_table "hairdressers", force: :cascade do |t|
     t.string   "name"
@@ -75,6 +75,44 @@ ActiveRecord::Schema.define(version: 20150319231333) do
   end
 
   add_index "packages", ["hairdresser_id"], name: "index_packages_on_hairdresser_id"
+
+  create_table "photographers", force: :cascade do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "telephone"
+    t.string   "address"
+    t.string   "mobile"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "phpackages", force: :cascade do |t|
+    t.string   "name"
+    t.string   "price"
+    t.text     "description"
+    t.integer  "photographer_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "phpackages", ["photographer_id"], name: "index_phpackages_on_photographer_id"
+
+  create_table "phsamples", force: :cascade do |t|
+    t.string   "info"
+    t.integer  "photographer_id"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "phsamples", ["photographer_id"], name: "index_phsamples_on_photographer_id"
 
   create_table "samples", force: :cascade do |t|
     t.string   "info"
