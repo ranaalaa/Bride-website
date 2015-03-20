@@ -1,0 +1,36 @@
+<%= form_for(@dress)  do |f| %>
+  <% if @dress.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@dress.errors.count, "error") %> prohibited this dress from being saved:</h2>
+
+      <ul>
+      <% @dress.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :address %><br>
+    <%= f.text_area :address %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile %><br>
+    <%= f.text_field :mobile %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br>
+    <%= f.text_field :email %>
+  </div>
+   <div class="field">
+    <%= f.file_field :image%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

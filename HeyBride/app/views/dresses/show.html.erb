@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <%= image_tag @dress.image.url %>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @dress.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @dress.address %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @dress.mobile %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @dress.email %>
+</p>
+<h2>Samples</h2>
+<% @dress.dsamples.each do |dsample| %>
+  
+     <%=image_tag dsample.photo.url %> 
+  
+<% end %>
+<h2>Add samples:</h2>
+<%= form_for([@dress, @dress.dsamples.build]) do |f| %>
+ <div class="field">
+    <%= f.file_field :photo%> 
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <% end %>
+
+
+<%= link_to 'Edit', edit_dress_path(@dress) %> |
+<%= link_to 'Back', dresses_path %>
