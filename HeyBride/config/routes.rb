@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :views
   devise_for :users,controllers: {omniauth_callbacks: "omniauth_callbacks"}
   get 'welcome/index'
+  get 'welcome/HomePage'
   resources :makeups do
       member do
     get 'showsample'
@@ -24,7 +25,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 devise_scope :user do
   authenticated :user do
-    root 'hairdressers#index', as: :authenticated_root
+    root 'welcome#HomePage', as: :authenticated_root
   end
 
   unauthenticated do

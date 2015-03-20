@@ -1,5 +1,6 @@
 <h2>Log in</h2>
 
+
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="field">
     <%= f.label :email %><br />
@@ -18,7 +19,6 @@
     </div>
 <% end -%>
      <%= f.submit "Log in" %><br>
-
     <%= link_to 'sign in with facebook', user_omniauth_authorize_path(:facebook) %>
 
    
