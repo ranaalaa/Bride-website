@@ -1,0 +1,70 @@
+<%= image_tag @makeup.image.url(:small) %>
+<p>
+  <strong>Information:</strong>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @makeup.name %>
+</p>
+ 
+<p>
+  <strong>telephone:</strong>
+  <%=  @makeup.telephone %>
+</p>
+
+ 
+<p>
+  <strong>mobile:</strong>
+  <%= @makeup.mobile %>
+</p>
+
+<p>
+  <strong>address:</strong>
+  <%= @makeup.address %>
+</p>
+
+<p>
+  <strong>email:</strong>
+  <%=  @makeup.email%><br>
+
+  <p>
+  <strong>Packges:</strong>
+</p>
+ <% @makeup.mpackages.each do |mpackage| %>
+
+ <strong> Name:</strong>
+    <%=  mpackage.name%><br>
+   <strong>Price:</strong>
+<%=  mpackage.price%><br>
+   <strong>Decription:</strong>
+
+<%=  mpackage.description%><br><br><br>
+<% end %>
+</p>
+
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= form_for([@makeup, @makeup.mpackages.build]) do |f| %>
+  <p>
+    <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_area :price %>
+  </p>
+   <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+  <%= f.submit %> 
+  </p>
+<% end %>
+<% end %>
+<% end %>
+
+  <%= link_to 'show sample pictures', showsample_makeup_path(@makeup) %> 
+
