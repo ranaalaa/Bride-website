@@ -69,6 +69,6 @@ class DressesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def dress_params
-      params.require(:dress).permit(:name, :address, :mobile, :email, :image)
+      params.require(:dress).permit(:name, :address, :mobile, :email, :image, :brand)
     end
 end
