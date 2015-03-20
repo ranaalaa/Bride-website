@@ -1,0 +1,22 @@
+<%= notice %>
+Hairdressers <br>
+<% @hairdressers.each do |hairdresser| %>
+ <%= image_tag hairdresser.image.url(:small),{} %><br>
+<%= link_to hairdresser.name, hairdresser %> <br>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+<%= link_to 'Edit', edit_hairdresser_path(hairdresser) %> 
+<%= link_to 'Destroy', hairdresser, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+<% end %>
+ <% end %>
+
+  <% end %>
+
+
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+ <%= link_to 'New Hairdresser', new_hairdresser_path %> 
+ <% end %>
+ <% end %>
+
+

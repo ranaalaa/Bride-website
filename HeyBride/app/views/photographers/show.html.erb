@@ -1,0 +1,76 @@
+<%= image_tag @photographer.image.url(:small) %>
+<p>
+  <strong>Information:</strong>
+</p>
+<p>
+  <strong>Name:</strong>
+  <%= @photographer.name %>
+</p>
+ 
+<p>
+  <strong>telephone:</strong>
+  <%=  @photographer.telephone %>
+</p>
+
+ 
+<p>
+  <strong>mobile:</strong>
+  <%= @photographer.mobile %>
+</p>
+
+<p>
+  <strong>address:</strong>
+  <%= @photographer.address %>
+</p>
+
+<p>
+  <strong>email:</strong>
+  <%=  @photographer.email%><br>
+</p>
+  
+
+ <p>
+  <strong>Packges:</strong>
+</p>
+
+ <% @photographer.phpackages.each do |phpackage| %>
+
+ <strong>name:</strong>
+    <%=  phpackage.name%><br>
+   <strong>price:</strong>
+<%=  phpackage.price%><br>
+   <strong>decription:</strong>
+
+<%=  phpackage.description%><br><br><br>
+<% end %>
+</p>
+
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= form_for([@photographer, @photographer.phpackages.build]) do |f| %>
+  <p>
+    <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_area :price %>
+  </p>
+   <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+  <%= f.submit %> 
+  </p>
+<% end %>
+<% end %>
+<% end %>
+
+  
+  <%= link_to 'show sample pictures', showsample_photographer_path(@photographer) %> 
+
+  
+
+

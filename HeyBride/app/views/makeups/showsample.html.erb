@@ -1,0 +1,17 @@
+<% @makeup.msamples.each do |msample| %>
+  <p>
+  	<%= image_tag msample.image.url(:small) %>
+<% end %>
+</p>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= form_for([@makeup, @makeup.msamples.build]) do |f| %>
+  <p>
+     <%= f.file_field :image %>  
+  <%= f.submit %> 
+  </p>
+
+<% end %>
+<% end %>
+<% end %>
+
