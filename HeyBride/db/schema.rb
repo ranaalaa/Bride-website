@@ -127,6 +127,36 @@ ActiveRecord::Schema.define(version: 20150320163810) do
 
   add_index "samples", ["hairdresser_id"], name: "index_samples_on_hairdresser_id"
 
+  create_table "suit_samples", force: :cascade do |t|
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "suit_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "samples_file_name"
+    t.string   "samples_content_type"
+    t.integer  "samples_file_size"
+    t.datetime "samples_updated_at"
+  end
+
+  add_index "suit_samples", ["suit_id"], name: "index_suit_samples_on_suit_id"
+
+  create_table "suits", force: :cascade do |t|
+    t.string   "name"
+    t.text     "address"
+    t.text     "mobile"
+    t.string   "email"
+    t.text     "brand"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false

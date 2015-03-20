@@ -1,0 +1,27 @@
+<h1>Hey Bride!</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @suits.each do |suit| %>
+    
+        <%= image_tag suit.photo.url %> <br>
+        <%= link_to suit.name, suit %>  <br>
+    
+    
+    
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+<%= link_to 'New Store', new_suit_path %>
+ <% end %>
+  <% end %>
+  
