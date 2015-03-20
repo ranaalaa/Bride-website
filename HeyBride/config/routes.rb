@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   get 'welcome/index'
   resources :makeups do
       member do
-    get 'showp'
     get 'showsample'
 
   end
@@ -14,7 +13,6 @@ Rails.application.routes.draw do
   end
   resources :hairdressers do
     member do
-    get 'showp'
     get 'showsample'
   end
     resources :samples
