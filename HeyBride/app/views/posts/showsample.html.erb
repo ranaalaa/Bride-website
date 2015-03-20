@@ -1,0 +1,14 @@
+
+<% @post.spasamples.each do |spasample| %>
+<p>
+<%= image_tag spasample.image.url(:small) %>
+<% end %>
+</p>
+
+<%= form_for([@post, @post.spasamples.build]) do |f| %>
+<p>
+<%= f.file_field :image %>
+<%= f.submit %>
+</p>
+
+<% end %>
