@@ -9,9 +9,9 @@
   <tbody>
     <% @suits.each do |suit| %>
     
-        <%= image_tag suit.photo.url %><br>
-        <%= link_to suit.name, suit %>
-        <%= link_to 'Edit', edit_suit_path(suit) %>
+        <%= image_tag suit.photo.url %> <br>
+        <%= link_to suit.name, suit %>  <br>
+    
     
     
     <% end %>

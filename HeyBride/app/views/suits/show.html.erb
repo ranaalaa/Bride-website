@@ -24,20 +24,20 @@
 
 <h2>Samples</h2>
 <% @suit.suit_samples.each do |suit_sample| %>
-  <p>
+  
      <%=image_tag  suit_sample.samples %>
-  </p>
+  
 <% end %>
 
 <h2>Add samples:</h2>
 <%= form_for([@suit, @suit.suit_samples.build]) do |f| %>
  <div class="field">
-    <%= f.file_field :samples%> <br />
+    <%= f.file_field :samples%> 
   </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
-<br />
+
 <%= link_to 'Edit', edit_suit_path(@suit) %> |
 <%= link_to 'Back', suits_path %>

@@ -13,9 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20150319191158) do
 
-# Could not dump table "showsuites" because of following NoMethodError
-#   undefined method `[]' for nil:NilClass
-
   create_table "suit_samples", force: true do |t|
     t.string   "image_file_name"
     t.string   "image_content_type"
