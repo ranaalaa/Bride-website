@@ -1,5 +1,5 @@
 <%= notice %>
-Make-up Artists <br>
+Listing Make-up Artists <br>
 <% @makeups.each do |makeup| %>
  <%= image_tag makeup.image.url(:small),{} %><br>
 <%= link_to makeup.name, makeup %> <br>
