@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+
   devise_for :views
   devise_for :users,controllers: {omniauth_callbacks: "omniauth_callbacks"}
   get 'welcome/index'
@@ -29,6 +30,23 @@ Rails.application.routes.draw do
     resources :samples
      resources :packages
   end
+
+    
+#  get 'djs/index' 
+
+ 
+     resources :djs do
+
+     resources :dpackages
+     end
+  end
+
+  
+
+
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -90,4 +108,4 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-end
+

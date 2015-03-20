@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 20150320163810) do
 
   create_table "hairdressers", force: :cascade do |t|
@@ -160,11 +161,61 @@ ActiveRecord::Schema.define(version: 20150320163810) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+end 
+ActiveRecord::Schema.define(version: 20150315224232) do
+
+  create_table "dj_packages", force: true do |t|
+    t.string   "Package"
+    t.string   "Name"
+    t.text     "Description"
+    t.string   "Price"
+    t.string   "Overtime"
+    t.string   "per"
+    t.string   "Hour"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "djpackages", force: true do |t|
+    t.string   "Name"
+    t.text     "Description"
+    t.string   "Price"
+    t.integer  "Djs_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "djpackages", ["Djs_id"], name: "index_djpackages_on_Djs_id"
+
+  create_table "djs", force: true do |t|
+    t.string   "Name"
+    t.text     "Address"
+    t.string   "Phone"
+    t.string   "Email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.string   "photo"
+  end
+
+  create_table "dpackages", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "price"
+    t.integer  "dj_id"
+
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+
   add_index "views", ["email"], name: "index_views_on_email", unique: true
   add_index "views", ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
+
+  add_index "dpackages", ["dj_id"], name: "index_dpackages_on_dj_id"
+end 
 
 end
