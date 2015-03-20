@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320163810) do
+ActiveRecord::Schema.define(version: 20150320214941) do
+
+  create_table "djs", force: :cascade do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "phone"
+    t.string   "email"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "dpackages", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "price"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "hairdressers", force: :cascade do |t|
     t.string   "name"
@@ -148,7 +169,6 @@ ActiveRecord::Schema.define(version: 20150320163810) do
     t.text     "address"
     t.text     "mobile"
     t.string   "email"
-    t.text     "brand"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "photo_file_name"

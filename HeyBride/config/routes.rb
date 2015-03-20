@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :djs do
+    resources :dpackages
+
   devise_for :views
   devise_for :users,controllers: {omniauth_callbacks: "omniauth_callbacks"}
   get 'welcome/index'
@@ -97,4 +100,5 @@ end
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+end
 end
