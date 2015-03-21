@@ -1,0 +1,2 @@
+module MsamplesHelper
+end

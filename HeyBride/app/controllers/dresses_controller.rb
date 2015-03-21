@@ -1,10 +1,16 @@
 class DressesController < ApplicationController
-  before_action :set_dress, only: [:show, :edit, :update, :destroy]
+  before_action :set_dress, only: [:show, :edit, :update, :destroy] 
+      before_action :authenticate_user!
 
   # GET /dresses
   # GET /dresses.json
   def index
-    @dresses = Dress.all
+   # @dresses = Dress.all
+   if params[:search]
+      @dresses= Dress.search(params[:search]).order("created_at DESC")
+    else
+      @dresses = Dress.order("created_at DESC")
+    end
   end
 
   # GET /dresses/1
