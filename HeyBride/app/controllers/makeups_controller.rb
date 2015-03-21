@@ -1,7 +1,11 @@
 class MakeupsController < ApplicationController
 	def index
-		@makeups= Makeup.all
-	end
+	if params[:search]
+      @makeup= Makeup.search(params[:search]).order("created_at DESC")
+    else
+      @makeup = Makeup.order("created_at DESC")
+    end
+  end
 		def new
 			@makeup = Makeup.new
   end

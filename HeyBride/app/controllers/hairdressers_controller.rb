@@ -2,8 +2,13 @@ class HairdressersController < ApplicationController
 
     before_action :authenticate_user!
 
- def index
-    @hairdressers= Hairdresser.all
+ def index 
+  if params[:search]
+      @hairdresser = Hairdresser.search(params[:search]).order("created_at DESC")
+    else
+      @hairdresser = Hairdresser.order("created_at DESC")
+    end
+  
   end
  
 	def new

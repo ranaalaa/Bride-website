@@ -5,11 +5,16 @@ class SuitsController < ApplicationController
   # GET /suits
   # GET /suits.json
   def index
-    @suits = Suit.all
+    #@suits = Suit.all
      respond_to do |format|
     format.html  # index.html.erb
     format.json  { render :json => @posts }
-  end
+     if params[:search]
+      @suit= Suit.search(params[:search]).order("created_at DESC")
+    else
+      @suit = Suit.order("created_at DESC")
+    end
+  end 
   end
 
   # GET /suits/1

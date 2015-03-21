@@ -1,7 +1,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<%= image_tag @suit.photo.url %>
+<%= image_tag @dj.image.url %>
 
 <p>
   <strong>Name:</strong>
@@ -22,25 +22,27 @@
   <strong>Email:</strong>
   <%= @dj.email %>
 </p>
+
 <h2> Packages </h2>
-<% @dj.dpackages.each do |dpackage| %>
+<% @dj.djpackages.each do |djpackage| %>
   <p>
     <strong>Name:</strong>
-    <%= dpackage.name %>
+    <%= djpackage.name %>
   </p>
  
   <p>
     <strong>Description</strong>
-    <%= dpackage.description %>
+    <%= djpackage.description %>
   </p>
    <p>
     <strong>Price</strong>
-    <%= dpackage.price %>
+    <%= djpackage.price %>
   </p>
 <% end %>
-
+<% if user_signed_in? %>
+<% if current_user.admin? %>
 <h2>Add a package:</h2>
-<%= form_for([@dj, @dj.dpackages.build]) do |f| %>
+<%= form_for([@dj, @dj.djpackages.build]) do |f| %>
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
@@ -57,7 +59,14 @@
     <%= f.submit %>
   </p>
 <% end %>
-
-
-<%= link_to 'Edit', edit_dj_path(@dj) %> |
+<% end %>
+<% end %>
 <%= link_to 'Back', djs_path %>
+
+
+
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+<%= link_to 'Edit', edit_dj_path(@dj) %> 
+ <% end %>
+ <% end %>

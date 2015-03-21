@@ -1,10 +1,15 @@
 class DjsController < ApplicationController
-  before_action :set_dj, only: [:show, :edit, :update, :destroy]
+
+    before_action :authenticate_user!
 
   # GET /djs
   # GET /djs.json
   def index
-    @djs = Dj.all
+  if params[:search]
+      @dj= Dj.search(params[:search]).order("created_at DESC")
+    else
+      @dj = Dj.order("created_at DESC")
+    end
   end
 
   # GET /djs/1

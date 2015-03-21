@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150320214941) do
+ActiveRecord::Schema.define(version: 20150320230641) do
+
+  create_table "djpackages", force: :cascade do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "price"
+    t.integer  "dj_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "djpackages", ["dj_id"], name: "index_djpackages_on_dj_id"
 
   create_table "djs", force: :cascade do |t|
     t.string   "name"

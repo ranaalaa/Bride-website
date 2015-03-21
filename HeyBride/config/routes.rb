@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  resources :djs do
-    resources :dpackages
+
 
   devise_for :views
   devise_for :users,controllers: {omniauth_callbacks: "omniauth_callbacks"}
@@ -37,7 +36,9 @@ Rails.application.routes.draw do
    
   resources :suit_samples
 end
-   
+     resources :djs do
+    resources :djpackages
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -101,4 +102,4 @@ end
   #     resources :products
   #   end
 end
-end
+

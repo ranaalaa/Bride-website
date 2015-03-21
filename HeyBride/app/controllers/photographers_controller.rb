@@ -3,7 +3,11 @@ class PhotographersController < ApplicationController
     before_action :authenticate_user!
 
  def index
-    @photographers= Photographer.all
+   if params[:search]
+      @photographer= Photographer.search(params[:search]).order("created_at DESC")
+    else
+      @photographer = Photographer.order("created_at DESC")
+    end
   end
  
 	def new
