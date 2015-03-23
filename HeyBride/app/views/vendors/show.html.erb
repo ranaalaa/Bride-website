@@ -1,0 +1,67 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @vendor.image.url %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @vendor.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @vendor.address %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @vendor.telephone %>
+</p>
+
+<p>
+  <strong>Mobile:</strong>
+  <%= @vendor.email %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @vendor.email %>
+</p>
+    <% if @vendor.entry !=  "Suit" %>  
+        <% if @vendor.entry !=  "Dress" %>  
+       <%= link_to 'show packges', showPackages_vendor_path(@vendor) %> 
+      <%end%>
+      <%end%>
+    <% if @vendor.entry != "Dj"  %>  
+    <%= link_to 'show samples', showSamples_vendor_path(@vendor) %> 
+<%end%>
+  <% if @vendor.entry ==  "Suit" || @vendor.entry ==  "Dress" %>  
+       <%= link_to 'Brands', showBrands_vendor_path(@vendor) %> 
+       <%end%>
+
+<h2>Comments</h2>
+<% @vendor.comments.each do |comment| %>
+  <p>
+    <%= comment.body %>
+    <% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= link_to 'Delete Comment', [comment.vendor,comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+           <br><br>
+</p>
+<% end %>
+<% end %>
+  </p>
+<% end %>
+
+<h2>Add a comment:</h2>
+<%= form_for([@vendor, @vendor.comments.build]) do |f| %>
+  <p>
+    <p>
+    <%= f.label :Comment %><br>
+    <%= f.text_field :body %>
+  </p>
+  <%= f.submit %> 
+  <%end%>
+
+

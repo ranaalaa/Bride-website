@@ -1,0 +1,12 @@
+<%= form_for([@vendor, @brand]) do |f| %>
+ <p>
+    <p>
+    <%= f.label :Name %><br>
+    <%= f.text_field :bName %>
+  </p>
+  <p>
+    <%= f.label :Designer %><br>
+    <%= f.text_area :designer %>
+  </p>
+  <%= f.submit %> 
+  <%end%>
