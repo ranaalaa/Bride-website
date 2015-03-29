@@ -2,12 +2,12 @@
 
 one:
   name: MyString
-  price: MyString
+  price: 1.5
   description: MyText
   vendor_id: 
 
 two:
   name: MyString
-  price: MyString
+  price: 1.5
   description: MyText
   vendor_id: 
