@@ -91,6 +91,10 @@ if params[:search]
     @vendors = Vendor.where(entry:'Dj').order('created_at DESC')
    end 
  end
+ 
+    def indexYacht
+        @vendors = Vendor.where(entry:'Yacht').order('created_at DESC')
+    end
 
 
   def create
