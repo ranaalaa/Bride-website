@@ -102,6 +102,6 @@ end
  
 private
   def vendor_params
-    params.require(:vendor).permit(:email, :telephone, :mobile, :address, :name, :image, :entry, :location, :capacity)
+    params.require(:vendor).permit(:email, :telephone, :mobile, :address, :name, :image, :entry, :location, :capacity, :stars)
   end
 end
