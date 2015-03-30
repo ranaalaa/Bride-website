@@ -9,7 +9,7 @@ class PackagesController < ApplicationController
     @vendor = Vendor.find(params[:vendor_id])
     @package = @vendor.packages.find(params[:id])
     @package.destroy
-    redirect_to showPackages_vendor_path(@vendor)
+    redirect_to vendor_path(@vendor)
   end
 
   def edit
@@ -22,7 +22,7 @@ class PackagesController < ApplicationController
     @package = @vendor.packages.find(params[:id])
 
     if @package.update(package_params)
-    redirect_to showPackages_vendor_path(@vendor)
+    redirect_to vendor_path(@vendor)
     else
       render 'edit'
     end

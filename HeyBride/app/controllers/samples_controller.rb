@@ -10,7 +10,7 @@ class SamplesController < ApplicationController
     @vendor = Vendor.find(params[:vendor_id])
     @sample = @vendor.samples.find(params[:id])
     @sample.destroy
-    redirect_to showSamples_vendor_path(@vendor)
+    redirect_to vendor_path(@vendor)
   end
  
  

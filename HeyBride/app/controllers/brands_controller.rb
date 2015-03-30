@@ -2,14 +2,14 @@ class BrandsController < ApplicationController
 	 def create
     @vendor = Vendor.find(params[:vendor_id])
     @brand = @vendor.brands.create(brand_params)
-    redirect_to showBrands_vendor_path(@vendor)
+    redirect_to vendor_path(@vendor)
   end
  
    def destroy
     @vendor = Vendor.find(params[:vendor_id])
     @brand = @vendor.brands.find(params[:id])
     @brand.destroy
-    redirect_to showBrands_vendor_path(@vendor)
+    redirect_to vendor_path(@vendor)
   end
 
   def edit
@@ -22,7 +22,7 @@ class BrandsController < ApplicationController
     @brand = @vendor.brands.find(params[:id])
 
     if @brand.update(brand_params)
-    redirect_to showBrands_vendor_path(@vendor)
+    redirect_to vendor_path(@vendor)
     else
       render 'edit'
     end

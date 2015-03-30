@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150329232211) do
+ActiveRecord::Schema.define(version: 20150330131217) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "bName"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20150329232211) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "location"
   end
 
   create_table "views", force: :cascade do |t|

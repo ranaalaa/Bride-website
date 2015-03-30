@@ -28,14 +28,117 @@
 </p>
     <% if @vendor.entry !=  "Suit" %>  
         <% if @vendor.entry !=  "Dress" %>  
-       <%= link_to 'show packges', showPackages_vendor_path(@vendor) %> 
+<% @vendor.packages.each do |package| %>
+
+ <strong>name:</strong>
+    <%=  package.name%><br>
+   <strong>price:</strong>
+<%=  package.price%><br>
+   <strong>description:</strong>
+
+<%=  package.description%><br><br>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= link_to 'Delete Package', [package.vendor, package],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+                 <%= link_to 'Edit Package', edit_vendor_package_path(@vendor, package) %> <br><br>
+</p>
+<% end %>
+<% end %>
+<% end %>
+</p>
+
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= form_for([@vendor, @vendor.packages.build]) do |f| %>
+  <p>
+    <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :price %><br>
+    <%= f.text_area :price %>
+  </p>
+   <p>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </p>
+  <p>
+  <%= f.submit %> 
+  </p>
+<% end %>
+<% end %>
+<% end %>
       <%end%>
       <%end%>
     <% if @vendor.entry != "Dj"  %>  
-    <%= link_to 'show samples', showSamples_vendor_path(@vendor) %> 
+<% @vendor.samples.each do |sample| %>
+  <p>
+    <%= image_tag sample.image.url(:small) %><br>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+     <%= link_to 'Delete Sample', [sample.vendor, sample],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %><br><br>
+<% end %>
+<% end %>
+<% end %>
+</p>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= form_for([@vendor, @vendor.samples.build]) do |f| %>
+  <p>
+     <%= f.file_field :image %>  
+  <%= f.submit %> 
+  </p>
+
+<% end %>
+<% end %>
+<% end %>
+
+
 <%end%>
-  <% if @vendor.entry ==  "Suit" || @vendor.entry ==  "Dress" %>  
-       <%= link_to 'Brands', showBrands_vendor_path(@vendor) %> 
+  <% if @vendor.entry ==  "Suit" || @vendor.entry ==  "Dress" %> 
+  <% @vendor.brands.each do |brand| %>
+
+ <strong>name:</strong>
+    <%=brand.bName%><br>
+   <strong>Designer:</strong>
+<%=  brand.designer%><br>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= link_to 'Delete Brand', [brand.vendor, brand],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+                 <%= link_to 'Edit Package', edit_vendor_brand_path(@vendor, brand) %> <br><br>
+</p>
+<% end %>
+<% end %>
+<% end %>
+</p>
+
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= form_for([@vendor, @vendor.brands.build]) do |f| %>
+  <p>
+    <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :bName %>
+  </p>
+  <p>
+    <%= f.label :Designer %><br>
+    <%= f.text_area :designer %>
+  </p>
+ 
+  <p>
+  <%= f.submit %> 
+  </p>
+<% end %>
+<% end %>
+<% end %>
+ 
        <%end%>
 
 <h2>Comments</h2>

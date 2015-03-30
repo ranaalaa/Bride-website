@@ -16,11 +16,7 @@ end
     resources :samples
     resources :comments
     resources :brands
-    member do
-      get 'showPackages'
-      get 'showSamples'
-      get 'showBrands'
-     end
+  
     collection do
       get 'indexHairdressers'
       get 'indexMakeup'
