@@ -73,7 +73,7 @@
 <% end %>
       <%end%>
       <%end%>
-    <% if @vendor.entry != "Dj"  %>  
+  
 <% @vendor.samples.each do |sample| %>
   <p>
     <%= image_tag sample.image.url(:small) %><br>
@@ -82,7 +82,7 @@
      <%= link_to 'Delete Sample', [sample.vendor, sample],
                method: :delete,
                data: { confirm: 'Are you sure?' } %><br><br>
-<% end %>
+
 <% end %>
 <% end %>
 </p>
