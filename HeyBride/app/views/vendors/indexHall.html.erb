@@ -1,6 +1,18 @@
+ <!DOCTYPE html>
+<html>
+ <head>
+<link rel="stylesheets" type="css" href="TablesIndexView.css">
+</head> 
+<body> 
+<div id="gallery">
+  <ul id="grid">
 <% @vendors.each do |vendor| %>
  <%= image_tag vendor.image.url(:small),{} %></br>
     <%= link_to vendor.name, vendor %><br>
+      <%= link_to vendor.location, vendor %><br>
+  </ul>
+</div>
+
 
 <% if user_signed_in? %>
 <% if current_user.admin? %>
@@ -9,3 +21,6 @@
 <% end %>
  <% end %>
     <%end%>
+</body>
+      
+    </html>
