@@ -25,6 +25,7 @@ end
       get 'indexSpa'
       get 'indexSuites'
       get 'indexDjs'   
+      get 'indexHall'
     end
   end
 end
