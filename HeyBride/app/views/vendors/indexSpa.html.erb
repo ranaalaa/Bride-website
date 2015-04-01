@@ -2,15 +2,20 @@
   <%= submit_tag "Search", :name => nil %>
 <% end %>
 
-<% @vendors.each do |vendor| %>
- <%= image_tag vendor.image.url(:small),{} %><br>
-    <%= link_to vendor.name, vendor %><br>
-
-<% if user_signed_in? %>
-<% if current_user.admin? %>
-<%= link_to 'Edit', edit_vendor_path(vendor) %> 
-<%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-<% end %>
- <% end %>
-     <%end%>
-
+<h4 class="column">Spas & Beauty Centers</h4>
+    <% @vendors.in_groups_of(3, false) do |vendors| %>
+        <div class="row">
+            <% vendors.each do |vendor| %>
+                <div class="col-md-3">
+                        <%= image_tag vendor.image.url(:small),{} %><br>
+                        <%= link_to vendor.name, vendor %><br>
+                        <% if user_signed_in? %> 
+                            <% if current_user.admin? %>
+                                <%= link_to 'Edit', edit_vendor_path(vendor) %> 
+                                <%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+                            <% end %>
+                        <%end%>
+                </div>
+            <% end %>
+        </div>
+    <% end %>
