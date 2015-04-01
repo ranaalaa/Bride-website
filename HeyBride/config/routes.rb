@@ -26,6 +26,7 @@ end
       get 'indexSuites'
       get 'indexDjs' 
       get 'indexYacht'
+      get 'indexVilla'
     end
   end
 end
