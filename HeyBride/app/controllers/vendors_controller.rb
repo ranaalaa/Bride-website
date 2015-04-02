@@ -85,13 +85,20 @@ if params[:search]
    end 
  end
      def indexDjs
-if params[:search]
-    @vendors = Vendor.search(params[:search]).where(entry:'Dj').order("created_at DESC")
-  else
-    @vendors = Vendor.where(entry:'Dj').order('created_at DESC')
-   end 
- end
 
+        
+                @q = Vendor.where(entry:'Dj').ransack(params[:q])
+                               @vendors = @q.result(:distinct=>true)
+
+        
+               if @vendors.size.zero?
+                               flash[:notice] = "No Matches Found"
+                             
+                               
+                  end
+ 
+    
+  end
 
   def create
   @vendor = Vendor.new(vendor_params)

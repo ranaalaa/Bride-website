@@ -1,3 +1,74 @@
+<%= search_form_for @q, url: indexDjs_vendors_path do |f| %>
+
+  <%= f.label :name %>
+  <%= f.search_field :name_cont %>
+  <%= f.label :location %>
+  <%= f.search_field :location_cont %>
+  <%= f.label :capacity_gt, 'capacity greater than' %>
+  <%= f.text_field :capacity_gt%>
+  <%= f.label :capacity_lt, 'capacity less than' %>
+  <%= f.text_field :capacity_lt %>
+  <%= f.label :packages_price_gt, 'packages prices greater than' %>
+  <%= f.text_field :packages_price_gt %>
+  <%= f.label :packages_price_lt, 'packages prices less than' %>
+  <%= f.text_field :packages_price_lt %>
+      <p></p>
+      
+  <p></p>
+ <p>
+     <p>
+    Sort:
+ 
+  <%= sort_link(@q, :packages_price) %>
+  </p>
+  </p>
+
+  </p>
+  <p></p>
+  <%= f.label 'Stars' %> 
+  <p>
+    
+  <%= check_box_tag('q[stars_eq_any][]', "1") %>
+ 
+  <%= image_tag src="icon_star.png" , size: "20x20" %>
+
+  </p>
+   <p>
+    
+  <%= check_box_tag('q[stars_eq_any][]', "2") %>
+ 
+  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>
+
+  </p>
+     <p>
+    
+  <%= check_box_tag('q[stars_eq_any][]', "3") %>
+ 
+  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %>
+
+  </p>
+    <p>
+    
+  <%= check_box_tag('q[stars_eq_any][]', "4") %>
+ 
+  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>
+
+  </p>
+    <p>
+    
+  <%= check_box_tag('q[stars_eq_any][]', "4") %>
+ 
+  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %>
+
+  </p>
+ 
+  <%= f.submit %>
+  
+<% end %>
+
+
+
+
   <%= form_tag url_for(:controller => 'vendors', :action => 'indexDjs'), :method => 'get' do %>  <%= text_field_tag :search, params[:search], placeholder: "Search Djs" %>
   <%= submit_tag "Search", :name => nil %>
 <% end %>
