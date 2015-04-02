@@ -41,7 +41,16 @@ class VendorsController < ApplicationController
   def show
     @vendor = Vendor.find(params[:id])
   end
-
+ # Author:
+ # Donia Magdy, Hanan Hosny
+ # Description:
+ # this action display the Hairdressers and the results of the search filtering
+ # Params:
+ # q (this contains a hash of the search parameters that the user passes in)
+ # Success:
+ # The user gets the list of the hairdressers specified in the search params
+ # Failure:
+ # The user gets a message "no matches found"
   def indexHairdressers
     @q = Vendor.where(entry:'Hairdresser').ransack(params[:q])
     @vendors = @q.result(:distinct=>true)
