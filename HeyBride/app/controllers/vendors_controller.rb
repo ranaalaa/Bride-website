@@ -58,6 +58,16 @@ class VendorsController < ApplicationController
       flash[:notice] = "No Matches Found"
     end
   end
+ # Author:
+ # Donia Magdy, Hanan Hosny
+ # Description:
+ # this action display the Dresses stores and the results of the search filtering
+ # Params:
+ # q (this contains a hash of the search parameters that the user passes in)
+ # Success:
+ # The user gets the list of the Dresses stores specified in the search params
+ # Failure:
+ # The user gets a message "no matches found"
   def indexDresses
     @q = Vendor.where(entry:'Dress').ransack(params[:q])
     @vendors = @q.result(:distinct=>true)
@@ -65,6 +75,16 @@ class VendorsController < ApplicationController
       flash[:notice] = "No Matches Found"
     end
   end
+   # Author:
+ # Donia Magdy, Hanan Hosny
+ # Description:
+ # this action display the Make-up artists and the results of the search filtering
+ # Params:
+ # q (this contains a hash of the search parameters that the user passes in)
+ # Success:
+ # The user gets the list of the Makeup-artists specified in the search params
+ # Failure:
+ # The user gets a message "no matches found"
   def indexMakeup
    @q = Vendor.where(entry:'Makeup').ransack(params[:q])
     @vendors = @q.result(:distinct=>true)
@@ -72,6 +92,16 @@ class VendorsController < ApplicationController
       flash[:notice] = "No Matches Found"
     end
   end
+ # Author:
+ # Donia Magdy, Hanan Hosny
+ # Description:
+ # this action display the photographers and the results of the search filtering
+ # Params:
+ # q (this contains a hash of the search parameters that the user passes in)
+ # Success:
+ # The user gets the list of the photographers specified in the search params
+ # Failure:
+ # The user gets a message "no matches found"
   def indexPhotographers
    @q = Vendor.where(entry:'Photographer').ransack(params[:q])
     @vendors = @q.result(:distinct=>true)
@@ -79,6 +109,16 @@ class VendorsController < ApplicationController
       flash[:notice] = "No Matches Found"
     end
   end
+ # Author:
+ # Donia Magdy, Hanan Hosny
+ # Description:
+ # this action display the Suites stores and the results of the search filtering
+ # Params:
+ # q (this contains a hash of the search parameters that the user passes in)
+ # Success:
+ # The user gets the list of the Suites stores specified in the search params
+ # Failure:
+ # The user gets a message "no matches found"
   def indexSuites
    @q = Vendor.where(entry:'Suit').ransack(params[:q])
     @vendors = @q.result(:distinct=>true)
@@ -86,7 +126,16 @@ class VendorsController < ApplicationController
       flash[:notice] = "No Matches Found"
     end
   end
-
+ # Author:
+ # Donia Magdy, Hanan Hosny
+ # Description:
+ # this action display the Spa centers and the results of the search filtering
+ # Params:
+ # q (this contains a hash of the search parameters that the user passes in)
+ # Success:
+ # The user gets the list of the Spa centers specified in the search params
+ # Failure:
+ # The user gets a message "no matches found"
   def indexSpa
     @q = Vendor.where(entry:'Spa').ransack(params[:q])
     @vendors = @q.result(:distinct=>true)
@@ -94,7 +143,16 @@ class VendorsController < ApplicationController
       flash[:notice] = "No Matches Found"
     end
   end
-
+ # Author:
+ # Donia Magdy, Hanan Hosny
+ # Description:
+ # this action display the Djs and the results of the search filtering
+ # Params:
+ # q (this contains a hash of the search parameters that the user passes in)
+ # Success:
+ # The user gets the list of the Djs specified in the search params
+ # Failure:
+ # The user gets a message "no matches found"
   def indexDjs
     @q = Vendor.where(entry:'Dj').ransack(params[:q])
     @vendors = @q.result(:distinct=>true)
