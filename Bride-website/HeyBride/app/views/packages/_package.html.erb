@@ -1,0 +1,18 @@
+
+ <strong>name:</strong>
+    <%=  package.name%><br>
+   <strong>price:</strong>
+<%=  package.price%><br>
+   <strong>description:</strong>
+
+<%=  package.description%><br><br>
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+  <%= link_to 'Delete Package', [package.vendor, package],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+                 <%= link_to 'Edit Package', edit_vendor_package_path(package.vendor, package) %> <br><br>
+</p>
+<% end %>
+<% end %>
+
