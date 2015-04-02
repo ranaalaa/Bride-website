@@ -1,11 +1,49 @@
-<%= form_tag url_for(:controller => 'vendors', :action => 'indexPhotographers'), :method => 'get' do %>  <%= text_field_tag :search, params[:search], placeholder: "Search photographers" %>
-  <%= submit_tag "Search", :name => nil %>
+<%= search_form_for @q, url: indexPhotographers_vendors_path do |f| %>
+  <%= f.label :name %>
+  <%= f.search_field :name_cont %>
+  <%= f.label :location %>
+  <%= f.search_field :location_cont %>
+  <%= f.label :capacity_gteq, 'capacity greater than' %>
+  <%= f.text_field :capacity_gteq%>
+  <%= f.label :capacity_lteq, 'capacity less than' %>
+  <%= f.text_field :capacity_lteq %>
+  <%= f.label :packages_price_gteq, 'packages prices greater than' %>
+  <%= f.text_field :packages_price_gteq %>
+  <%= f.label :packages_price_lteq, 'packages prices less than' %>
+  <%= f.text_field :packages_price_lteq%>
+  <p>
+    Sort:
+    <%= sort_link(@q, :packages_price) %>
+  </p>
+  <p>
+    <%= f.label 'Stars' %> 
+  <p>
+   <%= check_box_tag('q[stars_eq_any][]', "1") %>
+   <%= image_tag src="icon_star.png" , size: "20x20" %>
+  </p>
+  <p>
+    <%= check_box_tag('q[stars_eq_any][]', "2") %>
+    <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>
+  </p>
+  <p>
+  <%= check_box_tag('q[stars_eq_any][]', "3") %>
+  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %>
+  </p>
+  <p>
+    <%= check_box_tag('q[stars_eq_any][]', "4") %>
+    <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>
+  </p>
+  <p>
+    <%= check_box_tag('q[stars_eq_any][]', "4") %>
+    <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %>
+  </p>
+  <%= f.submit %>
 <% end %>
 
-<% @vendors.each do |vendor| %>
- <%= image_tag vendor.image.url(:small),{} %><br>
-    <%= link_to vendor.name, vendor %><br>
-
+ <% if @vendors.size.zero? %>
+ <p id="notice"><%= notice %> </p> 
+ <% end %> 
+ 
 <% if user_signed_in? %>
 <% if current_user.admin? %>
 <%= link_to 'Edit', edit_vendor_path(vendor) %> 
