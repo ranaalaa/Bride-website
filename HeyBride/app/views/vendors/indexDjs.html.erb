@@ -73,7 +73,10 @@
   <%= submit_tag "Search", :name => nil %>
 <% end %>
 
-
+ <% if @vendors.size.zero? %>
+ <p id="notice"><%= notice %> </p> 
+ <% end %> 
+ 
 <% @vendors.each do |vendor| %>
  <%= image_tag vendor.image.url(:small),{} %><br>
     <%= link_to vendor.name, vendor %>
