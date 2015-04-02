@@ -26,6 +26,7 @@ end
       get 'indexSuites'
       get 'indexDjs'   
       get 'indexHall'
+      get 'indexGarden'
     end
   end
 end
