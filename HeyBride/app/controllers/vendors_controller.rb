@@ -91,14 +91,23 @@ if params[:search]
     @vendors = Vendor.where(entry:'Dj').order('created_at DESC')
    end 
  end
+
  
-    def indexYacht
-        @vendors = Vendor.where(entry:'Yacht').order('created_at DESC')
-    end
+  def indexYacht
+    @vendors = Vendor.where(entry:'Yacht').order('created_at DESC')
+  end
+  # Author:
+ # Mayada Tarek
+ # Description:
+ # this action display the Vilas
+ # Success:
+ # The user gets the list of all Villas 
+ # Failure:
+ # No Villas to view
     
-    def indexVilla
-        @vendors = Vendor.where(entry:'Villa').order('created_at DESC')
-    end
+  def indexVilla
+    @vendors = Vendor.where(entry:'Villa').order('created_at DESC')
+  end
 
 
   def create
