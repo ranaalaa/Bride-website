@@ -12,16 +12,15 @@
  <p id="notice"><%= notice %> </p> 
  <% end %> 
  
-
-
-<% if user_signed_in? %>
-<% if current_user.admin? %>
-<%= link_to 'Edit', edit_vendor_path(vendor) %> 
-<%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-<% end %>
- <% end %>
-  <% end %>
-
-
+<% @vendors.each do |vendor| %>
+  <%= image_tag vendor.image.url(:small),{} %><br>
+  <%= link_to vendor.name, vendor %>
+  <% if user_signed_in? %>
+    <% if current_user.admin? %>
+      <%= link_to 'Edit', edit_vendor_path(vendor) %> 
+      <%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+    <% end %>
+   <% end %>
+<%end%>
   
 
