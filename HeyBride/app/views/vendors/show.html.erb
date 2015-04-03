@@ -12,7 +12,7 @@
 
           <div class="container">
             <div class="samples">
-              <h1> <%= @vendor.name %> </h1>
+              <h1> <%= @vendor.name %> <%= @vendor.entry %>  </h1>
                 <p>Image samples</p>      
 
             </div>
@@ -26,6 +26,10 @@
                 <div class="box">
                   <div id="box53100"></div>
                     <p><strong> CONTACT US!</strong>
+                         <p>
+                          <%= @vendor.location %>
+                        </p>
+                        
                         <p>
                           <%= @vendor.address %>
                         </p>
@@ -41,14 +45,40 @@
                         <p>
                             <%= @vendor.email %>
                         </p>
-                    </p>
-    
+                        <p>
+                           <% if @vendor.entry == "Villa" %>
+                                <%= @vendor.capacity %> <h>Guests</h>
+                              <% end %>
+                        </p>
+                        <p>
+                          <% if @vendor.entry == "Yacht" %>
+                           <%= @vendor.capacity %> <h>Guests</h>
+                              <% end %>
+                              </p>
+                        <p>
+                           <% if @vendor.entry == "Hall"  %>
+                               <%= @vendor.capacity %> <h>Guests</h></br>
+                                
+                                  <%= @vendor.stars %> <h>stars</h>
+                              <% end %>
+                        </p>
+                        <p>
+                          <% if @vendor.entry == "Garden" %>
+                          <%= @vendor.capacity %> <strong>Guests</strong>
+                             <strong>Ranking</strong>
+                               <%= @vendor.stars %>
+                              <% end %>
+                        </p>
                 </div>
               </div>
           </div>
         </body>
   </html>
-
+    
+    
+    
+   
+    
   <% if @vendor.entry != "Suit" %>
   <% if @vendor.entry != "Dress" %>
     <% @vendor.packages.each do |package| %>
