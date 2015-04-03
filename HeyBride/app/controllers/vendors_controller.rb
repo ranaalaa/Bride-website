@@ -92,6 +92,14 @@ if params[:search]
    end 
  end
  
+# Author:
+# Mayada Tarek
+# Description:
+# this action display the Yachts
+# Success:
+# The user gets the list of all Yachts 
+# Failure:
+# No Yachts to view
     def indexYacht
         @vendors = Vendor.where(entry:'Yacht').order('created_at DESC')
     end
