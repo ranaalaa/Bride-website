@@ -42,6 +42,14 @@ end
    def show
     @vendor = Vendor.find(params[:id])
    end
+ # Author:
+ # Jala Ashraf
+ # Description:
+ # This action displays the index view of the Hairdresses in grid view
+ # Success:
+ # The user views the list of hairdressers in a grid view of 3 per row
+ # Failure:
+ # The user views the list of hairdressers in any other view but the grid view in group of 3 per row
 def indexHairdressers
  if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Hairdresser').order("created_at DESC")
@@ -91,15 +99,30 @@ if params[:search]
     @vendors = Vendor.where(entry:'Dj').order('created_at DESC')
 end 
      end
- 
+     
+ # Author:
+ # Jala Ashraf
+ # Description:
+ # This action displays the index view of the halls in grid view
+ # Success:
+ # The user views the list of halls in a grid view of 3 per row
+ # Failure:
+ # The user views the list of halls in any other view but the grid view in group of 3 per row
     def indexHall
     @vendors = Vendor.where(entry:'Hall').order('created_at DESC')
     end
-    
+ # Author:
+ # Jala Ashraf
+ # Description:
+ # This action displays the index view of the gardens in grid view
+ # Success:
+ # The user views the list of gardens in a grid view of 3 per row
+ # Failure:
+ # The user views the list of gardens in any other view but the grid view in group of 3 per row
     def indexGarden
     @vendors = Vendor.where(entry:'Garden').order('created_at DESC')
     end
-    
+ 
   def create
   @vendor = Vendor.new(vendor_params)
  
