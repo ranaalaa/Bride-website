@@ -6,10 +6,11 @@ class VendorsController < ApplicationController
   end
 
   def destroy
-  @vendor = Vendor.find(params[:id])
-  @vendor.destroy
-  redirect_to :controller => 'welcome', :action => 'HomePage'   
+    @vendor = Vendor.find(params[:id])
+    @vendor.destroy
+    redirect_to :controller => 'welcome', :action => 'HomePage'   
   end
+
   def index
   end 
 
@@ -18,24 +19,18 @@ class VendorsController < ApplicationController
   end
  
   def update
-  @vendor = Vendor.find(params[:id])
+    @vendor = Vendor.find(params[:id])
     if @vendor.update(vendor_params)
       redirect_to @vendor
     else
-    render 'edit'
+      render 'edit'
     end
   end
 
-  def showPackages
-    @vendor= Vendor.find(params[:id])
-  end
-
-  def showBrands
-    @vendor= Vendor.find(params[:id])
-  end
-
-  def showSamples
-    @vendor= Vendor.find(params[:id])
+  def create
+    @vendor = Vendor.new(vendor_params)
+    @vendor.save
+    redirect_to @vendor
   end
 
   def show
@@ -120,7 +115,7 @@ class VendorsController < ApplicationController
  # Failure:
  # The user gets a message "no matches found"
   def indexSuites
-   @q = Vendor.where(entry:'Suit').ransack(params[:q])
+    @q = Vendor.where(entry:'Suit').ransack(params[:q])
     @vendors = @q.result(:distinct=>true)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
@@ -175,7 +170,8 @@ class VendorsController < ApplicationController
     @vendors = @q.result(:distinct=>true)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
-    end  end
+    end  
+  end
     
  # Author:
  # Donia Magdy, Hanan Hosny
@@ -195,11 +191,39 @@ class VendorsController < ApplicationController
     end 
   end
 
-
-  def create
-    @vendor = Vendor.new(vendor_params)
-    @vendor.save
-    redirect_to @vendor
+ # Author:
+ # Donia Magdy, Hanan Hosny
+ # Description:
+ # this action displays the Halls and the results of the search filtering
+ # Params:
+ # q (this contains a hash of the search parameters that the user passes in)
+ # Success:
+ # The user gets the list of the Halls specified in the search params
+ # Failure:
+ # The user gets a message "no matches found"
+  def indexHall
+    @q = Vendor.where(entry:'Hall').ransack(params[:q])
+    @vendors = @q.result(:distinct=>true)
+    if @vendors.size.zero?
+      flash[:notice] = "No Matches Found"
+    end   
+  end
+ # Author:
+ # Donia Magdy, Hanan Hosny
+ # Description:
+ # this action displays the villas and the results of the search filtering
+ # Params:
+ # q (this contains a hash of the search parameters that the user passes in)
+ # Success:
+ # The user gets the list of the Gardens specified in the search params
+ # Failure:
+ # The user gets a message "no matches found"
+  def indexGarden
+    @q = Vendor.where(entry:'Yacht').ransack(params[:q])
+    @vendors = @q.result(:distinct=>true)
+    if @vendors.size.zero?
+      flash[:notice] = "No Matches Found"
+    end   
   end
  
   private

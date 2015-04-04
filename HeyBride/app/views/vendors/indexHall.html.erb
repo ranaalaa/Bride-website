@@ -1,6 +1,6 @@
 <link href="css/vendors.css" rel="stylesheet">
 <div id="nav">
-  <%= search_form_for @q, url: indexPhotographers_vendors_path do |f| %>
+  <%= search_form_for @q, url: indexHall_vendors_path do |f| %>
     <%= f.label :name %><br>
     <%= f.search_field :name_cont  %><br> 
     <%= f.label :location %><br>
@@ -21,7 +21,7 @@
     </p> 
   <% end %> 
 </div>
-<h4 class="column"> &nbsp;&nbsp;&nbsp;Photographers</h4>
+<h4 class="column"> &nbsp;&nbsp;&nbsp;Halls</h4>
 <% @vendors.in_groups_of(3, false) do |vendors| %>
   <div class="row">
     <% vendors.each do |vendor| %>
