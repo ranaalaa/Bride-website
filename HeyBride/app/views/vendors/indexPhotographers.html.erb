@@ -21,20 +21,23 @@
     </p> 
   <% end %> 
 </div>
-<h4 class="column"> &nbsp;&nbsp;&nbsp;Photographers</h4>
-<% @vendors.in_groups_of(3, false) do |vendors| %>
-  <div class="row">
-    <% vendors.each do |vendor| %>
-      <div class="col-md-3">
-        <%= image_tag vendor.image.url(:small) ,Size: "150x150" %>  <br> 
-        <%= link_to vendor.name, vendor %><br>
-        <% if user_signed_in? %>
-          <% if current_user.admin? %>
-            <%= link_to 'Edit', edit_vendor_path(vendor) %>
-            <%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-          <% end %>
-        <%end%>
-      </div>
-    <% end %>
-  </div>
-<% end %>
+<div id="section">
+  <h4 class="column"> &nbsp;&nbsp;&nbsp;Photographers</h4>
+  <% @vendors.in_groups_of(3, false) do |vendors| %>
+    <div class="row">
+      <% vendors.each do |vendor| %>
+        <div class="col-md-3">
+          <%= image_tag vendor.image.url(:small), :size => "200x200" %>  <br> 
+          <%= link_to vendor.name, vendor %><br>
+          <% if user_signed_in? %>
+            <% if current_user.admin? %>
+              <%= link_to 'Edit', edit_vendor_path(vendor) %>
+              <%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+            <% end %>
+          <%end%>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+

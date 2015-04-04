@@ -10,7 +10,12 @@
     animation-duration: 6s;
     animation-iteration-count: 1;
 }
+#section {
+    width:1000px;
+    float:left;
+    padding:30px;
 
+}
 
 @-webkit-keyframes example {
     from {background-color: white;}
