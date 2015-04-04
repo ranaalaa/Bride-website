@@ -44,7 +44,7 @@ class VendorsController < ApplicationController
  # Author:
  # Donia Magdy, Hanan Hosny
  # Description:
- # this action display the Hairdressers and the results of the search filtering
+ # this action displays the Hairdressers and the results of the search filtering
  # Params:
  # q (this contains a hash of the search parameters that the user passes in)
  # Success:
@@ -61,7 +61,7 @@ class VendorsController < ApplicationController
  # Author:
  # Donia Magdy, Hanan Hosny
  # Description:
- # this action display the Dresses stores and the results of the search filtering
+ # this action displays the Dresses stores and the results of the search filtering
  # Params:
  # q (this contains a hash of the search parameters that the user passes in)
  # Success:
@@ -78,7 +78,7 @@ class VendorsController < ApplicationController
    # Author:
  # Donia Magdy, Hanan Hosny
  # Description:
- # this action display the Make-up artists and the results of the search filtering
+ # this action displays the Make-up artists and the results of the search filtering
  # Params:
  # q (this contains a hash of the search parameters that the user passes in)
  # Success:
@@ -95,7 +95,7 @@ class VendorsController < ApplicationController
  # Author:
  # Donia Magdy, Hanan Hosny
  # Description:
- # this action display the photographers and the results of the search filtering
+ # this action displays the photographers and the results of the search filtering
  # Params:
  # q (this contains a hash of the search parameters that the user passes in)
  # Success:
@@ -112,7 +112,7 @@ class VendorsController < ApplicationController
  # Author:
  # Donia Magdy, Hanan Hosny
  # Description:
- # this action display the Suites stores and the results of the search filtering
+ # this action displays the Suites stores and the results of the search filtering
  # Params:
  # q (this contains a hash of the search parameters that the user passes in)
  # Success:
@@ -129,7 +129,7 @@ class VendorsController < ApplicationController
  # Author:
  # Donia Magdy, Hanan Hosny
  # Description:
- # this action display the Spa centers and the results of the search filtering
+ # this action displays the Spa centers and the results of the search filtering
  # Params:
  # q (this contains a hash of the search parameters that the user passes in)
  # Success:
@@ -146,7 +146,7 @@ class VendorsController < ApplicationController
  # Author:
  # Donia Magdy, Hanan Hosny
  # Description:
- # this action display the Djs and the results of the search filtering
+ # this action displays the Djs and the results of the search filtering
  # Params:
  # q (this contains a hash of the search parameters that the user passes in)
  # Success:
@@ -159,7 +159,42 @@ class VendorsController < ApplicationController
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end
+  end 
+ # Author:
+ # Donia Magdy, Hanan Hosny
+ # Description:
+ # this action displays the yachts and the results of the search filtering
+ # Params:
+ # q (this contains a hash of the search parameters that the user passes in)
+ # Success:
+ # The user gets the list of the yachts specified in the search params
+ # Failure:
+ # The user gets a message "no matches found"
+  def indexYacht
+    @q = Vendor.where(entry:'Yacht').ransack(params[:q])
+    @vendors = @q.result(:distinct=>true)
+    if @vendors.size.zero?
+      flash[:notice] = "No Matches Found"
+    end  end
+    
+ # Author:
+ # Donia Magdy, Hanan Hosny
+ # Description:
+ # this action displays the villas and the results of the search filtering
+ # Params:
+ # q (this contains a hash of the search parameters that the user passes in)
+ # Success:
+ # The user gets the list of the villas specified in the search params
+ # Failure:
+ # The user gets a message "no matches found"
+  def indexVilla
+    @q = Vendor.where(entry:'Villa').ransack(params[:q])
+    @vendors = @q.result(:distinct=>true)
+    if @vendors.size.zero?
+      flash[:notice] = "No Matches Found"
+    end 
   end
+
 
   def create
     @vendor = Vendor.new(vendor_params)
