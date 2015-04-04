@@ -1,0 +1,24 @@
+  #nav {  
+    line-height:30px;
+    height:350px;
+    width:200px;
+    float:left;
+    margin-top: 50px;
+    padding:5px;
+    background-color: white;
+    animation-name: example;
+    animation-duration: 6s;
+    animation-iteration-count: 1;
+}
+
+
+@-webkit-keyframes example {
+    from {background-color: white;}
+    to {background-color: pink;}
+}
+
+
+@keyframes example {
+    from {background-color: white;}
+    to {background-color: pink;}
+}
