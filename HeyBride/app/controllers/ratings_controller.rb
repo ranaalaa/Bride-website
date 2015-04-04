@@ -1,16 +1,29 @@
 class RatingsController < ApplicationController
 
-  
-   def create
+	 def create
     @vendor = Vendor.find(params[:vendor_id])
     @rating = @vendor.ratings.create(rating_params)
-    @rating.user_id = current_user.id
+    if @rating.save   
+      redirect_to vendor_path(@vendor) 
+           flash[:notice]
+    end
+
+  end
+
+
+   def destroy
+    @vendor = Vendor.find(params[:vendor_id])
+    @rating = @vendor.ratings.find(params[:id])
+    @rating.destroy
     redirect_to vendor_path(@vendor)
   end
  
- private
+ 
+  private
     def rating_params
       params.require(:rating).permit(:score)
+      
     end
 end
+
 
