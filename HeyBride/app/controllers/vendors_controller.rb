@@ -45,11 +45,11 @@ end
  # Author:
  # Jala Ashraf
  # Description:
- # This action displays the index view of the Hairdresses in grid view
+ # This action displays the index view of the Hairdressers in grid view in which it displays a row in group of 3 contating the image and below it the name of the Hairdressers
  # Success:
- # The user views the list of hairdressers in a grid view of 3 per row
+ # The user views the list of Hairdressers in a grid view of 3 per row
  # Failure:
- # The user views the list of hairdressers in any other view but the grid view in group of 3 per row
+ # The user views the list of Hairdressers in any other view but the grid view in group of 3 per row
 def indexHairdressers
  if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Hairdresser').order("created_at DESC")
@@ -71,6 +71,14 @@ if params[:search]
     @vendors = Vendor.where(entry:'Makeup').order('created_at DESC')
 end 
     end
+ # Author:
+ # Jala Ashraf
+ # Description:
+ # This action displays the index view of the Photographers in grid view in which it displays a row in group of 3 contating the image and below it the name of the Photographers
+ # Success:
+ # The user views the list of Photographers in a grid view of 3 per row
+ # Failure:
+ # The user views the list of Photographers in any other view but the grid view in group of 3 per row
     def indexPhotographers
 if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Photographer').order("created_at DESC")
@@ -92,6 +100,14 @@ if params[:search]
     @vendors = Vendor.where(entry:'Spa').order('created_at DESC')
 end 
   end
+ # Author:
+ # Jala Ashraf
+ # Description:
+ # This action displays the index view of the Djs in grid view in which it displays a row in group of 3 contating the image and below it the name of the Dj
+ # Success:
+ # The user views the list of Djs in a grid view of 3 per row
+ # Failure:
+ # The user views the list of Djs in any other view but the grid view in group of 3 per row
      def indexDjs
 if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Dj').order("created_at DESC")
@@ -99,11 +115,10 @@ if params[:search]
     @vendors = Vendor.where(entry:'Dj').order('created_at DESC')
 end 
      end
-     
  # Author:
  # Jala Ashraf
  # Description:
- # This action displays the index view of the halls in grid view
+ # This action displays the index view of the Halls in grid view in which it displays a row in group of 3 contating the image and below it the name of the Hall and its location
  # Success:
  # The user views the list of halls in a grid view of 3 per row
  # Failure:
@@ -114,11 +129,11 @@ end
  # Author:
  # Jala Ashraf
  # Description:
- # This action displays the index view of the gardens in grid view
+ # This action displays the index view of in grid view in which it displays a row in group of 3 contating the image and below it the name of the Garden and its location
  # Success:
- # The user views the list of gardens in a grid view of 3 per row
+ # The user views the list of Gardens in a grid view of 3 per row
  # Failure:
- # The user views the list of gardens in any other view but the grid view in group of 3 per row
+ # The user views the list of Gardens in any other view but the grid view in group of 3 per row
     def indexGarden
     @vendors = Vendor.where(entry:'Garden').order('created_at DESC')
     end
