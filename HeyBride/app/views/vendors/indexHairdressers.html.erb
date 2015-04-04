@@ -3,7 +3,7 @@
         <div class="row">
             <% vendors.each do |vendor| %>
                 <div class="col-md-3">
-                        <%= image_tag vendor.image.url(:small),{150×150} %><br>
+                        <%= image_tag vendor.image.url(:small) ,Size: "150x150" %><br>
                         <%= link_to vendor.name, vendor %>
                         <% if user_signed_in? %> 
                             <% if current_user.admin? %>
