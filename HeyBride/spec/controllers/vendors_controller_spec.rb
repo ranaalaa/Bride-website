@@ -34,4 +34,32 @@ RSpec.describe VendorsController, type: :controller do
     end
     
   end
+      describe "GET indexHall" do
+    it "assigns @vendors" do
+      sign_in
+      vendor = Vendor.create!(:name => "Hall2", :entry=> "Hall")
+      get :indexHall
+      expect(assigns(:vendors)).to eq([vendor])
+    end
+
+    it "renders the index template" do
+      sign_in 
+      get :indexHall
+      expect(response).to render_template("indexHall")
+    end
+  end
+      describe "GET indexGarden" do
+    it "assigns @vendors" do
+      sign_in
+      vendor = Vendor.create!(:name => "Garden", :entry=> "Garden")
+      get :indexGarden
+      expect(assigns(:vendors)).to eq([vendor])
+    end
+
+    it "renders the index template" do
+      sign_in 
+      get :indexGarden
+      expect(response).to render_template("indexGarden")
+    end
+  end
 end

@@ -82,8 +82,17 @@
     
     <li ><a href="#method-i-indexDresses">#indexDresses</a>
     
+<<<<<<< HEAD
     <li ><a href="#method-i-indexHairdressers">#indexHairdressers</a>
     
+=======
+    <li ><a href="#method-i-indexGarden">#indexGarden</a>
+    
+    <li ><a href="#method-i-indexHairdressers">#indexHairdressers</a>
+    
+    <li ><a href="#method-i-indexHall">#indexHall</a>
+    
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
     <li ><a href="#method-i-indexMakeup">#indexMakeup</a>
     
     <li ><a href="#method-i-indexPhotographers">#indexPhotographers</a>
@@ -92,20 +101,26 @@
     
     <li ><a href="#method-i-indexSuites">#indexSuites</a>
     
+<<<<<<< HEAD
     <li ><a href="#method-i-indexVilla">#indexVilla</a>
     
     <li ><a href="#method-i-indexYacht">#indexYacht</a>
     
+=======
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
     <li ><a href="#method-i-new">#new</a>
     
     <li ><a href="#method-i-show">#show</a>
     
+<<<<<<< HEAD
     <li ><a href="#method-i-showBrands">#showBrands</a>
     
     <li ><a href="#method-i-showPackages">#showPackages</a>
     
     <li ><a href="#method-i-showSamples">#showSamples</a>
     
+=======
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
     <li ><a href="#method-i-update">#update</a>
     
   </ul>
@@ -161,12 +176,21 @@
 
           
           <div class="method-source-code" id="create-source">
+<<<<<<< HEAD
             <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 120</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
   <span class="ruby-ivar">@vendor</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">vendor_params</span>)
  
   <span class="ruby-ivar">@vendor</span>.<span class="ruby-identifier">save</span>
   <span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@vendor</span>
+=======
+            <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+<span class="ruby-ivar">@vendor</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">vendor_params</span>)
+ 
+<span class="ruby-ivar">@vendor</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-identifier">redirect_to</span> <span class="ruby-ivar">@vendor</span>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -203,7 +227,11 @@
   <span class="ruby-ivar">@vendor</span>.<span class="ruby-identifier">destroy</span>
  
 <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;welcome&#39;</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&#39;HomePage&#39;</span>   
+<<<<<<< HEAD
 <span class="ruby-keyword">end</span></pre>
+=======
+  <span class="ruby-keyword">end</span></pre>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           </div>
           
         </div>
@@ -299,14 +327,23 @@
 
           
           <div class="method-source-code" id="indexDjs-source">
+<<<<<<< HEAD
             <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 87</span>
+=======
+            <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 73</span>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
      <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexDjs</span>
 <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]
     <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Dj&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;created_at DESC&quot;</span>)
   <span class="ruby-keyword">else</span>
     <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Dj&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
+<<<<<<< HEAD
    <span class="ruby-keyword">end</span> 
  <span class="ruby-keyword">end</span></pre>
+=======
+<span class="ruby-keyword">end</span> 
+     <span class="ruby-keyword">end</span></pre>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           </div>
           
         </div>
@@ -336,14 +373,23 @@
 
           
           <div class="method-source-code" id="indexDresses-source">
+<<<<<<< HEAD
             <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 52</span>
+=======
+            <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 38</span>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
   <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexDresses</span>
 <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]
    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Dress&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;created_at DESC&quot;</span>)
  <span class="ruby-keyword">else</span>
    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Dress&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
+<<<<<<< HEAD
   <span class="ruby-keyword">end</span>
    <span class="ruby-keyword">end</span></pre>
+=======
+<span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span></pre>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           </div>
           
         </div>
@@ -354,10 +400,17 @@
       </div>
 
     
+<<<<<<< HEAD
       <div id="method-i-indexHairdressers" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">indexHairdressers</span><span
+=======
+      <div id="method-i-indexGarden" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">indexGarden</span><span
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
             class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -367,11 +420,18 @@
 
         <div class="method-description">
           
+<<<<<<< HEAD
           
+=======
+          <p>Author: Jala Ashraf Description: This action displays all the list of
+Gardens The user views the all the list of Gardens Failure: The user
+doesn&#39;t views the list of Gardens</p>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           
           
 
           
+<<<<<<< HEAD
           <div class="method-source-code" id="indexHairdressers-source">
             <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 45</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexHairdressers</span>
@@ -380,6 +440,12 @@
   <span class="ruby-keyword">else</span>
     <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Hairdresser&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
    <span class="ruby-keyword">end</span>
+=======
+          <div class="method-source-code" id="indexGarden-source">
+            <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">indexGarden</span>
+<span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Garden&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -391,10 +457,17 @@
       </div>
 
     
+<<<<<<< HEAD
       <div id="method-i-indexMakeup" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">indexMakeup</span><span
+=======
+      <div id="method-i-indexHairdressers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">indexHairdressers</span><span
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
             class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -409,6 +482,7 @@
           
 
           
+<<<<<<< HEAD
           <div class="method-source-code" id="indexMakeup-source">
             <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 59</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexMakeup</span>
@@ -418,6 +492,17 @@
     <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Makeup&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
    <span class="ruby-keyword">end</span> 
  <span class="ruby-keyword">end</span></pre>
+=======
+          <div class="method-source-code" id="indexHairdressers-source">
+            <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">indexHairdressers</span>
+ <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]
+    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Hairdresser&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;created_at DESC&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Hairdresser&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
+ <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           </div>
           
         </div>
@@ -428,10 +513,17 @@
       </div>
 
     
+<<<<<<< HEAD
       <div id="method-i-indexPhotographers" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">indexPhotographers</span><span
+=======
+      <div id="method-i-indexHall" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">indexHall</span><span
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
             class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -441,11 +533,18 @@
 
         <div class="method-description">
           
+<<<<<<< HEAD
           
+=======
+          <p>Author: Jala Ashraf Description: This action displays all the list of Halls
+The user views all the list of Halls Failure: The user doesn&#39;t views
+the list of Halls</p>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           
           
 
           
+<<<<<<< HEAD
           <div class="method-source-code" id="indexPhotographers-source">
             <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 66</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexPhotographers</span>
@@ -455,6 +554,13 @@
     <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Photographer&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
    <span class="ruby-keyword">end</span>
     <span class="ruby-keyword">end</span></pre>
+=======
+          <div class="method-source-code" id="indexHall-source">
+            <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">indexHall</span>
+<span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Hall&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
+<span class="ruby-keyword">end</span></pre>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           </div>
           
         </div>
@@ -465,10 +571,17 @@
       </div>
 
     
+<<<<<<< HEAD
       <div id="method-i-indexSpa" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">indexSpa</span><span
+=======
+      <div id="method-i-indexMakeup" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">indexMakeup</span><span
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
             class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -483,6 +596,7 @@
           
 
           
+<<<<<<< HEAD
           <div class="method-source-code" id="indexSpa-source">
             <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 80</span>
   <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexSpa</span>
@@ -492,6 +606,17 @@
     <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Spa&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
    <span class="ruby-keyword">end</span> 
  <span class="ruby-keyword">end</span></pre>
+=======
+          <div class="method-source-code" id="indexMakeup-source">
+            <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 45</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexMakeup</span>
+<span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]
+    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Makeup&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;created_at DESC&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Makeup&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
+<span class="ruby-keyword">end</span> 
+    <span class="ruby-keyword">end</span></pre>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           </div>
           
         </div>
@@ -502,10 +627,17 @@
       </div>
 
     
+<<<<<<< HEAD
       <div id="method-i-indexSuites" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">indexSuites</span><span
+=======
+      <div id="method-i-indexPhotographers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">indexPhotographers</span><span
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
             class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -520,6 +652,7 @@
           
 
           
+<<<<<<< HEAD
           <div class="method-source-code" id="indexSuites-source">
             <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 73</span>
     <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexSuites</span>
@@ -529,6 +662,17 @@
     <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Suit&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
    <span class="ruby-keyword">end</span> 
  <span class="ruby-keyword">end</span></pre>
+=======
+          <div class="method-source-code" id="indexPhotographers-source">
+            <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 52</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexPhotographers</span>
+<span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]
+    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Photographer&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;created_at DESC&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Photographer&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
+<span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span></pre>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           </div>
           
         </div>
@@ -539,10 +683,17 @@
       </div>
 
     
+<<<<<<< HEAD
       <div id="method-i-indexVilla" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">indexVilla</span><span
+=======
+      <div id="method-i-indexSpa" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">indexSpa</span><span
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
             class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -552,17 +703,33 @@
 
         <div class="method-description">
           
+<<<<<<< HEAD
           <p>Author: Mayada Tarek Description: this action display the Villas Success:
 The user gets the list of all Villas  Failure: No Villas to view</p>
+=======
+          
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           
           
 
           
+<<<<<<< HEAD
           <div class="method-source-code" id="indexVilla-source">
             <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 115</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexVilla</span>
     <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Villa&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
+=======
+          <div class="method-source-code" id="indexSpa-source">
+            <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 66</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexSpa</span>
+<span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]
+    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Spa&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;created_at DESC&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Spa&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
+<span class="ruby-keyword">end</span> 
+  <span class="ruby-keyword">end</span></pre>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           </div>
           
         </div>
@@ -573,10 +740,17 @@ The user gets the list of all Villas  Failure: No Villas to view</p>
       </div>
 
     
+<<<<<<< HEAD
       <div id="method-i-indexYacht" class="method-detail ">
         
         <div class="method-heading">
           <span class="method-name">indexYacht</span><span
+=======
+      <div id="method-i-indexSuites" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">indexSuites</span><span
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
             class="method-args">()</span>
           
           <span class="method-click-advice">click to toggle source</span>
@@ -586,17 +760,33 @@ The user gets the list of all Villas  Failure: No Villas to view</p>
 
         <div class="method-description">
           
+<<<<<<< HEAD
           <p>Author: Mayada Tarek Description: this action display the Yachts Success:
 The user gets the list of all Yachts  Failure: No Yachts to view</p>
+=======
+          
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           
           
 
           
+<<<<<<< HEAD
           <div class="method-source-code" id="indexYacht-source">
             <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 103</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexYacht</span>
     <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Yacht&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
 <span class="ruby-keyword">end</span></pre>
+=======
+          <div class="method-source-code" id="indexSuites-source">
+            <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 59</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier">indexSuites</span>
+<span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]
+    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:search</span>]).<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Suit&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&quot;created_at DESC&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@vendors</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">where</span>(<span class="ruby-identifier">entry</span><span class="ruby-value">:&#39;Suit&#39;</span>).<span class="ruby-identifier">order</span>(<span class="ruby-string">&#39;created_at DESC&#39;</span>)
+<span class="ruby-keyword">end</span> 
+    <span class="ruby-keyword">end</span></pre>
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
           </div>
           
         </div>
@@ -658,9 +848,15 @@ The user gets the list of all Yachts  Failure: No Yachts to view</p>
 
           
           <div class="method-source-code" id="show-source">
+<<<<<<< HEAD
             <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 42</span>
  <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
   <span class="ruby-ivar">@vendor</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+=======
+            <pre><span class="ruby-comment"># File app/controllers/vendors_controller.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+ <span class="ruby-ivar">@vendor</span> = <span class="ruby-constant">Vendor</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[<span class="ruby-value">:id</span>])
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
 <span class="ruby-keyword">end</span></pre>
           </div>
           
@@ -672,6 +868,7 @@ The user gets the list of all Yachts  Failure: No Yachts to view</p>
       </div>
 
     
+<<<<<<< HEAD
       <div id="method-i-showBrands" class="method-detail ">
         
         <div class="method-heading">
@@ -771,6 +968,8 @@ The user gets the list of all Yachts  Failure: No Yachts to view</p>
       </div>
 
     
+=======
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
       <div id="method-i-update" class="method-detail ">
         
         <div class="method-heading">
