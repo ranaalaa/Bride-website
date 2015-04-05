@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330134608) do
+ActiveRecord::Schema.define(version: 20150405165117) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "bName"
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150330134608) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.text     "info"
   end
 
   add_index "samples", ["vendor_id"], name: "index_samples_on_vendor_id"

@@ -24,7 +24,11 @@ end
       get 'indexPhotographers'
       get 'indexSpa'
       get 'indexSuites'
-      get 'indexDjs'   
+      get 'indexDjs' 
+      get 'indexYacht'
+      get 'indexVilla'
+      get 'indexHall'
+      get 'indexGarden'
     end
   end
 end

@@ -1,4 +1,4 @@
-  <p id="notice"><%= notice %></p>
+<p id="notice"><%= notice %></p>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,91 +7,45 @@
 <link href='css/fontfamily.css' rel='stylesheet'>
 <link href="css/vendors.css" rel="stylesheet">
 <link href="css/aya.css" rel="stylesheet">
-
 <!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">
-
 <!-- Optional theme -->
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <meta charset="utf-8">
 <body>
 <div class="container">
-<div class="slider">
+  <div class="slider">
   
-
-      <div class="slide active-slide">
-        <div class="container">
-          <div class="row">
-            <div class="slide-copy col-xs-5">
-              <h1>Description </h1>
-              <p>This image is to show you details about this dress</p>
-              
-             
-            </div>
-            <div class="slide-img col-xs-7">
-             <!--  <img src="http://i61.tinypic.com/241jspz.jpg" border="0" alt="Image and video hosting by TinyPic"> -->
-            <img src="/assets/bride_1.jpg">
-            
-            
-            
-            </div>
-          </div>
-        </div>      
-      </div>
-
+    <% @vendor.samples.each do |sample| %>
       <div class="slide">
         <div class="container">
           <div class="row">
             <div class="slide-copy col-xs-5">
-              <h1>Description</h1>
-              
-              <p>This image is to show you details about this dress</p>
-              
+              <h1>Description</h1> <br>
+                   <%= sample.info%><br> 
+            
             </div>
-            <div class="slide-img col-xs-7">
-             <img src="/assets/bride_4.jpg" >
+            <div class="slide-img col-xs-3">
+              <%= image_tag sample.image.url(:small) %>
             </div>
           </div>
-        </div>      
-      </div> 
-
-
-
-<div class="slide">
-        <div class="container">
           <div class="row">
-            <div class="slide-copy col-xs-5">
-              <h1>description</h1>
-              
-              <p>This image is to show you details about this dress</p>
-               
-            </div>
-            <div class="slide-img col-xs-7">
-             <img src="/assets/bride_111.jpg" >
-            </div>
+              <div class="col-xs-12">
+              <% if user_signed_in? %> 
+                <% if current_user.admin? %>
+                  <%= link_to 'Delete Sample', [sample.vendor, sample],
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %><br><br>
+                  <% end %>
+                <% end %></div>
           </div>
         </div>      
-      </div> 
-
-
-<div class="slide">
-        <div class="container">
-          <div class="row">
-            <div class="slide-copy col-xs-5">
-              <h1>Wedding Dresses</h1>
+      </div>
+    <% end %>
               
-              <p>This image is to show you details about this dress</p>
-              
-            </div>
-            <div class="slide-img col-xs-7">
-             <img src="/assets/bride_30.jpg" >
-            </div>
-          </div>
-        </div>      
-      </div> 
-</div>
-
- <div class="slider-nav">
+            
+  </div> 
+  <div class="slider-nav">
       <a href="#" class="arrow-prev"><img src="/assets/arrow-prev.png"></a>
       <ul class="slider-dots">
         <li class="dot active-dot">&bull;</li>
@@ -101,21 +55,19 @@
       </ul>
       <a href="#" class="arrow-next"><img src="/assets/arrow-next.png"></a>
     </div> 
-
-
-<div class="row">
-<div class="col-sm-4">
-</div>
-<div class="col-sm-4">
-</div>
-<div class="col-sm-4">
-<div class="box">
-<div id="box53100"></div>
-<p><strong> CONTACT US!</strong>
-<p>
-<%= @vendor.address %>
-</p>
-<p>
+  <div class="row">
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-4">
+  </div>
+  <div class="col-sm-3">
+  <div class="box">
+  <div id="box53100"></div>
+  <p><strong> CONTACT US!</strong>
+  <p>
+  <%= @vendor.address %>
+  </p>
+  <p>
 <%= @vendor.telephone %>
 </p>
 <p>
@@ -128,8 +80,6 @@
 </div>
 </div>
 </div>
-</body>
-</html>
 <% if @vendor.entry != "Suit" %>
 <% if @vendor.entry != "Dress" %>
 <% @vendor.packages.each do |package| %>
@@ -174,24 +124,14 @@ data: { confirm: 'Are you sure?' } %>
 <% end %>
 <%end%>
 <%end%>
-<% if @vendor.entry != "Dj" %>
-<% @vendor.samples.each do |sample| %>
-
-<p>
-<%= image_tag sample.image.url(:small) %><br>
-<% if user_signed_in? %>
-<% if current_user.admin? %>
-<%= link_to 'Delete Sample', [sample.vendor, sample],
-method: :delete,
-data: { confirm: 'Are you sure?' } %><br><br>
-<% end %>
-<% end %>
-<% end %>
 </p>
 <% if user_signed_in? %>
 <% if current_user.admin? %>
 <%= form_for([@vendor, @vendor.samples.build]) do |f| %>
-
+<p>
+<%= f.label :info %><br>
+<%= f.text_field :info %>
+</p>
 <p>
 <%= f.file_field :image %>
 <%= f.submit %>
@@ -199,7 +139,6 @@ data: { confirm: 'Are you sure?' } %><br><br>
 <% end %>
 <% end %>
 <% end %>
-<%end%>
 <% if @vendor.entry == "Suit" || @vendor.entry == "Dress" %>
 <% @vendor.brands.each do |brand| %>
 <strong>name:</strong>
@@ -262,5 +201,5 @@ data: { confirm: 'Are you sure?' } %>
 <%end%>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/vvv.js"></script>
-
-    
+</body>
+</html>
