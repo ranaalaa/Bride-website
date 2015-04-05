@@ -1,13 +1,14 @@
 <link href="css/vendors.css" rel="stylesheet">
 <div id="nav">
   <%= search_form_for @q, url: indexDresses_vendors_path do |f| %>
+    <%= f.label "Filter By" %><br>
     <%= f.label :name %><br>
     <%= f.search_field :name_cont  %><br> 
     <%= f.label :location %><br>
-    <%= f.text_field :location_cont  %>  <br> 
+    <%= f.text_field :location_cont  %>  <br> <br>
   
-   
-    <%= image_submit_tag("icon_star.png")%>
+
+    <%= image_submit_tag("search.png")  %>
   <% end %>
   <% if @vendors.size.zero? %>
     <p id="notice"><%= notice %> 
