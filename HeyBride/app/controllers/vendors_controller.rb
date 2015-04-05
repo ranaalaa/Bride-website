@@ -8,7 +8,7 @@ class VendorsController < ApplicationController
   @vendor.destroy
  
 redirect_to :controller => 'welcome', :action => 'HomePage'   
-end
+  end
 def index
   
 end
@@ -25,70 +25,57 @@ def update
     render 'edit'
   end
 end
-
-  def showPackages
-   @vendor= Vendor.find(params[:id])
-   end
-
-  def showBrands
-   @vendor= Vendor.find(params[:id])
-   end
-
-
-  def showSamples
-   @vendor= Vendor.find(params[:id])
-   end
-
    def show
     @vendor = Vendor.find(params[:id])
-  end
+   end
 def indexHairdressers
  if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Hairdresser').order("created_at DESC")
   else
     @vendors = Vendor.where(entry:'Hairdresser').order('created_at DESC')
-   end
+ end
 end
    def indexDresses
  if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Dress').order("created_at DESC")
   else
     @vendors = Vendor.where(entry:'Dress').order('created_at DESC')
+ end
    end
-    end
     def indexMakeup
 if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Makeup').order("created_at DESC")
   else
     @vendors = Vendor.where(entry:'Makeup').order('created_at DESC')
-   end 
- end
+end 
+    end
     def indexPhotographers
 if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Photographer').order("created_at DESC")
   else
     @vendors = Vendor.where(entry:'Photographer').order('created_at DESC')
-   end
+end
     end
     def indexSuites
 if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Suit').order("created_at DESC")
   else
     @vendors = Vendor.where(entry:'Suit').order('created_at DESC')
-   end 
- end
+end 
+    end
   def indexSpa
 if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Spa').order("created_at DESC")
   else
     @vendors = Vendor.where(entry:'Spa').order('created_at DESC')
-   end 
- end
+end 
+  end
      def indexDjs
 if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Dj').order("created_at DESC")
   else
     @vendors = Vendor.where(entry:'Dj').order('created_at DESC')
+<<<<<<< HEAD
    end 
  end
  
@@ -117,12 +104,37 @@ if params[:search]
     end
 
 
+=======
+end 
+     end
+ # Author:
+ # Jala Ashraf
+ # Description:
+ # This action displays all the list of Halls
+ # The user views all the list of Halls
+ # Failure:
+ # The user doesn't views the list of Halls
+    def indexHall
+    @vendors = Vendor.where(entry:'Hall').order('created_at DESC')
+    end
+ # Author:
+ # Jala Ashraf
+ # Description:
+ # This action displays all the list of Gardens
+ # The user views the all the list of Gardens
+ # Failure:
+ # The user doesn't views the list of Gardens
+    def indexGarden
+    @vendors = Vendor.where(entry:'Garden').order('created_at DESC')
+    end
+ 
+>>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
   def create
   @vendor = Vendor.new(vendor_params)
  
   @vendor.save
   redirect_to @vendor
-end
+  end
  
 private
   def vendor_params
