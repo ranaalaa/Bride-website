@@ -28,6 +28,8 @@ end
       get 'indexDjs' 
       get 'indexYacht'
       get 'indexVilla'
+      get 'indexHall'
+      get 'indexGarden'
     end
   end
 end

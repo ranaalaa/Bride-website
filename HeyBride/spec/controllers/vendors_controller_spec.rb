@@ -32,6 +32,5 @@ RSpec.describe VendorsController, type: :controller do
       get :indexVilla
       expect(response).to render_template("indexVilla")
     end
-    
   end
 end
