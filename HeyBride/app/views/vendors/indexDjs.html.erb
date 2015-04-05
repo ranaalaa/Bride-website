@@ -2,10 +2,10 @@
 <div id="nav">
   <%= search_form_for @q, url: indexDjs_vendors_path do |f| %>
     <%= f.label "Filter By" %><br>
-    <%= f.label :name %><br>
-    <%= f.search_field :name_cont  %><br> 
+    <%= f.label :name , 'name'%><br>
+    <%= f.search_field :name_cont%><br> 
     <%= f.label :location %><br>
-    <%= f.text_field :location_cont  %>  <br> 
+    <%= f.text_field :location_cont   %>  <br> 
     <%= f.label "Price Range" %> <br>
     <%= f.label :packages_price_gteq, 'From' %>
     <%= f.text_field :packages_price_gteq , size: "3x3"%>
@@ -15,7 +15,7 @@
       <%= f.label "Sort By" %> <br>
       <%= sort_link(@q, :packages_price) %>
     </p>
-    <%= image_submit_tag("search.png")%>
+    <%= f.submit "search" %>
   <% end %>
   <% if @vendors.size.zero? %>
     <p id="notice"><%= notice %> 
