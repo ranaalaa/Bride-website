@@ -75,7 +75,6 @@ if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Dj').order("created_at DESC")
   else
     @vendors = Vendor.where(entry:'Dj').order('created_at DESC')
-<<<<<<< HEAD
    end 
  end
  
@@ -102,11 +101,6 @@ if params[:search]
     def indexVilla
         @vendors = Vendor.where(entry:'Villa').order('created_at DESC')
     end
-
-
-=======
-end 
-     end
  # Author:
  # Jala Ashraf
  # Description:
@@ -128,7 +122,6 @@ end
     @vendors = Vendor.where(entry:'Garden').order('created_at DESC')
     end
  
->>>>>>> 4ff721dcc9c01b9677d141c3b1bc51f46bf6fe1d
   def create
   @vendor = Vendor.new(vendor_params)
  
