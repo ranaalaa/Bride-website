@@ -5,16 +5,36 @@
     <%= f.search_field :name_cont  %><br> 
     <%= f.label :location %><br>
     <%= f.text_field :location_cont  %>  <br> 
-    <%= f.label "Price Range" %> <br>
-    <%= f.label :packages_price_gteq, 'From' %>
-    <%= f.text_field :packages_price_gteq , size: "5x5"%>
-    <%= f.label :packages_price_lteq, 'To' %>
-    <%= f.text_field :packages_price_lteq , size: "5x5" %>
+    <%= f.label "Capacity" %> <br>
+    <%= f.label :capacity_gteq, "From" %>
+    <%= f.text_field :capacity_gteq, size: "3x3" %>
+    <%= f.label :capacity_lteq, "To" %>
+    <%= f.text_field :capacity_lteq, size: "3x3" %>
+  
     <p>
-      <%= f.label "Sort By" %> <br>
-      <%= sort_link(@q, :packages_price) %>
+    <%= f.label 'Stars' %> 
+    <p>
+    <%= check_box_tag('q[stars_eq_any][]', "1") %>
+    <%= image_tag src="icon_star.png" , size: "20x20" %>
     </p>
-    <%= image_submit_tag("icon_star.png")%>
+    <p>
+    <%= check_box_tag('q[stars_eq_any][]', "2") %>
+    <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>
+    </p>
+    <p>
+    <%= check_box_tag('q[stars_eq_any][]', "3") %>
+    <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %>
+    </p>
+    <p>
+    <%= check_box_tag('q[stars_eq_any][]', "4") %>
+    <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>
+    </p>
+    <p>
+    <%= check_box_tag('q[stars_eq_any][]', "4") %>
+    <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %>
+    </p>
+
+    <%= image_submit_tag("search.png")%>
   <% end %>
   <% if @vendors.size.zero? %>
     <p id="notice"><%= notice %> 
