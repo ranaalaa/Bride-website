@@ -70,7 +70,7 @@ class VendorsController < ApplicationController
       flash[:notice] = "No Matches Found"
     end
   end
-   # Author:
+ # Author:
  # Donia Magdy, Hanan Hosny
  # Description:
  # this action displays the Make-up artists and the results of the search filtering
