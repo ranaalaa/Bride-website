@@ -14,7 +14,6 @@ RSpec.feature "Vendors", type: :feature do
     fill_in 'name', :with => 'Hanan'
     fill_in 'location', :with => 'Alex'
     fill_in 'min', :with => '300'
-
     click_button 'search'
     expect(page).to have_content 'Hanan'
   end
