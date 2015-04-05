@@ -28,13 +28,13 @@ end
    def show
     @vendor = Vendor.find(params[:id])
    end
-def indexHairdressers
- if params[:search]
-    @vendors = Vendor.search(params[:search]).where(entry:'Hairdresser').order("created_at DESC")
-  else
-    @vendors = Vendor.where(entry:'Hairdresser').order('created_at DESC')
- end
-end
+  def indexHairdressers
+    if params[:search]
+      @vendors = Vendor.search(params[:search]).where(entry:'Hairdresser').order("created_at DESC")
+    else
+      @vendors = Vendor.where(entry:'Hairdresser').order('created_at DESC')
+   end
+  end
    def indexDresses
  if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Dress').order("created_at DESC")
@@ -42,26 +42,26 @@ end
     @vendors = Vendor.where(entry:'Dress').order('created_at DESC')
  end
    end
-    def indexMakeup
-if params[:search]
-    @vendors = Vendor.search(params[:search]).where(entry:'Makeup').order("created_at DESC")
-  else
-    @vendors = Vendor.where(entry:'Makeup').order('created_at DESC')
-end 
+  def indexMakeup
+    if params[:search]
+      @vendors = Vendor.search(params[:search]).where(entry:'Makeup').order("created_at DESC")
+    else
+      @vendors = Vendor.where(entry:'Makeup').order('created_at DESC')
+    end 
+  end
+  def indexPhotographers
+    if params[:search]
+      @vendors = Vendor.search(params[:search]).where(entry:'Photographer').order("created_at DESC")
+    else
+      @vendors = Vendor.where(entry:'Photographer').order('created_at DESC')
     end
-    def indexPhotographers
-if params[:search]
-    @vendors = Vendor.search(params[:search]).where(entry:'Photographer').order("created_at DESC")
-  else
-    @vendors = Vendor.where(entry:'Photographer').order('created_at DESC')
-end
-    end
-    def indexSuites
-if params[:search]
+  end
+  def indexSuites
+  if params[:search]
     @vendors = Vendor.search(params[:search]).where(entry:'Suit').order("created_at DESC")
   else
     @vendors = Vendor.where(entry:'Suit').order('created_at DESC')
-end 
+ end 
     end
   def indexSpa
 if params[:search]
@@ -77,7 +77,8 @@ if params[:search]
     @vendors = Vendor.where(entry:'Dj').order('created_at DESC')
    end 
  end
- 
+
+
 # Author:
 # Mayada Tarek
 # Description:
@@ -86,9 +87,9 @@ if params[:search]
 # The user gets the list of all Yachts 
 # Failure:
 # No Yachts to view
-    def indexYacht
-        @vendors = Vendor.where(entry:'Yacht').order('created_at DESC')
-    end
+  def indexYacht
+    @vendors = Vendor.where(entry:'Yacht').order('created_at DESC')
+  end
     
 # Author:
 # Mayada Tarek
@@ -122,6 +123,7 @@ if params[:search]
     @vendors = Vendor.where(entry:'Garden').order('created_at DESC')
     end
  
+
   def create
   @vendor = Vendor.new(vendor_params)
  
