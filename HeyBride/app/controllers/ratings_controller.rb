@@ -12,7 +12,7 @@ class RatingsController < ApplicationController
     # The user submits the rating of this vendor successfully
     # Failure:
     # The user couldn't rate the vendor and this will cause a failure in the average rating as well 
-	 def create
+  def create
     @vendor = Vendor.find(params[:vendor_id])
     @rating = @vendor.ratings.create(rating_params)
     if @rating.save   
