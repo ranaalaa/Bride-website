@@ -8,9 +8,9 @@
     <%= f.text_field :location_cont,:placeholder => "location"  %>  <br> 
     <%= f.label "Price Range" %> <br>
     <%= f.label :packages_price_gteq, 'From' %>
-    <%= f.text_field :packages_price_gteq , size: "3x3",:placeholder => "min"%>
+    <%= f.text_field :packages_price_gteq , size: "3x3",:placeholder => "max"%>
     <%= f.label :packages_price_lteq, 'To' %>
-    <%= f.text_field :packages_price_lteq , size: "3x3",:placeholder => "max" %>
+    <%= f.text_field :packages_price_lteq , size: "3x3",:placeholder => "min" %>
     <p>
       <%= f.label "Sort By" %> <br>
       <%= sort_link(@q, :packages_price) %>
