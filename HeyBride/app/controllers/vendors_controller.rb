@@ -91,7 +91,8 @@ if params[:search]
     @vendors = Vendor.where(entry:'Dj').order('created_at DESC')
    end 
  end
- 
+
+
 # Author:
 # Mayada Tarek
 # Description:
@@ -100,9 +101,9 @@ if params[:search]
 # The user gets the list of all Yachts 
 # Failure:
 # No Yachts to view
-    def indexYacht
-        @vendors = Vendor.where(entry:'Yacht').order('created_at DESC')
-    end
+  def indexYacht
+    @vendors = Vendor.where(entry:'Yacht').order('created_at DESC')
+  end
     
 # Author:
 # Mayada Tarek
@@ -112,9 +113,9 @@ if params[:search]
 # The user gets the list of all Villas 
 # Failure:
 # No Villas to view
-    def indexVilla
-        @vendors = Vendor.where(entry:'Villa').order('created_at DESC')
-    end
+  def indexVilla
+    @vendors = Vendor.where(entry:'Villa').order('created_at DESC')
+  end
 
 
   def create
