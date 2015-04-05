@@ -10,30 +10,38 @@
     <%= f.text_field :capacity_gteq, size: "3x3" %>
     <%= f.label :capacity_lteq, "To" %>
     <%= f.text_field :capacity_lteq, size: "3x3" %>
-  
+    <%= f.label "Price Range" %> <br>
+    <%= f.label :packages_price_gteq, 'From' %>
+    <%= f.text_field :packages_price_gteq , size: "3x3"%>
+    <%= f.label :packages_price_lteq, 'To' %>
+    <%= f.text_field :packages_price_lteq , size: "3x3" %>
     <p>
-    <%= f.label 'Stars' %> 
-    <p>
-    <%= check_box_tag('q[stars_eq_any][]', "1") %>
-    <%= image_tag src="icon_star.png" , size: "20x20" %>
+      <%= f.label "Sort By" %> <br>
+      <%= sort_link(@q, :packages_price) %>
     </p>
-    <p>
+    </p>
+  <p>
+    <%= f.label 'Stars' %> 
+  <p>
+   <%= check_box_tag('q[stars_eq_any][]', "1") %>
+   <%= image_tag src="icon_star.png" , size: "20x20" %>
+  </p>
+  <p>
     <%= check_box_tag('q[stars_eq_any][]', "2") %>
     <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>
-    </p>
-    <p>
-    <%= check_box_tag('q[stars_eq_any][]', "3") %>
-    <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %>
-    </p>
-    <p>
+  </p>
+  <p>
+  <%= check_box_tag('q[stars_eq_any][]', "3") %>
+  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %>
+  </p>
+  <p>
     <%= check_box_tag('q[stars_eq_any][]', "4") %>
     <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>
-    </p>
-    <p>
+  </p>
+  <p>
     <%= check_box_tag('q[stars_eq_any][]', "4") %>
     <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %>
-    </p>
-
+  </p>
     <%= image_submit_tag("search.png")%>
   <% end %>
   <% if @vendors.size.zero? %>
