@@ -7,7 +7,7 @@
           vendor = Vendor.create!
           rating1 = vendor.ratings.create!(:score => 3)
           rating2 = vendor.ratings.create!(:score => 5)
-          expect(vendor.reload.packages).to eq ([rating1,rating2])
+          expect(vendor.reload.ratings).to eq ([rating1,rating2])
         end
     end
  end
