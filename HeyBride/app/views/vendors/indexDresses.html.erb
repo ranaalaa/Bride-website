@@ -5,15 +5,8 @@
     <%= f.search_field :name_cont  %><br> 
     <%= f.label :location %><br>
     <%= f.text_field :location_cont  %>  <br> 
-    <%= f.label "Price Range" %> <br>
-    <%= f.label :packages_price_gteq, 'From' %>
-    <%= f.text_field :packages_price_gteq , size: "5x5"%>
-    <%= f.label :packages_price_lteq, 'To' %>
-    <%= f.text_field :packages_price_lteq , size: "5x5" %>
-    <p>
-      <%= f.label "Sort By" %> <br>
-      <%= sort_link(@q, :packages_price) %>
-    </p>
+  
+   
     <%= image_submit_tag("icon_star.png")%>
   <% end %>
   <% if @vendors.size.zero? %>
