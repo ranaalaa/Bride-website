@@ -1,0 +1,25 @@
+Sun, 05 Apr 2015 12:43:23 +0000
+README.rdoc	Mon, 30 Mar 2015 22:30:32 +0000
+app/controllers/application_controller.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/controllers/brands_controller.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/controllers/comments_controller.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/controllers/omniauth_callbacks_controller.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/controllers/packages_controller.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/controllers/samples_controller.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/controllers/vendors_controller.rb	Fri, 03 Apr 2015 22:54:58 +0000
+app/controllers/welcome_controller.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/helpers/application_helper.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/helpers/brands_helper.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/helpers/comments_helper.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/helpers/omniauth_callbacks_helper.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/helpers/packages_helper.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/helpers/samples_helper.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/helpers/vendors_helper.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/helpers/welcome_helper.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/models/brand.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/models/comment.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/models/package.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/models/sample.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/models/user.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/models/vendor.rb	Mon, 30 Mar 2015 22:30:32 +0000
+app/models/view.rb	Mon, 30 Mar 2015 22:30:32 +0000
