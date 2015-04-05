@@ -1,6 +1,7 @@
-<%= form_tag url_for(:controller => 'vendors', :action => 'indexSpa'), :method => 'get' do %>  <%= text_field_tag :search, params[:search], placeholder: "Search Spa&beauty centers " %>
-  <%= submit_tag "Search", :name => nil %>
-<% end %>
+  <%= form_tag url_for(:controller => 'vendors', :action => 'indexSpa'), :method => 'get' do %>  <%= text_field_tag :search, params[:search], placeholder: "Search Spa&beauty centers " %>
+    <%= submit_tag "Search", :name => nil %>
+  <% end %>
+
 
 <h4 class="column">Spas & Beauty Centers</h4>
 <% @vendors.in_groups_of(3, false) do |vendors| %>
@@ -19,3 +20,4 @@
     <% end %>
   </div>
 <% end %>
+
