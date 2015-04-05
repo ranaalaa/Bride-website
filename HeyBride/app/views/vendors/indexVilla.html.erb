@@ -1,15 +1,10 @@
-  <%= form_tag url_for(:controller => 'vendors', :action => 'indexSpa'), :method => 'get' do %>  <%= text_field_tag :search, params[:search], placeholder: "Search Spa&beauty centers " %>
-    <%= submit_tag "Search", :name => nil %>
-  <% end %>
-
-
-<h4 class="column">Spas & Beauty Centers</h4>
+<h4 class="column">Villas</h4>
 <% @vendors.in_groups_of(3, false) do |vendors| %>
   <div class="row">
     <% vendors.each do |vendor| %>
       <div class="col-md-3">
-        <%= image_tag vendor.image.url(:small),{} %><br>
-        <%= link_to vendor.name, vendor %><br>
+        <%= image_tag vendor.image.url(:small) ,Size: "150x150" %><br>
+        <%= link_to vendor.name, vendor %>-<%= link_to vendor.location, vendor %><br>
         <% if user_signed_in? %> 
           <% if current_user.admin? %>
             <%= link_to 'Edit', edit_vendor_path(vendor) %> 
@@ -20,4 +15,3 @@
     <% end %>
   </div>
 <% end %>
-
