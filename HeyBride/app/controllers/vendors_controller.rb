@@ -25,20 +25,6 @@ def update
     render 'edit'
   end
 end
-
-  def showPackages
-   @vendor= Vendor.find(params[:id])
-  end
-
-  def showBrands
-   @vendor= Vendor.find(params[:id])
-  end
-
-
-  def showSamples
-   @vendor= Vendor.find(params[:id])
-  end
-
    def show
     @vendor = Vendor.find(params[:id])
    end
