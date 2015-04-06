@@ -2,7 +2,7 @@
 <div id="nav">
   <%= search_form_for @q, url: indexHairdressers_vendors_path do |f| %>
     <%= f.label :name %><br>
-    <%= f.search_field :name_cont, :placeholder => "name"%><br> 
+    <%= f.search_field :name_cont, :placeholder => "name" %><br> 
     <%= f.label :location %><br>
     <%= f.text_field :location_cont,:placeholder => "location"   %>  <br> 
     <%= f.label "Price Range" %> <br>
