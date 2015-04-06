@@ -16,19 +16,12 @@
 # users commonly want.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
-<<<<<<< HEAD
-require 'capybara/rspec'
-=======
 require 'devise'
->>>>>>> dee2800b200c4e8d668af3a7d36f7027572db700
 RSpec.configure do |config|
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.
-<<<<<<< HEAD
-=======
   config.include Devise::TestHelpers, :type => :controller
->>>>>>> dee2800b200c4e8d668af3a7d36f7027572db700
   config.expect_with :rspec do |expectations|
     # This option will default to `true` in RSpec 4. It makes the `description`
     # and `failure_message` of custom matchers include text for helper methods
@@ -48,13 +41,8 @@ RSpec.configure do |config|
     # `true` in RSpec 4.
     mocks.verify_partial_doubles = true
   end
-<<<<<<< HEAD
-   config.expect_with :rspec do |c|
-    c.syntax = [:should, :expect]
-=======
   config.expect_with :rspec do |c|
   c.syntax = [:should, :expect]
->>>>>>> dee2800b200c4e8d668af3a7d36f7027572db700
   end
 
 # The settings below are suggested to provide a good initial experience

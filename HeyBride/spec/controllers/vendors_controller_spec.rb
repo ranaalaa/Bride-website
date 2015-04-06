@@ -4,14 +4,7 @@ require 'support/controller_helper'
 
 
 RSpec.describe VendorsController, type: :controller do
-<<<<<<< HEAD
 
-  describe "GET indexDjs" do
-    it "assigns @vendors" do
-      sign_in
-      vendor = Vendor.create!(:name => "Hanan", :entry=> "Dj")
-      get :indexDjs
-=======
     describe "GET indexYacht" do
     it "assigns @vendors" do
       sign_in
@@ -58,21 +51,16 @@ RSpec.describe VendorsController, type: :controller do
       describe "GET indexGarden" do
     it "assigns @vendors" do
       sign_in
-      vendor = Vendor.create!(:name => "Garden", :entry=> "Garden")
+      vendor = Vendor.create!(:name => "g", :entry=> "Garden")
       get :indexGarden
->>>>>>> dee2800b200c4e8d668af3a7d36f7027572db700
       expect(assigns(:vendors)).to eq([vendor])
     end
 
     it "renders the index template" do
       sign_in 
-<<<<<<< HEAD
-      get :indexDjs
-      expect(response).to render_template("indexDjs")
-=======
       get :indexGarden
       expect(response).to render_template("indexGarden")
->>>>>>> dee2800b200c4e8d668af3a7d36f7027572db700
     end
   end
-end
+ end
+

@@ -219,7 +219,7 @@ class VendorsController < ApplicationController
  # Failure:
  # The user gets a message "no matches found"
   def indexGarden
-    @q = Vendor.where(entry:'Yacht').ransack(params[:q])
+    @q = Vendor.where(entry:'Garden').ransack(params[:q])
     @vendors = @q.result(:distinct=>true)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
@@ -230,4 +230,6 @@ class VendorsController < ApplicationController
     def vendor_params
       params.require(:vendor).permit(:email, :telephone, :mobile, :address, :name, :image, :entry, :location, :capacity, :stars)
     end
-  end
+end
+
+

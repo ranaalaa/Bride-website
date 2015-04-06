@@ -27,14 +27,11 @@ ActiveRecord::Migration.maintain_test_schema!
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-<<<<<<< HEAD
   config.mock_with :rspec do |c|
     c.syntax = [:should, :expect]
   end
   
-=======
 
->>>>>>> dee2800b200c4e8d668af3a7d36f7027572db700
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
