@@ -1,9 +1,7 @@
 ##
-
 # This class represents the categories in the website (hairdressers,make-up,dress stores..etc)
 class VendorsController < ApplicationController
   before_filter :authenticate_user!
-
   def new
   end
 
@@ -221,7 +219,7 @@ class VendorsController < ApplicationController
  # Failure:
  # The user gets a message "no matches found"
   def indexGarden
-    @q = Vendor.where(entry:'Garden').ransack(params[:q])
+    @q = Vendor.where(entry:'Yacht').ransack(params[:q])
     @vendors = @q.result(:distinct=>true)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"

@@ -5,7 +5,6 @@
     <%= f.search_field :name_cont , :placeholder => "name" %><br> 
     <%= f.label :location %><br>
     <%= f.text_field :location_cont , :placeholder => "location" %>  <br> 
-
     <%= f.submit "search" %>
   <% end %>
   <% if @vendors.size.zero? %>
@@ -32,4 +31,3 @@
     </div>
   <% end %>
 </div>
-

@@ -16,7 +16,7 @@
     <%= f.text_field :packages_price_gteq , size: "3x3",:placeholder => "min"%>
     <%= f.label :packages_price_lteq, 'To' %>
     <%= f.text_field :packages_price_lteq , size: "3x3",:placeholder => "max" %>
-     <p>
+    <p>
      <%= f.label 'Stars' %> 
     <p>
      <%= check_box_tag('q[stars_eq_any][]', "1") %>
@@ -37,7 +37,7 @@
     <p>
      <%= check_box_tag('q[stars_eq_any][]', "4") %>
      <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %>
-  </p>
+    </p>
     <%=  f.submit "search" %>
   <% end %>
   <% if @vendors.size.zero? %>
@@ -64,3 +64,4 @@
     </div>
   <% end %>
 </div>
+
