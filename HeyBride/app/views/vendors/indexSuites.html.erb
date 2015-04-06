@@ -1,23 +1,33 @@
-<%= form_tag url_for(:controller => 'vendors', :action => 'indexSuites'), :method => 'get' do %>  <%= text_field_tag :search, params[:search], placeholder: "Search Suites" %>
-  <%= submit_tag "Search", :name => nil %>
-<% end %>
-
- <h4 class="column">Suits</h4>
-   <% @vendors.in_groups_of(3, false) do |vendors| %>
-     <div class="row">
+<link href="css/vendors.css" rel="stylesheet">
+<div id="nav">
+  <%= search_form_for @q, url: indexSuites_vendors_path do |f| %>
+    <%= f.label :name %><br>
+    <%= f.search_field :name_cont , :placeholder => "name" %><br> 
+    <%= f.label :location %><br>
+    <%= f.text_field :location_cont , :placeholder => "location" %>  <br> 
+    <%= f.submit "search" %>
+  <% end %>
+  <% if @vendors.size.zero? %>
+    <p id="notice"><%= notice %> 
+    </p> 
+  <% end %> 
+</div>
+<div id="section">
+  <h4 class="column"> &nbsp;&nbsp;&nbsp;Suites Stores</h4>
+  <% @vendors.in_groups_of(3, false) do |vendors| %>
+    <div class="row">
       <% vendors.each do |vendor| %>
-       <div class="col-md-3">
-         <%= image_tag vendor.image.url(:small),{} %><br>
-         <%= link_to vendor.name, vendor %>
-         <% if user_signed_in? %> 
-           <% if current_user.admin? %>
-            <%= link_to 'Edit', edit_vendor_path(vendor) %> 
-            <%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-           <% end %>
+        <div class="col-md-3">
+          <%= image_tag vendor.image.url(:small), :size => "200x200" %>  <br> 
+          <%= link_to vendor.name, vendor %><br>
+          <% if user_signed_in? %>
+            <% if current_user.admin? %>
+              <%= link_to 'Edit', edit_vendor_path(vendor) %>
+              <%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+            <% end %>
           <%end%>
         </div>
       <% end %>
-     </div>
-   <% end %>
-
-
+    </div>
+  <% end %>
+</div>
