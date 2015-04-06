@@ -62,8 +62,8 @@ RSpec.feature "Vendors", type: :feature do
   end
   
  it "searches Halls" do
-   vendor = Vendor.create!(:name => "Hanan",:stars=> "1", :entry=> "Hall",:location => "Alex", :capacity => "400")
-   vendor1 = Vendor.create!(:name => "Donia",:stars=> "1", :entry=> "Hall",:location => "Cairo")
+   vendor = Vendor.create!(:name => "Hanan", :entry=> "Hall",:location => "Alex", :capacity => "400")
+   vendor1 = Vendor.create!(:name => "Donia", :entry=> "Hall",:location => "Cairo")
    vendor.packages.create!(:name => "package1", :price=> "200.0", :description=> "package1 has")
 
     visit 'vendors/indexHall'
