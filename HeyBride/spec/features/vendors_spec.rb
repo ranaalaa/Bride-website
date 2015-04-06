@@ -18,7 +18,7 @@ RSpec.feature "Vendors", type: :feature do
     visit 'vendors/indexDjs'
     fill_in 'name', :with => 'Hanan'
     fill_in 'location', :with => 'Alex'
-    fill_in 'min', :with => '300'
+    fill_in 'max', :with => '300'
     click_button 'search'
     expect(page).to have_content 'Hanan'
    end
@@ -31,7 +31,7 @@ RSpec.feature "Vendors", type: :feature do
     visit 'vendors/indexHairdressers'
     fill_in 'name', :with => 'Hanan'
     fill_in 'location', :with => 'Alex'
-    fill_in 'min', :with => '300'
+    fill_in 'max', :with => '300'
     click_button 'search'
     expect(page).to have_content 'Hanan'
   end
@@ -62,8 +62,8 @@ RSpec.feature "Vendors", type: :feature do
   end
   
  it "searches Halls" do
-   vendor = Vendor.create!(:name => "Hanan", :entry=> "Hall",:location => "Alex", :capacity => "400")
-   vendor1 = Vendor.create!(:name => "Donia", :entry=> "Hall",:location => "Cairo")
+   vendor = Vendor.create!(:name => "Hanan",:stars=> "1", :entry=> "Hall",:location => "Alex", :capacity => "400")
+   vendor1 = Vendor.create!(:name => "Donia",:stars=> "1", :entry=> "Hall",:location => "Cairo")
    vendor.packages.create!(:name => "package1", :price=> "200.0", :description=> "package1 has")
 
     visit 'vendors/indexHall'
@@ -71,7 +71,7 @@ RSpec.feature "Vendors", type: :feature do
     fill_in 'location', :with => 'Alex'
     fill_in 'mincap', :with => '300'
     fill_in 'maxcap', :with => '700'
-    fill_in 'min', :with => '300'
+    fill_in 'max', :with => '300'
     click_button 'search'
     expect(page).to have_content 'Hanan'
   end
@@ -86,7 +86,7 @@ RSpec.feature "Vendors", type: :feature do
     fill_in 'location', :with => 'Alex'
     fill_in 'mincap', :with => '300'
     fill_in 'maxcap', :with => '700'
-    fill_in 'min', :with => '300'
+    fill_in 'max', :with => '300'
     click_button 'search'
     expect(page).to have_content 'Hanan'
   end
@@ -99,7 +99,7 @@ RSpec.feature "Vendors", type: :feature do
     visit 'vendors/indexMakeup'
     fill_in 'name', :with => 'Hanan'
     fill_in 'location', :with => 'Alex'
-    fill_in 'min', :with => '300'
+    fill_in 'max', :with => '300'
     click_button 'search'
     expect(page).to have_content 'Hanan'
   end
@@ -111,7 +111,7 @@ RSpec.feature "Vendors", type: :feature do
     visit 'vendors/indexPhotographers'
     fill_in 'name', :with => 'Hanan'
     fill_in 'location', :with => 'Alex'
-    fill_in 'min', :with => '300'
+    fill_in 'max', :with => '300'
     click_button 'search'
     expect(page).to have_content 'Hanan'
   end   
@@ -123,7 +123,7 @@ RSpec.feature "Vendors", type: :feature do
     visit 'vendors/indexSpa'
     fill_in 'name', :with => 'Hanan'
     fill_in 'location', :with => 'Alex'
-    fill_in 'min', :with => '300'
+    fill_in 'max', :with => '300'
     click_button 'search'
     expect(page).to have_content 'Hanan'
   end
@@ -137,7 +137,7 @@ RSpec.feature "Vendors", type: :feature do
     fill_in 'location', :with => 'Alex'
     fill_in 'mincap', :with => '300'
     fill_in 'maxcap', :with => '700'
-    fill_in 'min', :with => '300'
+    fill_in 'max', :with => '300'
     click_button 'search'
     expect(page).to have_content 'Hanan'
   end
@@ -151,7 +151,7 @@ RSpec.feature "Vendors", type: :feature do
     fill_in 'location', :with => 'Alex'
     fill_in 'mincap', :with => '300'
     fill_in 'maxcap', :with => '700'
-    fill_in 'min', :with => '300'
+    fill_in 'max', :with => '300'
     click_button 'search'
     expect(page).to have_content 'Hanan'
     end
