@@ -3,14 +3,19 @@
   <%= search_form_for @q, url: indexGarden_vendors_path do |f| %>
     <%= f.label "Filter By" %><br>
     <%= f.label :name %><br>
-    <%= f.search_field :name_cont  %><br> 
+    <%= f.search_field :name_cont, :placeholder => "name" %><br> 
     <%= f.label :location %><br>
-    <%= f.text_field :location_cont  %>  <br>
+    <%= f.text_field :location_cont,:placeholder => "location"   %>  <br>
     <%= f.label "Capacity" %> <br>
     <%= f.label :capacity_gteq, "From" %>
-    <%= f.text_field :capacity_gteq, size: "3x3" %>
+    <%= f.text_field :capacity_gteq, size: "3x3",:placeholder => "mincap" %>
     <%= f.label :capacity_lteq, "To" %>
-    <%= f.text_field :capacity_lteq, size: "3x3" %>
+    <%= f.text_field :capacity_lteq, size: "3x3",:placeholder => "maxcap" %><br>
+    <%= f.label "Price Range" %> <br>
+    <%= f.label :packages_price_gteq, 'From' %>
+    <%= f.text_field :packages_price_gteq , size: "3x3",:placeholder => "max"%>
+    <%= f.label :packages_price_lteq, 'To' %>
+    <%= f.text_field :packages_price_lteq , size: "3x3",:placeholder => "min" %>
      <p>
      <%= f.label 'Stars' %> 
     <p>
@@ -33,7 +38,7 @@
      <%= check_box_tag('q[stars_eq_any][]', "4") %>
      <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %> <%= image_tag src="icon_star.png" , size: "20x20" %>  <%= image_tag src="icon_star.png" , size: "20x20" %>
   </p>
-    <%= image_submit_tag("search.png")%>
+    <%=  f.submit "search" %>
   <% end %>
   <% if @vendors.size.zero? %>
     <p id="notice"><%= notice %> 
