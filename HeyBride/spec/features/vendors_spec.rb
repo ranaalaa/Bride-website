@@ -7,7 +7,7 @@ Warden.test_mode!
 
 
 RSpec.feature "Vendors", type: :feature do
-  describe "AuthenticationPages" do
+  describe "Searching" do
 
   let(:user) { FactoryGirl.create(:user) }
   before { login_as(user, scope: :user )}
@@ -22,7 +22,7 @@ RSpec.feature "Vendors", type: :feature do
     click_button 'search'
     expect(page).to have_content 'Hanan'
    end
-  end
+  
   it "searches Hairdresser" do
    vendor = Vendor.create!(:name => "Hanan", :entry=> "Hairdresser",:location => "Alex")
    vendor1 = Vendor.create!(:name => "Donia", :entry=> "Hairdresser",:location => "Cairo")
@@ -154,10 +154,8 @@ RSpec.feature "Vendors", type: :feature do
     fill_in 'min', :with => '300'
     click_button 'search'
     expect(page).to have_content 'Hanan'
-  end
-   
-  
-  
+    end
+  end 
 end
 
   
