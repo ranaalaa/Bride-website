@@ -4,6 +4,7 @@ require 'support/controller_helper'
 
 
 RSpec.describe VendorsController, type: :controller do
+
   describe "GET indexDjs" do
     it "assigns @vendors" do
       sign_in
