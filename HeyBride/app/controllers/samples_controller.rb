@@ -16,7 +16,7 @@ class SamplesController < ApplicationController
  
   private
     def sample_params
-      params.require(:sample).permit(:image)
+      params.require(:sample).permit(:image, :info)
     end
 end
 

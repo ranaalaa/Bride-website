@@ -62,5 +62,20 @@ RSpec.describe VendorsController, type: :controller do
       expect(response).to render_template("indexGarden")
     end
   end
+
+   
+   describe "GET show" do
+     it "renders the #show view" do
+       sign_in
+       vendor = Vendor.create!(:email => '@vendor.com', :telephone => '22723365', :mobile => '0125589625', :address => 'll st hasan', :name => 'pronovias',  
+       :entry => 'Dress', :location => 'nasr city')
+       get :show, id: vendor.id
+       expect(response).to render_template("show")
+     end
+   end
+
+end
+
  end
+
 
