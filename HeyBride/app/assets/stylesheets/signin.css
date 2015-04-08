@@ -1,0 +1,150 @@
+
+/*
+    Note: It is best to use a less version of this file ( see http://css2less.cc
+    For the media queries use @screen-sm-min instead of 768px.
+    For .omb_spanOr use @body-bg instead of white.
+*/
+
+h2{
+    color:Grey;
+    font-family:Calibri;
+    text-align:center;
+    font-weight:bold;
+    margin-left:-380px;
+    
+    
+}
+label{
+    font-family:Calibri;
+}
+
+.container0 {
+ position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-width: 1280px;
+  height:120px;
+  margin-top: -20px;
+  padding-top: 20px;
+}
+
+
+.logo-icon{
+	margin-left: 40px;
+}
+
+
+@media (min-width: 768px) {
+    .omb_row-sm-offset-3 div:first-child[class*="col-"] {
+        margin-left: 25%;
+    }
+}
+
+.omb_login .omb_authTitle {
+    text-align: center;
+	line-height: 300%;
+	color:black;
+}
+
+a {
+  color:grey;
+  text-decoration: none;
+}
+
+}
+	
+.omb_login .omb_socialButtons a {
+	color: white; // In yourUse @body-bg 
+	opacity:0.9;
+	position: center;
+}
+.omb_login .omb_socialButtons a:hover {
+    color: white;
+	opacity:1;    	
+}
+.omb_spanOr{
+	background-color: none;
+}
+.omb_login .omb_socialButtons .omb_btn-facebook {background: #3b5998;}
+.omb_login .omb_socialButtons .omb_btn-twitter {background: #00aced;}
+.omb_login .omb_socialButtons .omb_btn-google {background: #c32f10;}
+
+
+.omb_login .omb_socialButtons a {
+  color: white;
+}
+
+body {
+  font-family: Georgia,"Times New Roman",Times,serif;
+  font-size: 15px;
+  line-height: 1.42857143;
+  color: #777777;
+  }
+
+.omb_login .omb_loginOr {
+	position: relative;
+	font-size: 1.5em;
+	color: #aaa;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+}
+.omb_login .omb_loginOr .omb_hrOr {
+	background-color: #cdcdcd;
+	height: 1px;
+	margin-top: 0px !important;
+	margin-bottom: 0px !important;
+}
+.omb_login .omb_loginOr .omb_spanOr {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: -0.6em;
+	margin-left: -1.5em;
+	background-color: white;
+	width: 3em;
+	text-align: center;
+}			
+
+.omb_login .omb_loginForm .input-group.i {
+	width: 2em;
+}
+.omb_login .omb_loginForm  .help-block {
+    color: red;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+.btn-lg, .btn-group-lg>.btn {
+  padding: 14px 16px;
+  font-size: 19px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+.btn-primary {
+  color: #ffffff;
+  background-color:#F9A7B0;
+  border-color: #F9A7B0;
+}
+.btn {
+ 
+  margin-bottom: 0;
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
+  white-space: nowrap;
+	
+@media (min-width: 768px) {
+    .omb_login .omb_forgotPwd {
+        text-align: right;
+		margin-top:10px;
+ 	}		
+}

@@ -10,6 +10,9 @@ Rails.application.routes.draw do
     root 'devise/sessions#new', as: :unauthenticated_root
   end
 end
+get 'welcome/AboutUs'
+get 'welcome/OurPeople'
+
 
   resources :vendors do
     resources :packages

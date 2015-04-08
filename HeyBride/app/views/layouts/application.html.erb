@@ -9,15 +9,81 @@
 <body>
 
  
-<div id= "user_nav">
 
 
 	<% if user_signed_in? %>
-	Signed in as <%= current_user.email %>. Not You?
-	<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-	<% end %>
 </div>
+
+
+
+
+
+<div class="header">
+<div class="container0">
+   <div class="nav-top">
+      
+        <a href="#" class="logo-icon">
+                <%= link_to image_tag("logo-1.png", :border => 0), {:action => 'HomePage', :controller => 'welcome'} %>
+
+        </a>
+
+        <div id="header-right">
+
+    
+         <ul class="nav-out">
+              
+             
+             <li>	<%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+</li>
+            </ul>
+
+</div>
+        
+        </div>
+
+
+
+<div class="nav-bottom">
+<div class="nav-menu">
+<ul class="menu">
+            <li><a href="<%= url_for controller: 'vendors', action: 'indexDresses' %>">Dress</a></li>
+          <li><a href="<%= url_for controller: 'vendors', action: 'indexSuites' %>">Suit</a></li>
+           <li><a href="<%= url_for controller: 'vendors', action: 'indexMakeup' %>">Makeup</a></li>
+           <li><a href="<%= url_for controller: 'vendors', action: 'indexHairdressers' %>">Hairdresser</a></li>
+           <li><a href="<%= url_for controller: 'vendors', action: 'indexDjs' %>">Dj</a></li>
+                      <li><a href="<%= url_for controller: 'vendors', action: 'indexPhotographers' %>">Photographer</a></li>
+                       <li><a href="<%= url_for controller: 'vendors', action: 'indexSpa' %>">Spa & Beauty Center</a></li>
+            
+                  <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Venue<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Hotel</a></li>
+             <li><a href="<%= url_for controller: 'vendors', action: 'indexYacht' %>">Yacht</a></li>
+              <li><a href="<%= url_for controller: 'vendors', action: 'indexVilla' %>">Villa</a></li>
+              <li><a href="<%= url_for controller: 'vendors', action: 'indexHall' %>">Hall</a></li>
+              <li><a href="<%= url_for controller: 'vendors', action: 'indexGarden' %>">Garden</a></li>
+            </ul>
+          </li>
+
+<% if user_signed_in? %>
+<% if current_user.admin? %>
+       <%= link_to 'New Category', new_vendor_path %></br>
+<%end%>
+<%end%>
+        </ul>
+        </div>
+    </div>
+      </div>
+    </div>
+
+
+
+	<% end %>
+
 <%= yield %>
+
+
+
 
 </body>
 </html>
