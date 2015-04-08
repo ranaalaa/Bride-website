@@ -16,6 +16,7 @@ end
     resources :samples
     resources :comments
     resources :brands
+    resources :ratings
   
     collection do
       get 'indexHairdressers'

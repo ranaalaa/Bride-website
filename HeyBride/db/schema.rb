@@ -43,6 +43,17 @@ ActiveRecord::Schema.define(version: 20150405165117) do
 
   add_index "packages", ["vendor_id"], name: "index_packages_on_vendor_id"
 
+  create_table "ratings", force: :cascade do |t|
+    t.integer  "score"
+    t.integer  "vendor_id"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
+  add_index "ratings", ["vendor_id"], name: "index_ratings_on_vendor_id"
+
   create_table "samples", force: :cascade do |t|
     t.integer  "vendor_id"
     t.datetime "created_at",         null: false
