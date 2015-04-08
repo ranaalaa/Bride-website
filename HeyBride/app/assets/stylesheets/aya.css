@@ -1,38 +1,123 @@
+.container0 {
+ position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  min-width: 1280px;
+  height:120px;
+  margin-top: -20px;
+  padding-top: 20px;
+}
+
 .container {
   width: 960px;
 }
+.logo-icon{
+	margin-left: 40px;
+}
 
+.nav-top{
+padding-top: 20px;
+  padding-bottom: 10px;
+  width:1380px;
+  height:100px;
+}
 
-/* Header */
+.nav-bottom{
+	background-color: #F9A7B0;
+	width:100%;
+	min-width: 1380px;
+	height:50px;
+	  padding-left: 10px;
+  padding-right: 10px;
 
+}
 .header {
+	height:200px;
+	width :100%;
   background-color: rgba(255, 255, 255, 0.95);
-  border-bottom: 1px solid #ddd;
+ 
   
-  font-family: 'Oswald', sans-serif;
-  font-weight: 300;
+  font-family: 'Calibri', sans-serif;
+  font-weight: 500;
+
   
   font-size: 17px;
-  padding: 15px;
+ 
 }
+
+
 
 
 /* Menu */ 
 
 .header .menu {
-  float: right;
+  float: left;
   list-style: none;
-  margin-top: 20px;
+  margin-top: -5px;
+
+}
+#header-right {
+    float: right;
+    width: 300px;
+    margin-right: 20px;
+    margin-top:20px;
+    text-align: center;
+}
+.nav-out> li {
+  display: inline;
+   padding-left: 40px;
+  
+
+}
+.nav-out a{
+	color: #F9A7B0;
+	font-weight: bold;
+
 }
 
+.element {
+    position: relative;
+}
+ 
+/*replace the content value with the
+corresponding value from the list below*/
+ 
+.element:before {
+    content: "\f002";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+/*--adjust as necessary--*/
+    color: #000;
+    font-size: 18px;
+    padding-right: 0.5em;
+    position: absolute;
+    top: 10px;
+    left: 0;
+}
+
+.nav-menu{
+margin-left:-40px;
+min-width: 1380px;
+	height:50px;
+	padding-top: 20px;
+
+}
 .menu > li {
   display: inline;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 40px;
+  padding-right: 40px;
+ 
 }
 
+
 .menu a {
-  color: #898989;
+  color: white;
+  font-weight:bold;
+  width:100%;
+  
 }
 
 /* Dropdown */
@@ -49,6 +134,7 @@
   font-weight: 300;
 }
 
+
 .slider {
   position: relative;
   width: 100%;
@@ -57,7 +143,7 @@
 }
 
 .slide {
-  background: transparent url('http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/flipboard/feature-gradient-transparent.png') center center no-repeat;
+  background: transparent url('img/feature-gradient-transparent.png') center center no-repeat;
   background-size: cover;
   display: none;
   
@@ -143,3 +229,4 @@
 .slider-dots li.active-dot {
   color: #363636;
 }
+
