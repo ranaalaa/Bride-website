@@ -1,4 +1,5 @@
 
+
   <p id="notice"><%= notice %></p>
    <html lang="en">
     <head>
@@ -7,10 +8,51 @@
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/bootstrap-theme.min.css">
       <meta charset="utf-8">
-        <body>
-          <div class="container">
-           <div class="samples">
-             <h1> <%= @vendor.name %></h1>
+      
+  <body>
+<div class="container">
+  <div class="slider">
+       <h1> <%= @vendor.name %></h1>
+    <% @vendor.samples.each do |sample| %>
+      <div class="slide">
+        <div class="container">
+          <div class="row">
+            <div class="slide-copy col-xs-5">
+              <h1>Description</h1> <br>
+                   <%= sample.info%><br> 
+            
+            </div>
+            <div class="slide-img col-xs-3">
+              <%= image_tag sample.image.url(:small) %>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-xs-12">
+              <% if user_signed_in? %> 
+                <% if current_user.admin? %>
+                  <%= link_to 'Delete Sample', [sample.vendor, sample],
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %><br><br>
+                  <% end %>
+                <% end %></div>
+          </div>
+        </div>      
+      </div>
+    <% end %>
+              
+            
+  </div> 
+  <div class="slider-nav">
+      <a href="#" class="arrow-prev"><img src="/assets/arrow-prev.png"></a>
+      <ul class="slider-dots">
+        <li class="dot active-dot">&bull;</li>
+        <li class="dot">&bull;</li>
+        <li class="dot">&bull;</li>
+        <li class="dot">&bull;</li>
+      </ul>
+      <a href="#" class="arrow-next"><img src="/assets/arrow-next.png"></a>
+    </div> 
+             
            </div>
              <div class="row">
                <div class="col-sm-4">        

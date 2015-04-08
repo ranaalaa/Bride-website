@@ -146,8 +146,8 @@ min-width: 1380px;
   background: transparent url('img/feature-gradient-transparent.png') center center no-repeat;
   background-size: cover;
   display: none;
-  
-  top: 0;
+     position: absolute;
+   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -155,6 +155,10 @@ min-width: 1380px;
 
 .active-slide {
     display: block;
+    position: absolute;
+    top: 0;
+  left: 0;
+
 }
 
 .slide-copy h1 {
