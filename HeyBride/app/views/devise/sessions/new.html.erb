@@ -1,11 +1,11 @@
-<link href="css/signin.css" rel="stylesheet">
+<link href="/css/signin.css" rel="stylesheet">
 
 
 <a href="#" class="logo-icon">
          <img src="assets/logo-1.png" border="0" alt="Image and video hosting by TinyPic" style="height: 80px;"  >
        
        </a>
-<body background="assets/background02.png">
+<body background="/assets/background02.png">
 <h2>Log in</h2>
 <div class="container">
     
@@ -20,7 +20,7 @@
 					
   <div class="field">
     
-    
+     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true,  :placeholder=>"email address"  %>
   
 </div>
@@ -29,6 +29,8 @@
 					
 					
   <div class="field">
+    
+    <%= f.label :Password %><br />
    
     <%= f.password_field :password, autocomplete: "off" ,  :placeholder=>"password" %>
   </div>
@@ -43,7 +45,7 @@
 
   <div class="actions">
 
-    <%= image_submit_tag("fblogin.png") %><br>
+    <%= image_submit_tag("button2.png") %><br>
     
     <%= link_to image_tag("fblogin.png"), user_omniauth_authorize_path(:facebook) %>
   </div>

@@ -1,23 +1,11 @@
-
-/*
-    Note: It is best to use a less version of this file ( see http://css2less.cc
-    For the media queries use @screen-sm-min instead of 768px.
-    For .omb_spanOr use @body-bg instead of white.
-*/
-
 h2{
     color:Grey;
     font-family:Calibri;
     text-align:center;
     font-weight:bold;
-    margin-left:-380px;
-    
+    margin-left:-140px;
     
 }
-label{
-    font-family:Calibri;
-}
-
 .container0 {
  position: absolute;
   left: 0;

@@ -9,6 +9,11 @@
   padding-top: 20px;
 }
 
+p{
+  font-family:Calibri;
+  colour:black;
+}
+
 .container {
   width: 960px;
 }
