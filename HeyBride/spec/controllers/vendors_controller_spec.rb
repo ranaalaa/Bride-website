@@ -2,10 +2,10 @@ require 'rails_helper'
 require 'spec_helper'
 require 'support/controller_helper'
 
-
 RSpec.describe VendorsController, type: :controller do
 
     describe "GET indexYacht" do
+
     it "assigns @vendors" do
       sign_in
       vendor = Vendor.create!(:name => "Yacht1", :entry=> "Yacht")
@@ -15,7 +15,7 @@ RSpec.describe VendorsController, type: :controller do
 
     it "renders the index template" do
       sign_in 
-      get :indexYacht
+     get :indexYacht
       expect(response).to render_template("indexYacht")
     end
     
@@ -73,9 +73,7 @@ RSpec.describe VendorsController, type: :controller do
        expect(response).to render_template("show")
      end
    end
-
 end
 
- end
 
 
