@@ -12,6 +12,7 @@ class CommentsController < ApplicationController
 	 def create
     @vendor = Vendor.find(params[:vendor_id])
     @comment = @vendor.comments.create(comment_params)
+    @comment.user = current_user
     redirect_to vendor_path(@vendor)
   end
  # Author:

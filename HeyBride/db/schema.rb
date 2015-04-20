@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150405165117) do
+ActiveRecord::Schema.define(version: 20150420222813) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "bName"
@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 20150405165117) do
     t.integer  "vendor_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "commenter"
   end
 
   add_index "comments", ["vendor_id"], name: "index_comments_on_vendor_id"
