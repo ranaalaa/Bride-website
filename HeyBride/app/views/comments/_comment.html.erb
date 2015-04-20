@@ -1,6 +1,7 @@
 <h2>comments</h2>
 <% @vendor.comments.each do |comment| %>
   <p>
+  <%= comment.commenter %> :
   <%= comment.body %>
   <% if user_signed_in? %>
     <% if current_user.admin? %>
