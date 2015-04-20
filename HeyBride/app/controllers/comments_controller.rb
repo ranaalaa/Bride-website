@@ -12,7 +12,6 @@ class CommentsController < ApplicationController
 	 def create
     @vendor = Vendor.find(params[:vendor_id])
     @comment = @vendor.comments.create(comment_params)
-    @comment.user = current_user
     redirect_to vendor_path(@vendor)
   end
  # Author:
@@ -39,6 +38,6 @@ class CommentsController < ApplicationController
  # the comment params which is the body
   private
     def comment_params
-      params.require(:comment).permit(:body)
+      params.require(:comment).permit(:body, :commenter)
     end
 end
