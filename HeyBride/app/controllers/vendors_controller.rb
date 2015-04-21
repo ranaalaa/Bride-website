@@ -65,7 +65,7 @@ class VendorsController < ApplicationController
  # The user gets a message "no matches found"
   def indexDresses
     @q = Vendor.where(entry:'Dress').ransack(params[:q])
-    @vendors = @q.result(:distinct=>true)
+    @vendors = @q.result(:distinct=>true).page(params[:page]).per(3)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end
@@ -82,7 +82,7 @@ class VendorsController < ApplicationController
  # The user gets a message "no matches found"
   def indexMakeup
    @q = Vendor.where(entry:'Makeup').ransack(params[:q])
-    @vendors = @q.result(:distinct=>true)
+    @vendors = @q.result(:distinct=>true).page(params[:page]).per(3)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end
@@ -99,7 +99,7 @@ class VendorsController < ApplicationController
  # The user gets a message "no matches found"
   def indexPhotographers
    @q = Vendor.where(entry:'Photographer').ransack(params[:q])
-    @vendors = @q.result(:distinct=>true)
+    @vendors = @q.result(:distinct=>true).page(params[:page]).per(3)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end
@@ -116,7 +116,7 @@ class VendorsController < ApplicationController
  # The user gets a message "no matches found"
   def indexSuites
     @q = Vendor.where(entry:'Suit').ransack(params[:q])
-    @vendors = @q.result(:distinct=>true)
+    @vendors = @q.result(:distinct=>true).page(params[:page]).per(3)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end
@@ -133,7 +133,7 @@ class VendorsController < ApplicationController
  # The user gets a message "no matches found"
   def indexSpa
     @q = Vendor.where(entry:'Spa').ransack(params[:q])
-    @vendors = @q.result(:distinct=>true)
+    @vendors = @q.result(:distinct=>true).page(params[:page]).per(3)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end
@@ -150,7 +150,7 @@ class VendorsController < ApplicationController
  # The user gets a message "no matches found"
   def indexDjs
     @q = Vendor.where(entry:'Dj').ransack(params[:q])
-    @vendors = @q.result(:distinct=>true)
+    @vendors = @q.result(:distinct=>true).page(params[:page]).per(3)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end
@@ -167,7 +167,7 @@ class VendorsController < ApplicationController
  # The user gets a message "no matches found"
   def indexYacht
     @q = Vendor.where(entry:'Yacht').ransack(params[:q])
-    @vendors = @q.result(:distinct=>true)
+    @vendors = @q.result(:distinct=>true).page(params[:page]).per(3)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end  
@@ -185,7 +185,7 @@ class VendorsController < ApplicationController
  # The user gets a message "no matches found"
   def indexVilla
     @q = Vendor.where(entry:'Villa').ransack(params[:q])
-    @vendors = @q.result(:distinct=>true)
+    @vendors = @q.result(:distinct=>true).page(params[:page]).per(3)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end 
@@ -203,7 +203,7 @@ class VendorsController < ApplicationController
  # The user gets a message "no matches found"
   def indexHall
     @q = Vendor.where(entry:'Hall').ransack(params[:q])
-    @vendors = @q.result(:distinct=>true)
+    @vendors = @q.result(:distinct=>true).page(params[:page]).per(3)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end   
@@ -220,7 +220,7 @@ class VendorsController < ApplicationController
  # The user gets a message "no matches found"
   def indexGarden
     @q = Vendor.where(entry:'Garden').ransack(params[:q])
-    @vendors = @q.result(:distinct=>true)
+    @vendors = @q.result(:distinct=>true).page(params[:page]).per(3)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end   
