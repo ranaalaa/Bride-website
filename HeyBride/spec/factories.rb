@@ -4,5 +4,6 @@ FactoryGirl.define do
     password 'f4k3p455w0rd'
     phone '01060286681'
     username 'Hanan'
+    female 'true'
   end
 end
