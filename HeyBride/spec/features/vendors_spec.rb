@@ -157,10 +157,3 @@ RSpec.feature "Vendors", type: :feature do
     end
   end 
 end
-
-  
-  
-  
-  
-  
-  

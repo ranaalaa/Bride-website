@@ -52,7 +52,6 @@ a {
   text-decoration: none;
 }
 
-}
 	
 .omb_login .omb_socialButtons a {
 	color: white; // In yourUse @body-bg 
@@ -141,7 +140,7 @@ body {
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
-	
+	}
 @media (min-width: 768px) {
     .omb_login .omb_forgotPwd {
         text-align: right;
