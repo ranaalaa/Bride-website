@@ -28,27 +28,27 @@
     <%= f.email_field :email, autofocus: true , :placeholder=>"email address"  %>
     </div>
     <span class="help-block"></span>
-    
+
 	  <div class="field">
     <%= f.label :username %><br />
-    <%= f.text_field :username, autofocus: true , :placeholder=>"user name"  %>
+    <%= f.text_field :username, autofocus: true , :placeholder=>"user name",:required => true%>
     </div>
  
-  <div class="field">
+    <div class="field">
     <%= f.label :password %>
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    </div>
   
 
 			
-  <div class="field">
+    <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-  </br>
+    </div>
+    </br>
 
   <div class="actions">
     <%= image_submit_tag("button.png") %><br>

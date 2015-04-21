@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
          devise :omniauthable, :omniauth_providers => [:facebook]
          def self.from_omniauth(auth)
+  validates :username, presence: true
+  validates :username, uniqueness: true, if: -> { self.username.present? }
          	
   where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
     user.email = auth.info.email
