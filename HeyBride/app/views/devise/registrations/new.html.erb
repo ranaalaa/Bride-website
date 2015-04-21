@@ -31,22 +31,27 @@
 	  <div class="field">
     <%= f.text_field :username, autofocus: true , :placeholder=>"user name",:required => true%>
     </div>
+    <span class="help-block"></span>
 
-      <div class="field">
-    <%= f.text_field :phone, autofocus: true , :placeholder=>"phone"%>
+     <div class="field">
+    <%= f.text_field :phone, autofocus: true , :placeholder=>"phone(optional)"%>
     </div>
- 
+    <span class="help-block"></span>
+
+    <div class="field">
+    <%= f.radio_button :female, '1' %> <%= f.label :is_female, "Female" %>
+    <%= f.radio_button :female, '0' %> <%= f.label :is_female, "Male" %>
+    </div>
+
     <div class="field">
     <% if @validatable %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "off" , :placeholder=>"password"%>
     </div>
-  
+  		    <span class="help-block"></span>
 
-			
     <div class="field">
-    <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" , :placeholder=>"password confirmation" %>
     </div>
     </br>
