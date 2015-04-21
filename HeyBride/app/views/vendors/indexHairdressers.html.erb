@@ -1,5 +1,5 @@
 <link href="css/vendors.css" rel="stylesheet">
-   <%= paginate @vendors %>
+ 
 <div id="nav">
   <%= search_form_for @q, url: indexHairdressers_vendors_path do |f| %>
     <%= f.label :name %><br>
@@ -30,7 +30,7 @@
         <div class="col-md-3">
           <%= image_tag vendor.image.url(:small), :size => "200x200" %>  <br> 
           <%= link_to vendor.name, vendor %><br>
-       
+         
           <% if user_signed_in? %>
             <% if current_user.admin? %>
               <%= link_to 'Edit', edit_vendor_path(vendor) %>
@@ -41,5 +41,6 @@
       <% end %>
     </div>
   <% end %>
+   <%= paginate @vendors %>
 </div>
 
