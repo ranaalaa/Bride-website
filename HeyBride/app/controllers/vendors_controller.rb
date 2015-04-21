@@ -48,7 +48,7 @@ class VendorsController < ApplicationController
  # The user gets a message "no matches found"
   def indexHairdressers
     @q = Vendor.where(entry:'Hairdresser').ransack(params[:q])
-    @vendors = @q.result(:distinct=>true)
+    @vendors = @q.result(:distinct=>true).page(params[:page]).per(3)
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end
