@@ -34,3 +34,18 @@ class Vendor < ActiveRecord::Base
    end
  end
 end 
+
+ def avg_price
+  average_price = 0.0
+  count = 0
+  packages.each do |package| 
+    average_price += packages.price.round(1)
+    count += 1
+  end
+    if count != 0
+     (average_price / count).round(1)
+   else
+     count
+   end
+   return average_price
+end 

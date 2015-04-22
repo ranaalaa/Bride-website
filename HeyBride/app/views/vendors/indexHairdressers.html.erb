@@ -12,7 +12,9 @@
     <%= f.text_field :packages_price_lteq , size: "3x3",:placeholder => "max" %>
     <p>
       <%= f.label "Sort By" %> <br>
-      <%= sort_link(@q, :packages_price) %>
+     <%= sort_link(@q, :name, 'Name', default_order: :asc, hide_indicator: true ) %><br>
+      <%= sort_link(@q, :packages_price, 'Price Low to high',  default_order: :asc, hide_indicator: true ) %><br>
+      <%= sort_link(@q, :packages_price, 'Price High to Low',  default_order: :desc, hide_indicator: true  ) %><br>
     </p>
     <%=  f.submit "search" %>
   <% end %>
