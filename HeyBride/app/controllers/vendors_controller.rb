@@ -10,8 +10,9 @@ class VendorsController < ApplicationController
     @vendor.destroy
     redirect_to :controller => 'welcome', :action => 'HomePage'   
   end
-
+  
   def index
+    @vendors = Vendor.search(params[:search]).order("created_at DESC")
   end 
 
   def edit
