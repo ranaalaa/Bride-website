@@ -6,10 +6,19 @@ class Vendor < ActiveRecord::Base
 	has_many :ratings
 	  	has_attached_file :image, styles: { medium: "700x500#", small: "350x250#" }
       validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+  # Author:
+  # Hanan Hosny 
+  # Description:
+  # it returns the vendors whose names contain one or more words that form the query
+  # Params:
+  # name 
+  # Success:
+  # it returns the list of vendors that matches the query 
+  # Failure:
+  # it returns empty list
   def self.search(query)
     where("name like ?", "%#{query}%") 
   end
-  
   
  # Author:
  # Rana Alaa' 
