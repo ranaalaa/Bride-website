@@ -20,7 +20,7 @@
             <div class="col-md-4 ">
               <%= form_tag(vendors_path, :method => "get", class: "navbar-form", id: "search-form") do %>
                 <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search by name" %>
-                <%= image_submit_tag("search1.png") %><br>
+                <%= image_submit_tag("search1.png",:id=> "submit")%><br>
               <% end %>
             </div>
             <div class="col-md-4">
