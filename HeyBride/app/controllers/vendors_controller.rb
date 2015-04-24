@@ -10,8 +10,18 @@ class VendorsController < ApplicationController
     @vendor.destroy
     redirect_to :controller => 'welcome', :action => 'HomePage'   
   end
-
+  # Author:
+  # Hanan Hosny
+  # Description:
+  # this action displays the vendors returned from the search
+  # Params:
+  # search(this contains a hash of the search parameters that the user passes in)
+  # Success:
+  # The user gets a list of vendors specified in the search params
+  # Failure:
+  # The user gets a message "no matches found"
   def index
+    @vendors = Vendor.search(params[:search]).order("created_at DESC")
   end 
 
   def edit
