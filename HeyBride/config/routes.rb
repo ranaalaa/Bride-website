@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 end
 get 'welcome/AboutUs'
 get 'welcome/OurPeople'
-
+get 'welcome/HomePage'
 
   resources :vendors do
     resources :packages
