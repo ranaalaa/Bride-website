@@ -34,3 +34,4 @@ class Vendor < ActiveRecord::Base
    end
  end
 end 
+
