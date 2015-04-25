@@ -1,6 +1,8 @@
 <link href="css/vendors.css" rel="stylesheet">
+<p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <%= @vendors.size %> Results  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; View:  <%= select_tag :per_page, options_for_select([10,20,50], params[:per_page].to_i),
+       :onchange => "if(this.value){window.location='?per_page='+this.value;}" %> </p>
 
- <%= @vendors.size %> Items per page 
+ 
 
 <div id="nav">
   <%= search_form_for @q, url: indexHairdressers_vendors_path do |f| %>
@@ -64,7 +66,7 @@ h1 {
 </head>
 <body>
 
-<h1> <%= paginate @vendors %> </h1>
+<h1> <%= will_paginate @vendors %> </h1>
 
 
 </body>

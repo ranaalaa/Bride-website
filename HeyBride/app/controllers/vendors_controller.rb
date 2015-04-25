@@ -47,19 +47,13 @@ class VendorsController < ApplicationController
  # Failure:
  # The user gets a message "no matches found"
   def indexHairdressers
+ 
        @q = Vendor.where(entry:'Hairdresser').ransack(params[:q])
 
-           
-           @vendors = @q.result(:distinct=>true).page(params[:page]).per(7) 
-       
- 
+           @per_page = params[:per_page] || Vendor.per_page || 20
+           @vendors = @q.result(:distinct=>true).paginate( :per_page => @per_page, :page => params[:page])
+   
 
-    respond_to do |format|
-     format.html
-     format.js
-    end
-
-  
 
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
