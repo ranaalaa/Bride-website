@@ -45,6 +45,7 @@ class VendorsController < ApplicationController
 
   def show
     @vendor = Vendor.find(params[:id])
+    @comments = @vendor.comments.paginate(:page => params[:page], :per_page => 5)
   end
  # Author:
  # Donia Magdy, Hanan Hosny

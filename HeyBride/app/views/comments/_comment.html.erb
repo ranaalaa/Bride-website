@@ -1,5 +1,5 @@
 <h2>comments</h2>
-<% @vendor.comments.each do |comment| %>
+<% @comments.each do |comment| %>
   <p>
   <%= comment.commenter %> :
   <%= comment.body %>
@@ -8,6 +8,9 @@
        <hr>
   <% end %>
 <% end %>
+<%= will_paginate @comments%>
+
+
 
 <%= form_for([@vendor, @vendor.comments.build]) do |f| %>
   <p>
