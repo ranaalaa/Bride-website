@@ -254,6 +254,15 @@
      <% end %>
    <% end %>
   <%end%>
+     <% if @vendor.rate (current_user.email)  %>
+       <%= form_for([@vendor, @vendor.ratings.build]) do |f| %>
+         <p>
+          <%= f.collection_select :score, Rating::SCORES, :to_s, :to_s %>
+          <%= f.submit "Rate us" %>
+      
+       <%end%>
+     <%end%>
+    
   <h2>Comments</h2>
     <% @vendor.comments.each do |comment| %>
       <p>
@@ -273,13 +282,7 @@
       </p>
         <%= f.submit %>
     <%end%>
-      <%= form_for([@vendor, @vendor.ratings.build]) do |f| %>
-        <p>
-          <%= f.collection_select :score, Rating::SCORES, :to_s, :to_s %>
-          <%= f.submit "Rate us" %>
-          
-      <%end%>
-    
+     
    
     
   

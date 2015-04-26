@@ -24,7 +24,7 @@ class RatingsController < ApplicationController
 
   private
     def rating_params
-      params.require(:rating).permit(:score)
+      params.require(:rating).permit(:score, :rater)
       
     end
   end
