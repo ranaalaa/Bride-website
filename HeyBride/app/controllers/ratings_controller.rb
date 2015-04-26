@@ -15,7 +15,8 @@ class RatingsController < ApplicationController
   def create
     @vendor = Vendor.find(params[:vendor_id])
     @rating = @vendor.ratings.create(rating_params)
-    if @rating.save   
+    # @rating = @user.ratings.create(rating_params)
+    if @rating.save 
       redirect_to vendor_path(@vendor) 
            
     end

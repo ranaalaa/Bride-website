@@ -273,11 +273,13 @@
       </p>
         <%= f.submit %>
     <%end%>
-  
-    <%= form_for([@vendor, @vendor.ratings.build]) do |f| %>
-
-      <p>
-      <%= f.collection_select :score, Rating::SCORES, :to_s, :to_s %>
-      <%= f.submit "Rate us" %>
-    <%end%> 
+      <%= form_for([@vendor, @vendor.ratings.build]) do |f| %>
+        <p>
+          <%= f.collection_select :score, Rating::SCORES, :to_s, :to_s %>
+          <%= f.submit "Rate us" %>
+          
+      <%end%>
+    
+   
+    
   

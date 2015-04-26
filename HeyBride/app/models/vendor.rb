@@ -45,4 +45,13 @@ class Vendor < ActiveRecord::Base
      count
    end
  end
+# def rate 
+    # can_rate = true
+    # ratings.each do |rating|
+        # if  rating.user_id = user.user_id 
+           #  can_rate = false
+        # end
+    # end
+  #end 
+ 
 end 
