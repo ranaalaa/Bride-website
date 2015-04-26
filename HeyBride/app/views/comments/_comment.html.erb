@@ -16,6 +16,8 @@
   <hr>
   <%= f.text_field :body, :height=> "100"%>
   <%= f.hidden_field :commenter, :value => current_user.username %>  
+    <%= f.hidden_field :commenter, :value => current_user.email%>  
+
   <%= image_submit_tag("comment.png") %>
   </p>
 <%end%>
