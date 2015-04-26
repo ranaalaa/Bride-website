@@ -1,21 +1,21 @@
 <h2>comments</h2>
 <% @vendor.comments.each do |comment| %>
   <p>
-  <%= comment.commenter %> :
+  <%= comment.commenter %> 
+  <hr>
   <%= comment.body %>
-  <% if user_signed_in? %>
-    <% if current_user.admin? %>
+    <% if current_user.email == comment.commenteremail %>
       <%= link_to 'Delete Comment', [comment.vendor,comment],method: :delete,data: { confirm: 'Are you sure?' } %><br><br>
    </p>
-    <% end %>
   <% end %>
 <% end %>
 
 <%= form_for([@vendor, @vendor.comments.build]) do |f| %>
   <p>
   <%= f.label :Comment %><br>
-  <%= f.text_field :body %>
-  <%= f.hidden_field :commenter, :value => current_user.username %>
+  <hr>
+  <%= f.text_field :body, :height=> "100"%>
+  <%= f.hidden_field :commenter, :value => current_user.username %>  
+  <%= image_submit_tag("comment.png") %>
   </p>
-  <%= f.submit %>
 <%end%>
