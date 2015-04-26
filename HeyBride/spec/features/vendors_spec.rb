@@ -156,4 +156,15 @@ RSpec.feature "Vendors", type: :feature do
     expect(page).to have_content 'Hanan'
     end
   end 
+   describe "Comments" do
+  let(:user) { FactoryGirl.create(:user) }
+  before { login_as(user, scope: :user )}
+   it "comments" do
+   vendor = Vendor.create!(:name => "Hanan", :entry=> "Dj",:location => "Alex")
+    visit 'vendors/1'
+    fill_in 'comment here', :with => 'Hi Hanan'
+    click_button 'comment'
+    expect(page).to have_content 'Hi'
+   end
+  end
 end
