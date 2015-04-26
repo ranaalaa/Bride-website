@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
  # Description:
  # This method is for the admin to delete certain comment
  # Params:
- # the vendor_id to get the venodor that the user wants to comment on, and for the comment tha params are the body 
+ # the vendor_id to get the vendor that the user wants to comment on, and for the comment tha params are the body 
  # Success:
  # The admin is able to delete the comment and redirected to the show page of the vendor
  # Failure:
