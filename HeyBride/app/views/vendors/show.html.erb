@@ -107,22 +107,30 @@
          </body>
      </html>
      
+     <h2>Packages🎁</h2>
+     
   <% if @vendor.entry != "Suit" %>
   <% if @vendor.entry != "Dress" %>
     <% @vendor.packages.each do |package| %>
-      <strong>name:</strong>
+     <p style="width:300px;border-style:solid; border-color:pink;">
+      <strong>Name:</strong>
         <%= package.name%><br>
-      <strong>price:</strong>
+      <strong>Price 💸 :</strong>
         <%= package.price%><br>
-      <strong>description:</strong>
+      <strong>Includes:</strong>
         <%= package.description%><br><br>
-    <% if user_signed_in? %>
+        </p>
+        
       <% if current_user.admin? %>
         <%= link_to 'Delete Package', [package.vendor, package], method: :delete,data: { confirm: 'Are you sure?' } %>
         <%= link_to 'Edit Package', edit_vendor_package_path(@vendor, package) %> <br><br>
-      <% end %>
+      
+         <% if user_signed_in? %>
+          <% end %>
+       <% end %>
+       <p> &nbsp;&nbsp;&nbsp;&nbsp;💍_________💍_________💍</p><br>
    <% end %>
-   <% end %>
+    
       <% if user_signed_in? %>
         <% if current_user.admin? %>
           <%= form_for([@vendor, @vendor.packages.build]) do |f| %>
