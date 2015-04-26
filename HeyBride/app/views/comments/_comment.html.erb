@@ -1,12 +1,11 @@
 <h2>comments</h2>
 <% @comments.each do |comment| %>
-  <p>
   <%= comment.commenter %> :
   <%= comment.body %>
     <% if current_user.email == comment.commenteremail %>
       <%= link_to 'Delete Comment', [comment.vendor,comment],method: :delete,data: { confirm: 'Are you sure?' } %><br><br>
-  <% end %>
-   <hr>
+    <% end %>
+    <hr>
 <% end %>
 <%= will_paginate @comments%>
 

@@ -2,9 +2,9 @@ class CommentsController < ApplicationController
  # Author:
  # Hanan Hosny
  # Description:
- # this action creats the comments of a certian vendor
+ # this action creates the comments of a certain vendor
  # Params:
- # the vendor_id to get the venodr that the user wants to comment on, and for the comment tha params are the body 
+ # the vendor_id to get the venodor that the user wants to comment on, and for the comment the params are the body 
  # Success:
  # The user is able to comment on the the vendor and the comment is the displayed on the vendor show page
  # Failure:
@@ -19,7 +19,7 @@ class CommentsController < ApplicationController
  # Description:
  # This method is for the admin to delete certain comment
  # Params:
- # the vendor_id to get the venodr that the user wants to comment on, and for the comment tha params are the body 
+ # the vendor_id to get the venodor that the user wants to comment on, and for the comment tha params are the body 
  # Success:
  # The admin is able to delete the comment and redirected to the show page of the vendor
  # Failure:
@@ -33,7 +33,7 @@ class CommentsController < ApplicationController
  # Author:
  # Hanan Hosny
  # Description:
- # This method is a private method decripes the comment params
+ # This method is a private method decribes the comment params
  # Params:
  # the comment params which is the body
   private
