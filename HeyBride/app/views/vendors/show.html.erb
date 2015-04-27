@@ -1,5 +1,10 @@
 <html lang="en">
   <head>
+    <link href='css/fontfamily.css' rel='stylesheet'>
+      <link href="css/vendors.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+      <meta charset="utf-8">
     <body>
       <script src="https://apis.google.com/js/platform.js" async defer>
       </script>
@@ -238,6 +243,14 @@
       </p>
         <%= f.submit %>
     <%end%> 
-       </body>
-     </html>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vvv.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          main();
+        $(".slide").first().addClass('active-slide');
+                    });
+    </script>
+  </body>
+</html>
   
