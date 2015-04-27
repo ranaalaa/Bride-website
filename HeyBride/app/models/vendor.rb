@@ -32,29 +32,27 @@ class Vendor < ActiveRecord::Base
  # The user gets the average rating of the vendor desplayed and the answer is rounded up 
  # Failure:
  # The user couldn't view the average rating of the page desplayed
- def avg_rating
-  average_rating = 0.0
-  count = 0
-  ratings.each do |rating| 
-    average_rating += rating.score.round(1)
-    count += 1
-  end
+  def avg_rating
+    average_rating = 0.0
+    count = 0
+    ratings.each do |rating| 
+      average_rating += rating.score.round(1)
+      count += 1
+    end
     if count != 0
-     (average_rating / count).round(1)
-   else
-     count
-   end
- end
- def rate (email)
-     can_rate = true
-     ratings.each do |rating|
-         if  rating.rater = email 
-             can_rate = false
-        
-         end
-         
-     end
-     return can_rate
-  end 
- 
-end 
+      (average_rating / count).round(1)
+    else
+      count
+    end
+    end
+    
+  def rate (email)
+    can_rate = true
+    ratings.each do |rating|
+      if rating.rater = email 
+        can_rate = false
+      end
+    end
+      return can_rate
+   end 
+ end 
