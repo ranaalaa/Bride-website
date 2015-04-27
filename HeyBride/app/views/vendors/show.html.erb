@@ -258,7 +258,8 @@
     <img src="/assets/blank.png">
     <%= form_for([@vendor, @vendor.ratings.build]) do |f| %>
       <%= f.collection_select :score, Rating::SCORES, :to_s, :to_s %>
-      <%= image_submit_tag("rateus.png") %>
+      <%= image_submit_tag("rateus.png", :id => "rate") %>
+      
     <%end%>
   <%end%>
     
