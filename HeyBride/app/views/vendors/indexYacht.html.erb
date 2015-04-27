@@ -1,3 +1,4 @@
+<h1 align="center"><font font size="10"></h1><B><i>  Yachts </i></B></h1></font>
 <link href="css/vendors.css" rel="stylesheet">
 <div id="nav">
   <%= search_form_for @q, url: indexYacht_vendors_path do |f| %>
@@ -27,7 +28,7 @@
   <% end %> 
 </div>
 <div id="section">
-  <h4 class="column"> &nbsp;&nbsp;&nbsp;Yachts</h4>
+  <h4 class="column"> &nbsp;&nbsp;&nbsp;</h4>
   <% @vendors.in_groups_of(3, false) do |vendors| %>
     <div class="row">
       <% vendors.each do |vendor| %>
