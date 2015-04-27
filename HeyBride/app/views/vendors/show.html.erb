@@ -61,7 +61,7 @@
                    <div id="box53100"></div>
                      <strong> CONTACT US!</strong>
                        <p>
-                         <img src = "/assets/icon_star.png">
+                         <img src = "/assets/heartrate.png">
                            <h>(</h><%= @vendor.avg_rating%><h>)</h>
                        </p>
                        <p>
@@ -254,14 +254,13 @@
      <% end %>
    <% end %>
   <%end%>
-     <% if @vendor.rate (current_user.email)  %>
-       <%= form_for([@vendor, @vendor.ratings.build]) do |f| %>
-         <p>
-          <%= f.collection_select :score, Rating::SCORES, :to_s, :to_s %>
-          <%= image_submit_tag("/assets/rate.png") %>
-      
-       <%end%>
-     <%end%>
+  <% if @vendor.rate (current_user.email)  %>
+    <img src="/assets/blank.png">
+    <%= form_for([@vendor, @vendor.ratings.build]) do |f| %>
+      <%= f.collection_select :score, Rating::SCORES, :to_s, :to_s %>
+      <%= image_submit_tag("rateus.png") %>
+    <%end%>
+  <%end%>
     
   <h2>Comments</h2>
     <% @vendor.comments.each do |comment| %>
