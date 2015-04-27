@@ -45,7 +45,17 @@ class Vendor < ActiveRecord::Base
       count
     end
     end
-    
+ # Author:
+ # Rana Alaa' 
+ # Description:
+ # this action allows the user to rate only one time per vendor page 
+ # Params:
+ #email: it's an argument for the method which takes the email of the current user 
+ # can_rate: where it's a boolean to know if this user has done rating before or not
+ # Success:
+ # The user will rate only one time for every vendor page
+ # Failure:
+ # The user will be allowed to put ratings many times for the same vendor   
   def rate (email)
     can_rate = true
     ratings.each do |rating|
