@@ -1,19 +1,50 @@
 <link href="css/vendors.css" rel="stylesheet">
-<div id="nav">
-  <%= search_form_for @q, url: indexSuites_vendors_path do |f| %>
-    <%= f.label :name %><br>
-    <%= f.search_field :name_cont , :placeholder => "name" %><br> 
-    <%= f.label :location %><br>
-    <%= f.text_field :location_cont , :placeholder => "location" %>  <br> 
-    <%= f.submit "search" %>
+
+<ul class="dropdown1">
+ 
+	<li class="dropdown1">
+	  <h1 class="dropdown1" > Filter by</h1>
+	    <%= search_form_for @q, url: indexHairdressers_vendors_path do |f| %>
+		<h2 class="dropdown1">Name<span class="bullet"></span></h2>
+		<div class="dropdown1"> <br> <p>    <%= f.text_field :name_cont, :placeholder => "name", size:"15x15" %> </p></div>
+	</li>
+
+	<li class="dropdown1">
+		<h2 class="dropdown1">Location<span class="bullet"></span></h2>
+		<div class="dropdown1"> <br> <p>    <%= f.text_field :location_cont,:placeholder => "location", size:"15x15"   %> </p></div>
+	</li>
+   
+	<br>
+
+
+	<h2 class="dropdown3" > <%=  f.submit "Go" %> </h2>
   <% end %>
   <% if @vendors.size.zero? %>
     <p id="notice"><%= notice %> 
     </p> 
   <% end %> 
-</div>
+</ul>
+
+
+
+
 <div id="section">
   <h4 class="column"> &nbsp;&nbsp;&nbsp;Suites Stores</h4>
+   <h4 class="column">  <ul> 
+
+     <ul class="dropdown">
+      
+      <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false" id="nn">   Sort By  <span class="caret"></span></a>
+    
+       <ul class="dropdown-menu" >
+        
+        <li id="nn"><%= sort_link(@q, :name, 'Name', default_order: :asc, hide_indicator: true ) %></li>
+        <li id="nn"><%= sort_link(@q, :avgprice , 'Price Low to High',  default_order: :asc, hide_indicator: true) %> </li>
+        <li id="nn"><%= sort_link(@q, :avgprice , 'Price High to Low',  default_order: :desc, hide_indicator: true) %> </li>
+        
+ </ul>
+   </ul>
+      </ul> </h4>
   <% @vendors.in_groups_of(3, false) do |vendors| %>
     <div class="row">
       <% vendors.each do |vendor| %>
