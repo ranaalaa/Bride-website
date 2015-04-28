@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426113554) do
+ActiveRecord::Schema.define(version: 20150405165117) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "bName"
@@ -105,7 +105,6 @@ ActiveRecord::Schema.define(version: 20150426113554) do
     t.string   "location"
     t.integer  "capacity"
     t.integer  "stars"
-    t.float    "avgprice"
   end
 
   create_table "views", force: :cascade do |t|
