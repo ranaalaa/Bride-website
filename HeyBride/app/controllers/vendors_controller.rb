@@ -46,6 +46,18 @@ class VendorsController < ApplicationController
  # The user gets the list of the hairdressers specified in the search params
  # Failure:
  # The user gets a message "no matches found"
+ 
+ # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the number of items the user wants to show per Hairdresser
+ # Params:
+ # page is the number of pages per Hairdresser
+ # per_page the number of items per page
+ # Success:
+ # The user views the number of items he specified and can move between pages
+ # Failure:
+ # The user will only be able to view all the Hairdressers in one page
   def indexHairdressers
  
        @q = Vendor.where(entry:'Hairdresser').ransack(params[:q])
@@ -69,6 +81,18 @@ class VendorsController < ApplicationController
  # The user gets the list of the Dresses stores specified in the search params
  # Failure:
  # The user gets a message "no matches found"
+ 
+ # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the number of items the user wants to show per Dress
+ # Params:
+ # page is the number of pages per Dress
+ # per_page the number of items per page
+ # Success:
+ # The user views the number of items he specified and can move between pages
+ # Failure:
+ # The user will only be able to view all the Dresses in one page
   def indexDresses
    @q = Vendor.where(entry:'Dress').ransack(params[:q])
 
@@ -92,6 +116,18 @@ class VendorsController < ApplicationController
  # The user gets the list of the Makeup-artists specified in the search params
  # Failure:
  # The user gets a message "no matches found"
+ 
+ # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the number of items the user wants to show per Makeup artist
+ # Params:
+ # page is the number of pages per Makeup
+ # per_page the number of items per page
+ # Success:
+ # The user views the number of items he specified and can move between pages
+ # Failure:
+ # The user will only be able to view all the Makeup artists in one page
   def indexMakeup
    @q = Vendor.where(entry:'Makeup').ransack(params[:q])
 
@@ -111,6 +147,18 @@ class VendorsController < ApplicationController
  # The user gets the list of the photographers specified in the search params
  # Failure:
  # The user gets a message "no matches found"
+ 
+ # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the number of items the user wants to show per Photographer
+ # Params:
+ # page is the number of pages per Photographer
+ # per_page the number of items per page
+ # Success:
+ # The user views the number of items he specified and can move between pages
+ # Failure:
+ # The user will only be able to view all the Photographers in one page
   def indexPhotographers
    @q = Vendor.where(entry:'Photographer').ransack(params[:q])
 
@@ -130,6 +178,18 @@ class VendorsController < ApplicationController
  # The user gets the list of the Suites stores specified in the search params
  # Failure:
  # The user gets a message "no matches found"
+ 
+ # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the number of items the user wants to show per Suit Store
+ # Params:
+ # page is the number of pages per Suit Store
+ # per_page the number of items per page
+ # Success:
+ # The user views the number of items he specified and can move between pages
+ # Failure:
+ # The user will only be able to view all the Suit Stores in one page
   def indexSuites
      @q = Vendor.where(entry:'Suit').ransack(params[:q])
 
@@ -149,6 +209,18 @@ class VendorsController < ApplicationController
  # The user gets the list of the Spa centers specified in the search params
  # Failure:
  # The user gets a message "no matches found"
+ 
+ # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the number of items the user wants to show per Spa and beauty centers
+ # Params:
+ # page is the number of pages per Spa and beauty centers
+ # per_page the number of items per page
+ # Success:
+ # The user views the number of items he specified and can move between pages
+ # Failure:
+ # The user will only be able to view all the Spas and beauty centers in one page
   def indexSpa
     @q = Vendor.where(entry:'Spa').ransack(params[:q])
 
@@ -168,6 +240,18 @@ class VendorsController < ApplicationController
  # The user gets the list of the Djs specified in the search params
  # Failure:
  # The user gets a message "no matches found"
+ 
+ # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the number of items the user wants to show per Dj
+ # Params:
+ # page is the number of pages per Dj
+ # per_page the number of items per page
+ # Success:
+ # The user views the number of items he specified and can move between pages
+ # Failure:
+ # The user will only be able to view all the Djs in one page
   def indexDjs
   @q = Vendor.where(entry:'Dj').ransack(params[:q])
 
@@ -187,6 +271,18 @@ class VendorsController < ApplicationController
  # The user gets the list of the yachts specified in the search params
  # Failure:
  # The user gets a message "no matches found"
+ 
+ # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the number of items the user wants to show per Yacht
+ # Params:
+ # page is the number of pages per Yacht
+ # per_page the number of items per page
+ # Success:
+ # The user views the number of items he specified and can move between pages
+ # Failure:
+ # The user will only be able to view all the Yachts in one page
   def indexYacht
   @q = Vendor.where(entry:'Yacht').ransack(params[:q])
 
@@ -207,6 +303,18 @@ class VendorsController < ApplicationController
  # The user gets the list of the villas specified in the search params
  # Failure:
  # The user gets a message "no matches found"
+ 
+ # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the number of items the user wants to show per Villa
+ # Params:
+ # page is the number of pages per Villa
+ # per_page the number of items per page
+ # Success:
+ # The user views the number of items he specified and can move between pages
+ # Failure:
+ # The user will only be able to view all the Villas in one page
   def indexVilla
     @q = Vendor.where(entry:'Villa').ransack(params[:q])
 
@@ -227,6 +335,18 @@ class VendorsController < ApplicationController
  # The user gets the list of the Halls specified in the search params
  # Failure:
  # The user gets a message "no matches found"
+ 
+ # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the number of items the user wants to show per Hall
+ # Params:
+ # page is the number of pages per Hall
+ # per_page the number of items per page
+ # Success:
+ # The user views the number of items he specified and can move between pages
+ # Failure:
+ # The user will only be able to view all the Halls in one page
   def indexHall
   @q = Vendor.where(entry:'Hall').ransack(params[:q])
 
@@ -246,6 +366,18 @@ class VendorsController < ApplicationController
  # The user gets the list of the Gardens specified in the search params
  # Failure:
  # The user gets a message "no matches found"
+ 
+ # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the number of items the user wants to show per Garden
+ # Params:
+ # page is the number of pages per Garden
+ # per_page the number of items per page
+ # Success:
+ # The user views the number of items he specified and can move between pages
+ # Failure:
+ # The user will only be able to view all the Gardens in one page
   def indexGarden
     @q = Vendor.where(entry:'Garden').ransack(params[:q])
 
