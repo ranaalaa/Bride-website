@@ -1,6 +1,5 @@
 <link href="css/vendors.css" rel="stylesheet">
-<p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <%= @vendors.size %> Results  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; View:  <%= select_tag :per_page, options_for_select([10,20,50], params[:per_page].to_i),
-       :onchange => "if(this.value){window.location='?per_page='+this.value;}" %> </p>
+
 
  
 
@@ -28,6 +27,8 @@
 </div>
 <div id="section">
   <h4 class="column"> &nbsp;&nbsp;&nbsp;Hairdressers</h4>
+  <h4 class="column"><p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | <%= @vendors.size %> Results  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; View:  <%= select_tag :per_page, options_for_select([10,20,50], params[:per_page].to_i),
+       :onchange => "if(this.value){window.location='?per_page='+this.value;}" %> </p></h4>
   <% @vendors.in_groups_of(3, false) do |vendors| %>
     <div class="row">
       <% vendors.each do |vendor| %>

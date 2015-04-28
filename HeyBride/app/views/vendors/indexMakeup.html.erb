@@ -23,6 +23,8 @@
 </div>
 <div id="section">
   <h4 class="column"> &nbsp;&nbsp;&nbsp;Make-ups</h4>
+   <h4 class="column"><p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | <%= @vendors.size %> Results  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; View:  <%= select_tag :per_page, options_for_select([10,20,50], params[:per_page].to_i),
+       :onchange => "if(this.value){window.location='?per_page='+this.value;}" %> </p></h4>
   <% @vendors.in_groups_of(3, false) do |vendors| %>
     <div class="row">
       <% vendors.each do |vendor| %>
@@ -39,5 +41,28 @@
       <% end %>
     </div>
   <% end %>
-   <%= paginate @vendors %>
+
 </div>
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+h1 {
+  color: pink;
+    font-size:150%;
+    margin-bottom: 15cm;
+  text-align: right;
+
+}
+
+</style>
+</head>
+<body>
+
+<h1> <%= will_paginate @vendors %> </h1>
+
+
+</body>
+</html>
+ 
