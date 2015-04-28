@@ -11,5 +11,5 @@ RSpec.describe Vendor, type: :model do
       expect(vendor.reload.packages).to eq([package1, package2])
     end
   end
-end
-
+ end 
+  

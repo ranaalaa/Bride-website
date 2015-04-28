@@ -161,10 +161,13 @@ RSpec.feature "Vendors", type: :feature do
   before { login_as(user, scope: :user )}
    it "ratings" do
    vendor = Vendor.create!(:name => "bridal", :entry=> "Dress",:location => "Cairo")
+   vendor.ratings.create!(:score => 3)
+   vendor.rate(user.email)
     visit 'vendors/1'
-    select 1 , from: Rating::SCORES
-    click_button 'rate'
-    expect(page).to have_content '1.0'
+    expect(page).to have_content '3.0'
+    expect(vendor.rate(user.email)).to eq(false)
+     
+    
   end 
  end 
 end 
