@@ -157,8 +157,8 @@ RSpec.feature "Vendors", type: :feature do
     end
    end 
    describe "Ratings" do
-  let(:user) { FactoryGirl.create(:user) }
-  before { login_as(user, scope: :user )}
+   let(:user) { FactoryGirl.create(:user) }
+   before { login_as(user, scope: :user )}
    it "ratings" do
    vendor = Vendor.create!(:name => "bridal", :entry=> "Dress",:location => "Cairo")
     visit 'vendors/1'
