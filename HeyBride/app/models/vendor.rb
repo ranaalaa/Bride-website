@@ -7,7 +7,7 @@ class Vendor < ActiveRecord::Base
 	  	has_attached_file :image, styles: { medium: "700x500#", small: "350x250#" }
       validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
       
-     # Author:
+ # Author:
  # Donia Magdy 
  # Description:
  # This action calculates the average price of the vendor's packages in order to sort by them.
