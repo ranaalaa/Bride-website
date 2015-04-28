@@ -6,6 +6,24 @@ class Vendor < ActiveRecord::Base
 	has_many :ratings
 	  	has_attached_file :image, styles: { medium: "700x500#", small: "350x250#" }
       validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
+      
+     # Author:
+ # Donia Magdy 
+ # Description:
+ # This action calculates the average price of the vendor's packages in order to sort by them.
+ # Params:
+ # avgprice: where it's an attribute to save the average price  in it 
+ # count: is the attribute to save the no. of price of the package in order to calculate the average_price
+ # price: is the price of the package of each vendor
+ # Success:
+ # The average price is calculated correctly and sorting is done according to the average price of the packages
+ # Failure:
+ # The average price is not calculated correctly and the user will not be able to sort the vendors according to the average price of their packages
+      
+      
+      
+      
+      
   
   def update_average_price(vendor=nil)
     s = self.packages.sum(:price)
@@ -26,20 +44,6 @@ class Vendor < ActiveRecord::Base
  # Failure:
  # The user couldn't view the average rating of the page desplayed
  
-def avg_price
-    average_price = 0.0
-    count = 0
-    packages.each do |package|
-        average_price += package.price
-        count += 1
-    end
-    if count != 0 
-        (average_price / count)
-    else
-        count
-    end
-end
-
 
 
  
