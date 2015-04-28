@@ -11,5 +11,14 @@ RSpec.describe Vendor, type: :model do
       expect(vendor.reload.packages).to eq([package1, package2])
     end
   end
-end
+  context "average of the packages" do
+    it "calculates the averge" do
 
+ vendor = Vendor.create!(:name => "Donia", :entry=> "Yacht",:location => "Cairo")
+   vendor.packages.create!(:name => "package1", :price=> "200.0", :description=> "package1 has")
+      vendor.packages.create!(:name => "package1", :price=> "600.0", :description=> "package1 has")
+      expect(vendor.reload.avgprice).to eq(400.0)
+
+  end
+end
+end

@@ -155,5 +155,6 @@ RSpec.feature "Vendors", type: :feature do
     click_button 'Go'
     expect(page).to have_content 'Hanan'
     end
+   end
   end 
-end
+
