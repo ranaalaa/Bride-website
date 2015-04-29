@@ -36,8 +36,8 @@ class Vendor < ActiveRecord::Base
     average_rating = 0.0
     count = 0
     ratings.each do |rating| 
-      average_rating += rating.score.round(1)
-      count += 1
+    average_rating += rating.score.round(1)
+    count += 1
     end
     if count != 0
       (average_rating / count).round(1)
@@ -50,7 +50,7 @@ class Vendor < ActiveRecord::Base
  # Description:
  # this action allows the user to rate only one time per vendor page 
  # Params:
- #email: it's an argument for the method which takes the email of the current user 
+ # email: it's an argument for the method which takes the email of the current user 
  # can_rate: where it's a boolean to know if this user has done rating before or not
  # Success:
  # The user will rate only one time for every vendor page
