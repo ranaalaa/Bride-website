@@ -28,7 +28,7 @@ padding-top: 20px;
 	width:100%;
 	min-width: 1380px;
 	height:50px;
-	  padding-left: 10px;
+	padding-left: 10px;
   padding-right: 10px;
 
 }
@@ -233,3 +233,48 @@ min-width: 1380px;
 .slider-dots li.active-dot {
   color: #363636;
 }
+
+.circular {
+	width: 220px;
+	height: 220px;
+	border-radius: 100%;
+	/*background: url(http://link-to-your/image.jpg) no-repeat;*/
+	box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+}
+
+	.profileleft{
+	  margin-left: 100px;
+	  width: 250px;
+	  background-color: transparent;
+	  text-align: justify;
+	}
+	
+	.profileright {
+	  margin-left: 780px;
+	  width: 250px;
+	  background-color: transparent;
+	  text-align: justify;
+	  
+	}
+	
+	.profilename {
+	  display: inline;
+	  font-size: 35px;
+	  text-transform: none;
+	  text-align: justify;
+	  margin-left: 730px;
+	}
+	
+	.profiledesc {
+	  display: inline-block;
+	  width: 250px;
+	  font-size: 14px;
+	  font-weight: normal;
+	  text-transform: none;
+	  margin-left: 780px;
+	  margin-top: 5px;
+	  text-align: justify;
+	  
+	  
+	}
+	
