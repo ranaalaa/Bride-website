@@ -1,12 +1,38 @@
- <html lang="en">
-    <head>
-      <link href='css/fontfamily.css' rel='stylesheet'>
+<html lang="en">
+  <head>
+    <link href='css/fontfamily.css' rel='stylesheet'>
       <link href="css/vendors.css" rel="stylesheet">
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/bootstrap-theme.min.css">
       <meta charset="utf-8">
-      
-  <body>
+    <body>
+      <script src="https://apis.google.com/js/platform.js" async defer>
+      </script>
+      <div class="g-plus" data-action="share">
+      </div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+               var js, fjs = d.getElementsByTagName(s)[0];
+               if (d.getElementById(id)) return;
+               js = d.createElement(s); js.id = id;
+               js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+               fjs.parentNode.insertBefore(js, fjs);
+               }(document, 'script', 'facebook-jssdk'));
+      </script>
+      <div class="fb-share-button" data-href="https://sprint2-salmaadel1.c9.io/" data-layout="button_count">
+      </div>
+      <a class="twitter-share-button" href="https://twitter.com/share">
+        Tweet
+      </a>
+      <script>
+        window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};
+        if(d.getElementById(id))return;
+        js=d.createElement(s);js.id=id;
+        js.src="https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js,fjs);
+        t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+      </script>
+
 <div class="container">
   <div class="slider">
        <h1> <%= @vendor.name %></h1>
@@ -168,8 +194,7 @@
                     </div>
                  </div>
              </div>
-         </body>
-     </html>
+      
      
  <% if @vendor.entry != "Suit" %>
   <% if @vendor.entry != "Dress" %>
@@ -264,7 +289,16 @@
   <%end%>
     
  <%= render 'comments/comment' %>
-     
-   
-    
   
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vvv.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          main();
+        $(".slide").first().addClass('active-slide');
+                    });
+    </script>
+  </body>
+</html>
+  
+
