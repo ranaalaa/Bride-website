@@ -1,6 +1,4 @@
 <link href="css/vendors.css" rel="stylesheet">
-
-
 <ul class="dropdown1">
   <li class="dropdown1">
 	  <h1 class="dropdown1" > Filter by</h1>
@@ -10,7 +8,6 @@
         <p><%= f.text_field :name_cont, :placeholder => "name", size:"7x7" %> </p>
       </div>
 	</li>
-
 	<li class="dropdown1">
 	  <h2 class="dropdown1">Location<span class="bullet"></span></h2>
 	  <div class="dropdown1"><br>
@@ -24,7 +21,6 @@
     <p id="notice"><%= notice %></p> 
   <% end %> 
 </ul>
-
 <div id="section">
   <h4 class="column"> &nbsp;&nbsp;&nbsp;Dresses Stores</h4>
   <h4 class="column"> 
@@ -33,10 +29,9 @@
         <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false" id="nn">   Sort By  <span class="caret"></span></a>
         <ul class="dropdown-menu" >
           <li id="nn"><%= sort_link(@q, :name, 'Name', default_order: :asc, hide_indicator: true ) %></li>
-     
         </ul>
-    </ul>
-  </ul> 
+      </ul>
+    </ul> 
   </h4>
   
   <% @vendors.in_groups_of(3, false) do |vendors| %>
