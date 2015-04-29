@@ -10,8 +10,18 @@ class VendorsController < ApplicationController
     @vendor.destroy
     redirect_to :controller => 'welcome', :action => 'HomePage'   
   end
-
+  # Author:
+  # Hanan Hosny
+  # Description:
+  # this action displays the vendors returned from the search
+  # Params:
+  # search(this contains a hash of the search parameters that the user passes in)
+  # Success:
+  # The user gets a list of vendors specified in the search params
+  # Failure:
+  # The user gets a message "no matches found"
   def index
+    @vendors = Vendor.search(params[:search]).order("created_at DESC")
   end 
 
   def edit
@@ -32,9 +42,17 @@ class VendorsController < ApplicationController
     @vendor.save
     redirect_to @vendor
   end
-
+ # Description:
+ # this action displays the information of the vendor
+ # Params:
+ # id of the vendor
+ # Success:
+ # a page appears to the user having the samples,packages, contact info, comments and rating
+ # Failure:
+ # none
   def show
     @vendor = Vendor.find(params[:id])
+    @comments = @vendor.comments.paginate(:page => params[:page], :per_page => 10)
   end
  # Author:
  # Donia Magdy, Hanan Hosny
