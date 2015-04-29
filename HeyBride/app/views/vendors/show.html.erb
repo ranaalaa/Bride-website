@@ -87,7 +87,7 @@
                    <div id="box53100"></div>
                      <strong> CONTACT US!</strong>
                        <p>
-                         <img src = "/assets/heart-icon.png">
+                         <img src = "/assets/heartrate.png">
                            <h>(</h><%= @vendor.avg_rating%><h>)</h>
                        </p>
                        <p>
@@ -107,24 +107,88 @@
                        </p>
                        <p>
                          <% if @vendor.entry == "Villa" %>
-                           <%= @vendor.capacity %> <h>Guests</h>
+                           <h>Up to</h><%= @vendor.capacity %>  <h>Guests</h>
                          <% end %>
                        </p>
                         <p>
                           <% if @vendor.entry == "Yacht" %>
-                            <%= @vendor.capacity %> <h>Guests</h>
+                             <h>Up to</h><%= @vendor.capacity %>  <h>Guests</h> 
                           <% end %>
                         </p>
                         <p>
                           <% if @vendor.entry == "Hall"  %>
-                            <%= @vendor.capacity %> <h>Guests</h></br>
-                            <%= @vendor.stars %> <h>stars</h>
+                             <h>Up to</h><%= @vendor.capacity %>  <h>Guests</h> </br>
+                              <% if @vendor.stars == 1 %>
+                                <p> <img src="/assets/star-on.png"></p>
+                              <%end%>
+                              <% if @vendor.stars == 2 %>
+                                <p> 
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 3 %>
+                                <p>
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 4 %>
+                                <p>
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 5 %>
+                                <p> 
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
                           <% end %>
                         </p>
                         <p>
                           <% if @vendor.entry == "Garden" %>
-                            <%= @vendor.capacity %> <strong>Guests</strong>
-                            <%= @vendor.stars %> <h>stars</h>
+                             <h>Up to</h> <%= @vendor.capacity %> 
+                            <% if @vendor.stars == 1 %>
+                                <p> <img src="/assets/star-on.png"></p>
+                              <%end%>
+                              <% if @vendor.stars == 2 %>
+                                <p> 
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 3 %>
+                                <p>
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 4 %>
+                                <p>
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 5 %>
+                                <p> 
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
                           <% end %>
                         </p>
                     </div>
@@ -132,7 +196,7 @@
              </div>
       
      
-  <% if @vendor.entry != "Suit" %>
+ <% if @vendor.entry != "Suit" %>
   <% if @vendor.entry != "Dress" %>
     <% @vendor.packages.each do |package| %>
       <strong>name:</strong>
@@ -215,16 +279,17 @@
      <% end %>
    <% end %>
   <%end%>
-   
-  
-  <h2>Add a rating:</h2>
+  <% if @vendor.rate (current_user.email)  %>
+    <img src="/assets/blank.png">
     <%= form_for([@vendor, @vendor.ratings.build]) do |f| %>
-      <p>
-        <%= f.label :rating %><br>
-        <%= f.text_field :score %>
-      </p>
-        <%= f.submit %>
-    <%end%> 
+      <%= f.collection_select :score, Rating::SCORES, :to_s, :to_s %>
+      <%= image_submit_tag("rateus.png", :id => "rate") %>
+      
+    <%end%>
+  <%end%>
+    
+ <%= render 'comments/comment' %>
+  
     <script src="js/bootstrap.min.js"></script>
     <script src="js/vvv.js"></script>
     <script type="text/javascript">
@@ -235,4 +300,4 @@
     </script>
   </body>
 </html>
-  <%= render 'comments/comment' %>
+  

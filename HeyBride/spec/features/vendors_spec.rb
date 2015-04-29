@@ -155,7 +155,21 @@ RSpec.feature "Vendors", type: :feature do
     click_button 'search'
     expect(page).to have_content 'Hanan'
     end
+   end 
+   describe "Ratings" do
+   let(:user) { FactoryGirl.create(:user) }
+   before { login_as(user, scope: :user )}
+   it "ratings" do
+   vendor = Vendor.create!(:name => "bridal", :entry=> "Dress",:location => "Cairo")
+   vendor.ratings.create!(:score => 3)
+   vendor.rate(user.email)
+    visit 'vendors/1'
+    expect(page).to have_content '3.0'
+    expect(vendor.rate(user.email)).to eq(false)
+     
+    
   end 
+ end 
    describe "Comments" do
   let(:user) { FactoryGirl.create(:user) }
   before { login_as(user, scope: :user )}
