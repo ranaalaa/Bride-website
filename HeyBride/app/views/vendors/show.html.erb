@@ -263,25 +263,7 @@
     <%end%>
   <%end%>
     
-  <h2>Comments</h2>
-    <% @vendor.comments.each do |comment| %>
-      <p>
-        <%= comment.body %>
-        <% if user_signed_in? %>
-          <% if current_user.admin? %>
-            <%= link_to 'Delete Comment', [comment.vendor,comment],method: :delete,data: { confirm: 'Are you sure?' } %><br><br>
-      </p>
-          <% end %>
-        <% end %>
-    <% end %>
-  <h2>Add a comment:</h2>
-    <%= form_for([@vendor, @vendor.comments.build]) do |f| %>
-      <p>
-        <%= f.label :Comment %><br>
-        <%= f.text_field :body %>
-      </p>
-        <%= f.submit %>
-    <%end%>
+ <%= render 'comments/comment' %>
      
    
     
