@@ -81,17 +81,17 @@
                        </p>
                        <p>
                          <% if @vendor.entry == "Villa" %>
-                           <%= @vendor.capacity %> <h>Guests</h>
+                           <h>Up to</h><%= @vendor.capacity %>  <h>Guests</h>
                          <% end %>
                        </p>
                         <p>
                           <% if @vendor.entry == "Yacht" %>
-                             <h>Up to</h><%= @vendor.capacity %> 
+                             <h>Up to</h><%= @vendor.capacity %>  <h>Guests</h> 
                           <% end %>
                         </p>
                         <p>
                           <% if @vendor.entry == "Hall"  %>
-                             <h>Up to</h><%= @vendor.capacity %> </br>
+                             <h>Up to</h><%= @vendor.capacity %>  <h>Guests</h> </br>
                               <% if @vendor.stars == 1 %>
                                 <p> <img src="/assets/star-on.png"></p>
                               <%end%>
