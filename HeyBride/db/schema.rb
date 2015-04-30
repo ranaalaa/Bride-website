@@ -132,3 +132,4 @@ ActiveRecord::Schema.define(version: 20150426204753) do
   add_index "views", ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
 
 end
+
