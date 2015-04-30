@@ -176,7 +176,7 @@ RSpec.feature "Vendors", type: :feature do
    it "comments" do
    vendor = Vendor.create!(:name => "Hanan", :entry=> "Dj",:location => "Alex")
     visit 'vendors/1'
-    fill_in 'comment here', :with => 'Hi Hanan'
+    fill_in 'write a comment...', :with => 'Hi Hanan'
     click_button 'comment'
     expect(page).to have_content 'Hi'
    end
