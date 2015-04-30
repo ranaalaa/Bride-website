@@ -1,12 +1,38 @@
- <html lang="en">
-    <head>
-      <link href='css/fontfamily.css' rel='stylesheet'>
+<html lang="en">
+  <head>
+    <link href='css/fontfamily.css' rel='stylesheet'>
       <link href="css/vendors.css" rel="stylesheet">
       <link rel="stylesheet" href="css/bootstrap.min.css">
       <link rel="stylesheet" href="css/bootstrap-theme.min.css">
       <meta charset="utf-8">
-      
-  <body>
+    <body>
+      <script src="https://apis.google.com/js/platform.js" async defer>
+      </script>
+      <div class="g-plus" data-action="share">
+      </div>
+      <div id="fb-root"></div>
+      <script>(function(d, s, id) {
+               var js, fjs = d.getElementsByTagName(s)[0];
+               if (d.getElementById(id)) return;
+               js = d.createElement(s); js.id = id;
+               js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.0";
+               fjs.parentNode.insertBefore(js, fjs);
+               }(document, 'script', 'facebook-jssdk'));
+      </script>
+      <div class="fb-share-button" data-href="https://sprint2-salmaadel1.c9.io/" data-layout="button_count">
+      </div>
+      <a class="twitter-share-button" href="https://twitter.com/share">
+        Tweet
+      </a>
+      <script>
+        window.twttr=(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],t=window.twttr||{};
+        if(d.getElementById(id))return;
+        js=d.createElement(s);js.id=id;
+        js.src="https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js,fjs);
+        t._e=[];t.ready=function(f){t._e.push(f);};return t;}(document,"script","twitter-wjs"));
+      </script>
+
 <div class="container">
   <div class="slider">
        <h1> <%= @vendor.name %></h1>
@@ -61,7 +87,7 @@
                    <div id="box53100"></div>
                      <strong> CONTACT US!</strong>
                        <p>
-                         <img src = "/assets/heart-icon.png">
+                         <img src = "/assets/heartrate.png">
                            <h>(</h><%= @vendor.avg_rating%><h>)</h>
                        </p>
                        <p>
@@ -81,31 +107,94 @@
                        </p>
                        <p>
                          <% if @vendor.entry == "Villa" %>
-                           <%= @vendor.capacity %> <h>Guests</h>
+                           <h>Up to</h><%= @vendor.capacity %>  <h>Guests</h>
                          <% end %>
                        </p>
                         <p>
                           <% if @vendor.entry == "Yacht" %>
-                            <%= @vendor.capacity %> <h>Guests</h>
+                             <h>Up to</h><%= @vendor.capacity %>  <h>Guests</h> 
                           <% end %>
                         </p>
                         <p>
                           <% if @vendor.entry == "Hall"  %>
-                            <%= @vendor.capacity %> <h>Guests</h></br>
-                            <%= @vendor.stars %> <h>stars</h>
+                             <h>Up to</h><%= @vendor.capacity %>  <h>Guests</h> </br>
+                              <% if @vendor.stars == 1 %>
+                                <p> <img src="/assets/star-on.png"></p>
+                              <%end%>
+                              <% if @vendor.stars == 2 %>
+                                <p> 
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 3 %>
+                                <p>
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 4 %>
+                                <p>
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 5 %>
+                                <p> 
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
                           <% end %>
                         </p>
                         <p>
                           <% if @vendor.entry == "Garden" %>
-                            <%= @vendor.capacity %> <strong>Guests</strong>
-                            <%= @vendor.stars %> <h>stars</h>
+                             <h>Up to</h> <%= @vendor.capacity %> 
+                            <% if @vendor.stars == 1 %>
+                                <p> <img src="/assets/star-on.png"></p>
+                              <%end%>
+                              <% if @vendor.stars == 2 %>
+                                <p> 
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 3 %>
+                                <p>
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 4 %>
+                                <p>
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
+                              <% if @vendor.stars == 5 %>
+                                <p> 
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                  <img src="/assets/star-on.png">
+                                </p>
+                              <%end%>
                           <% end %>
                         </p>
                     </div>
                  </div>
              </div>
-         </body>
-     </html>
+      
      
   <h4><font face ="Papyrus" size = "6" ><%= @vendor.name %> Packages 💍 </font> </h4> <br>
      
@@ -193,32 +282,27 @@
      <% end %>
    <% end %>
   <%end%>
-  <h2>Comments</h2>
-    <% @vendor.comments.each do |comment| %>
-      <p>
-        <%= comment.body %>
-        <% if user_signed_in? %>
-          <% if current_user.admin? %>
-            <%= link_to 'Delete Comment', [comment.vendor,comment],method: :delete,data: { confirm: 'Are you sure?' } %><br><br>
-      </p>
-          <% end %>
-        <% end %>
-    <% end %>
-  <h2>Add a comment:</h2>
-    <%= form_for([@vendor, @vendor.comments.build]) do |f| %>
-      <p>
-        <%= f.label :Comment %><br>
-        <%= f.text_field :body %>
-      </p>
-        <%= f.submit %>
-    <%end%>
-  
-  <h2>Add a rating:</h2>
+  <% if @vendor.rate (current_user.email)  %>
+    <img src="/assets/blank.png">
     <%= form_for([@vendor, @vendor.ratings.build]) do |f| %>
-      <p>
-        <%= f.label :rating %><br>
-        <%= f.text_field :score %>
-      </p>
-        <%= f.submit %>
-    <%end%> 
+      <%= f.collection_select :score, Rating::SCORES, :to_s, :to_s %>
+      <%= image_submit_tag("rateus.png", :id => "rate") %>
+      
+    <%end%>
+  <%end%>
+    
+ <%= render 'comments/comment' %>
+  
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/vvv.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+          main();
+        $(".slide").first().addClass('active-slide');
+                    });
+    </script>
+  </body>
+</html>
+  
+
   

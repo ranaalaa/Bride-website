@@ -42,9 +42,17 @@ class VendorsController < ApplicationController
     @vendor.save
     redirect_to @vendor
   end
-
+ # Description:
+ # this action displays the information of the vendor
+ # Params:
+ # id of the vendor
+ # Success:
+ # a page appears to the user having the samples,packages, contact info, comments and rating
+ # Failure:
+ # none
   def show
     @vendor = Vendor.find(params[:id])
+    @comments = @vendor.comments.paginate(:page => params[:page], :per_page => 10)
   end
  # Author:
  # Donia Magdy, Hanan Hosny
