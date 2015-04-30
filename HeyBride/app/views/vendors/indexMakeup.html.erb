@@ -29,7 +29,7 @@
       <% vendors.each do |vendor| %>
         <div class="col-md-3">
           <%= image_tag vendor.image.url(:small), :size => "200x200" %>  <br> 
-          <%= link_to vendor.name, vendor %><br>
+          <font size="5"><B><i><%= link_to vendor.name, vendor %></i></B></font><br>
           <% if user_signed_in? %>
             <% if current_user.admin? %>
               <%= link_to 'Edit', edit_vendor_path(vendor) %>
