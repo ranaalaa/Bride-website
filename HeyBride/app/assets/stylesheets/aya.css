@@ -274,7 +274,9 @@ min-width: 1380px;
 	  margin-left: 780px;
 	  margin-top: 5px;
 	  text-align: justify;
-	  
-	  
+	}
+	.margin{
+    margin-left: 70px;
+    margin-right: 0px;
 	}
 	

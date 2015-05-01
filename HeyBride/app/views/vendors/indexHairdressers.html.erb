@@ -1,10 +1,15 @@
+<html>
+  <head>
+    <link href="css/aya.css" rel="stylesheet">
+  </head>
+<div class= "margin">
 <h1 align="center"><center><font font size="8"><B><i>  Hairdresser </i></B></font></center></h1><br>
 <link href="css/vendors.css" rel="stylesheet">
-
 <ul class="dropdown1">
   <%= search_form_for @q, url: indexHairdressers_vendors_path do |f| %>
   	<li class="dropdown1">
   	  <h1 class="dropdown1" > Filter by</h1>
+  	  
   		  <h2 class="dropdown1">Name<span class="bullet"></span></h2>
   	  	<div class="dropdown1"><br>
           <p><%= f.text_field :name_cont, :placeholder => "name", size:"7x7" %> </p></div>
@@ -73,4 +78,6 @@
   <%= will_paginate @vendors %> 
 
 </div>
+</div>
+</html>
  
