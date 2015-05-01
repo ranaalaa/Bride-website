@@ -11,5 +11,14 @@ RSpec.describe Vendor, type: :model do
       expect(vendor.reload.packages).to eq([package1, package2])
     end
   end
+  
+ 
+   context "with 2 comments" do
+    it "orders them in reverse chronologically" do
+      vendor = Vendor.create!
+      comment1 = vendor.comments.create!(:body => "comment1")
+      comment2 = vendor.comments.create!(:body => "comment2")
+      expect(vendor.reload.comments).to eq([comment1, comment2])
+    end
+  end
 end
-

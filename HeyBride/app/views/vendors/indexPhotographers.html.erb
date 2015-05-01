@@ -1,31 +1,43 @@
 <link href="css/vendors.css" rel="stylesheet">
-<div id="nav">
+<ul class="dropdown1">
   <%= search_form_for @q, url: indexPhotographers_vendors_path do |f| %>
-    <%= f.label :name %><br>
-    <%= f.search_field :name_cont , :placeholder => "name" %><br> 
-    <%= f.label :location %><br>
-    <%= f.text_field :location_cont , :placeholder => "location" %>  <br> 
-    <%= f.label "Price Range" %> <br>
-    <%= f.label :packages_price_gteq, 'From' %>
-    <%= f.text_field :packages_price_gteq , size: "3x3", :placeholder => "min"%>
-    <%= f.label :packages_price_lteq, 'To' %>
-    <%= f.text_field :packages_price_lteq , size: "3x3", :placeholder => "max" %>
-    <p>
-      <%= f.label "Sort By" %> <br>
-      <%= sort_link(@q, :packages_price) %>
-    </p>
-    <%=  f.submit "search" %>
-  <% end %>
-  <% if @vendors.size.zero? %>
-    <p id="notice"><%= notice %> 
-    </p> 
-  <% end %> 
-</div>
+    <li class="dropdown1">
+  	  <h1 class="dropdown1" > Filter by</h1>
+  		  <h2 class="dropdown1">Name<span class="bullet"></span></h2>
+  		  <div class="dropdown1"> <br> <p>    <%= f.text_field :name_cont, :placeholder => "name", size:"15x15" %> </p></div>
+  	</li>
+  
+  	<li class="dropdown1">
+  		<h2 class="dropdown1">Location<span class="bullet"></span></h2>
+  		<div class="dropdown1"> <br> <p>    <%= f.text_field :location_cont,:placeholder => "location", size:"15x15"   %> </p></div>
+  	</li>
+     
+  	<li class="dropdown1">
+  		<h2 class="dropdown1">Price<span class="bullet"></span></h2>
+  		<div class="dropdown1">  <br> <p>From  <%= f.text_field :packages_price_gteq , size: "2x2",:placeholder => "min" %> To  <%= f.text_field :packages_price_lteq , size: "2x2",:placeholder => "max" %> </p></div>
+  	</li><br>
+    <h2 class="dropdown3" > <%=  f.submit "Go" %> </h2>
+      <% end %>
+      <% if @vendors.size.zero? %>
+        <p id="notice"><%= notice %> 
+        </p> 
+      <% end %> 
+</ul>
 <div id="section">
   <h4 class="column"> &nbsp;&nbsp;&nbsp;Photographers</h4>
-  <h4 class="column"><p>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;    &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | <%= @vendors.count %> Results  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; View:  <%= select_tag :per_page, options_for_select([5,10,20,50], params[:per_page].to_i),
-       :onchange => "if(this.value){window.location='?per_page='+this.value;}" %> </p>
-  </h4>
+  <h4 class="column">
+     <ul class="dropdown">
+       <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false" id="nn">   Sort By  <span class="caret"></span></a>
+       <ul class="dropdown-menu" >
+          <li id="nn"><%= sort_link(@q, :name, 'Name', default_order: :asc, hide_indicator: true ) %></li>
+          <li id="nn"><%= sort_link(@q, :avgprice , 'Price Low to High',  default_order: :asc, hide_indicator: true) %> </li>
+          <li id="nn"><%= sort_link(@q, :avgprice , 'Price High to Low',  default_order: :desc, hide_indicator: true) %> </li>
+        </ul>
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | <%= @vendors.count %> Results  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; View:  <%= select_tag :per_page, options_for_select([5,10,20,50], params[:per_page].to_i),
+        :onchange => "if(this.value){window.location='?per_page='+this.value;}" %> 
+      </ul>
+    </h4>
+
   <% @vendors.in_groups_of(3, false) do |vendors| %>
     <div class="row">
       <% vendors.each do |vendor| %>
@@ -44,20 +56,12 @@
   <% end %>
 
 </div>
-<!DOCTYPE html>
-  <html>
-    <head>
-      <style>
-        h1 {
-          color: pink;
-          font-size:150%;
-          margin-bottom: 15cm;
-          text-align: right;
-           }
-      </style>
-    </head>
-    <body>
-      <h1> <%= will_paginate @vendors %> </h1>
-    </body>
-</html>
+<div class="pag">
+
+ 
+  <%= will_paginate @vendors %> 
+
+</div>
+ 
+
  
