@@ -3,7 +3,8 @@ var main=function(){
         $('.dropdown-menu').toggle()
     });
    
-    $('.arrow-next').click(function(){
+    $('.arrow-next').click(function(e){
+      e.preventDefault();
         var currentSlide = $('.active-slide');
         var nextSlide = currentSlide.next();
         
@@ -23,7 +24,8 @@ var main=function(){
   nextDot.addClass('active-dot');
         
     });
-      $('.arrow-prev').click(function() {
+      $('.arrow-prev').click(function(e) {
+        e.preventDefault();
   var currentSlide = $('.active-slide');
   var prevSlide = currentSlide.prev();
 
@@ -40,10 +42,7 @@ var main=function(){
 
   currentDot.removeClass('active-dot');
   prevDot.addClass('active-dot');
+  $(".slide").first().addClass('active-slide');
     });
-    
-    
-    
 }
 $(document).ready(main);
-
