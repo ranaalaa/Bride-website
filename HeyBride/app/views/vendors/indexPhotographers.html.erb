@@ -1,3 +1,4 @@
+<h1 align="center"><center><font font size="8"><B><i>  Photographer </i></B></font></center></h1><br>
 <link href="css/vendors.css" rel="stylesheet">
 <ul class="dropdown1">
   <%= search_form_for @q, url: indexPhotographers_vendors_path do |f| %>
@@ -24,7 +25,7 @@
       <% end %> 
 </ul>
 <div id="section">
-  <h4 class="column"> &nbsp;&nbsp;&nbsp;Photographers</h4>
+
   <h4 class="column">
      <ul class="dropdown">
        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false" id="nn">   Sort By  <span class="caret"></span></a>
@@ -37,13 +38,12 @@
         :onchange => "if(this.value){window.location='?per_page='+this.value;}" %> 
       </ul>
     </h4>
-
   <% @vendors.in_groups_of(3, false) do |vendors| %>
     <div class="row">
       <% vendors.each do |vendor| %>
         <div class="col-md-3">
           <%= image_tag vendor.image.url(:small), :size => "200x200" %>  <br> 
-          <%= link_to vendor.name, vendor %><br>
+          <font size="5"><B><i><%= link_to vendor.name, vendor %></i></B></font><br>
           <% if user_signed_in? %>
             <% if current_user.admin? %>
               <%= link_to 'Edit', edit_vendor_path(vendor) %>

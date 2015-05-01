@@ -1,4 +1,6 @@
+<h1 align="center"><center><font font size="8"><B><i>  Hall </i></B></font></center></h1><br>
 <link href="css/vendors.css" rel="stylesheet">
+<div>
 <ul class="dropdown1">
   <%= search_form_for @q, url: indexHall_vendors_path do |f| %>
     <li class="dropdown1">
@@ -50,9 +52,9 @@
         </p> 
       <% end %> 
 </ul>
-   
+</div>
+
 <div id="section">
-  <h4 class="column"> &nbsp;&nbsp;&nbsp;Halls</h4>
   <h4 class="column">
     <ul class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false" id="nn">   Sort By  <span class="caret"></span></a>
@@ -63,29 +65,32 @@
       </ul>
        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | <%= @vendors.count %> Results  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; View:  <%= select_tag :per_page, options_for_select([5,10,20,50], params[:per_page].to_i),
        :onchange => "if(this.value){window.location='?per_page='+this.value;}" %>
-    <ul> 
+
     </ul>
   </h4>
     <% @vendors.in_groups_of(3, false) do |vendors| %>
-      <div class="row">
-        <% vendors.each do |vendor| %>
-          <div class="col-md-3">
-            <%= image_tag vendor.image.url(:small), :size => "200x200" %>  <br> 
-            <%= link_to vendor.name, vendor %><br>
-            <% if user_signed_in? %>
-              <% if current_user.admin? %>
-                <%= link_to 'Edit', edit_vendor_path(vendor) %>
-                <%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-              <% end %>
-           <%end%>
-         </div>
+    <div class="row">
+      <% vendors.each do |vendor| %>
+        <div class="col-md-3">
+          <%= image_tag vendor.image.url(:small), :size => "200x200" %>  <br> 
 
+          <font size="5"><B><i><%= link_to vendor.name, vendor %></i></B></font><br>
+  <%= link_to vendor.name, vendor %><br>
+         
+
+          <% if user_signed_in? %>
+            <% if current_user.admin? %>
+              <%= link_to 'Edit', edit_vendor_path(vendor) %>
+              <%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
+            <% end %>
+          <%end%>
+        
+        </div>
       <% end %>
+     
     </div>
   <% end %>
-
 </div>
-
 <div class="pag">
 
  

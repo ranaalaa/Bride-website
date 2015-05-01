@@ -1,3 +1,4 @@
+<h1 align="center"><center><font font size="8"><B><i>  Spa & Beauty Center </i></B></font></center></h1><br>
 <link href="css/vendors.css" rel="stylesheet">
 <ul class="dropdown1">
   <%= search_form_for @q, url: indexSpa_vendors_path do |f| %>
@@ -23,9 +24,6 @@
       <% end %> 
 </ul>
 <div id="section">
-  <h4 class="column"> &nbsp;&nbsp;&nbsp;Spas & Beauty Centers</h4>
-
-
   <h4 class="column"> 
 
       <ul class="dropdown">
@@ -44,7 +42,7 @@
       <% vendors.each do |vendor| %>
         <div class="col-md-3">
           <%= image_tag vendor.image.url(:small), :size => "200x200" %>  <br> 
-          <%= link_to vendor.name, vendor %><br>
+          <font size="5"><B><i><%= link_to vendor.name, vendor %></i></B></font><br>
           <% if user_signed_in? %>
             <% if current_user.admin? %>
               <%= link_to 'Edit', edit_vendor_path(vendor) %>

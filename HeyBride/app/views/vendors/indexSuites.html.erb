@@ -1,3 +1,4 @@
+<h1 align="center"><center><font font size="8"><B><i>  Suit Store </i></B></font></center></h1><br>
 <link href="css/vendors.css" rel="stylesheet">
 
 <ul class="dropdown1">
@@ -21,7 +22,6 @@
 </ul>
 
 <div id="section">
-  <h4 class="column"> &nbsp;&nbsp;&nbsp;Suites Stores</h4>
   <h4 class="column">
     <ul class="dropdown">
       <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false" id="nn">   Sort By  <span class="caret"></span></a>
@@ -37,7 +37,7 @@
       <% vendors.each do |vendor| %>
         <div class="col-md-3">
           <%= image_tag vendor.image.url(:small), :size => "200x200" %>  <br> 
-          <%= link_to vendor.name, vendor %><br>
+          <font size="5"><B><i><%= link_to vendor.name, vendor %></i></B></font><br>
           <% if user_signed_in? %>
             <% if current_user.admin? %>
               <%= link_to 'Edit', edit_vendor_path(vendor) %>

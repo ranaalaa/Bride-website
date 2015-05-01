@@ -8,9 +8,9 @@
    
 }
 #section {
-    width:1000px;
-    float:left;
-    padding:30px;
+    width:830px;
+    float: left;
+    padding:10px;
 
 }
 
@@ -114,7 +114,7 @@ ul.dropdown1 {
   line-height:30px;
   
   
-    width:200px;
+    width:175px;
     float:left;
     margin-top: 50px;
 }
