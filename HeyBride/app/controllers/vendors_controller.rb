@@ -67,6 +67,7 @@ class VendorsController < ApplicationController
   def indexHairdressers
     @q = Vendor.where(entry:'Hairdresser').ransack(params[:q])
     @vendors = @q.result(:distinct=>true)
+  
     if @vendors.size.zero?
       flash[:notice] = "No Matches Found"
     end

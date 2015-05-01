@@ -111,6 +111,7 @@ ActiveRecord::Schema.define(version: 20150426204753) do
     t.string   "location"
     t.integer  "capacity"
     t.integer  "stars"
+    t.float    "avgprice"
   end
 
   create_table "views", force: :cascade do |t|
@@ -132,4 +133,3 @@ ActiveRecord::Schema.define(version: 20150426204753) do
   add_index "views", ["reset_password_token"], name: "index_views_on_reset_password_token", unique: true
 
 end
-
