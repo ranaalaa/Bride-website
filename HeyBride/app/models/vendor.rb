@@ -41,6 +41,19 @@ end
   end
   
  # Author:
+ # Donia Magdy
+ # Description:
+ # this action displays the default number of items to view per vendor's page
+ # Params:
+ # per_page: is the default number of items per page
+ # Success:
+ # The user will view only 5 items per vendor's page
+ # Failure:
+ # All the items of the vendor will be viewed in one page not 5
+ def self.per_page
+    5
+  end
+ # Author:
  # Rana Alaa' 
  # Description:
  # this action displays the average rating for each vendor page for the users 
@@ -86,3 +99,4 @@ end
       return can_rate
    end 
  end 
+

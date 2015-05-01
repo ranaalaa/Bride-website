@@ -1,4 +1,5 @@
 <link href="css/vendors.css" rel="stylesheet">
+
 <ul class="dropdown1">
   <%= search_form_for @q, url: indexHairdressers_vendors_path do |f| %>
   	<li class="dropdown1">
@@ -28,18 +29,19 @@
 
 <div id="section">
   <h4 class="column"> &nbsp;&nbsp;&nbsp;Hairdressers</h4>
-  <h4 class="column">  
-    <ul> 
-      <ul class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false" id="nn">   Sort By  <span class="caret"></span></a>
-        <ul class="dropdown-menu" >
-          <li id="nn"><%= sort_link(@q, :name, 'Name', default_order: :asc, hide_indicator: true ) %></li>
-          <li id="nn"><%= sort_link(@q, :avgprice , 'Price Low to High',  default_order: :asc, hide_indicator: true) %> </li>
-          <li id="nn"><%= sort_link(@q, :avgprice , 'Price High to Low',  default_order: :desc, hide_indicator: true) %> </li>
-        
+
+
+  <h4 class="column">
+    <ul class="dropdown">
+      <a class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="1000" data-close-others="false" id="nn">   Sort By  <span class="caret"></span></a>
+      <ul class="dropdown-menu" >
+        <li id="nn"><%= sort_link(@q, :name, 'Name', default_order: :asc, hide_indicator: true ) %></li>
+        <li id="nn"><%= sort_link(@q, :avgprice , 'Price Low to High',  default_order: :asc, hide_indicator: true) %> </li>
+        <li id="nn"><%= sort_link(@q, :avgprice , 'Price High to Low',  default_order: :desc, hide_indicator: true) %> </li>
         </ul>
-      </ul>
-    </ul> 
+        &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | <%= @vendors.count %> Results  &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; View:  <%= select_tag :per_page, options_for_select([5,10,20,50], params[:per_page].to_i),
+       :onchange => "if(this.value){window.location='?per_page='+this.value;}" %> 
+     </ul>
   </h4>
   <% @vendors.in_groups_of(3, false) do |vendors| %>
     <div class="row">
@@ -47,15 +49,25 @@
         <div class="col-md-3">
           <%= image_tag vendor.image.url(:small), :size => "200x200" %>  <br> 
           <%= link_to vendor.name, vendor %><br>
+         
           <% if user_signed_in? %>
             <% if current_user.admin? %>
               <%= link_to 'Edit', edit_vendor_path(vendor) %>
               <%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
             <% end %>
           <%end%>
+        
         </div>
       <% end %>
+     
     </div>
   <% end %>
 </div>
 
+<div class="pag">
+
+ 
+  <%= will_paginate @vendors %> 
+
+</div>
+ 

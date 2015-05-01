@@ -207,11 +207,11 @@
        <strong>•</strong>
        <font face = "Bedrock"> <%= package.description%></font><br><br>
       </p>
+      <% if user_signed_in? %>
       <% if current_user.admin? %>
         <%= link_to 'Delete Package', [package.vendor, package], method: :delete,data: { confirm: 'Are you sure?' } %>
         <%= link_to 'Edit Package', edit_vendor_package_path(@vendor, package) %> <br><br>
-        <% if user_signed_in? %>
-        <% end %>
+      <% end %>
       <% end %>
       <br><br>
     <% end %>

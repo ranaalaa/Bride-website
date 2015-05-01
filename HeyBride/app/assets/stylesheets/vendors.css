@@ -244,3 +244,12 @@ input[type="submit"] {
   font-family: "Times New Roman", Times, serif;
   font-size: 40px;
 }
+
+div.pag {
+
+          color: pink;
+          font-size:150%;
+          margin-bottom: 15cm;
+          text-align: right;
+           
+}
