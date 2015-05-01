@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20150426204753) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "rater"
   end
 
   add_index "ratings", ["user_id"], name: "index_ratings_on_user_id"
@@ -70,12 +71,12 @@ ActiveRecord::Schema.define(version: 20150426204753) do
   add_index "samples", ["vendor_id"], name: "index_samples_on_vendor_id"
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "",   null: false
-    t.string   "encrypted_password",     default: "",   null: false
+    t.string   "email",                  default: "",    null: false
+    t.string   "encrypted_password",     default: "",    null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,    null: false
+    t.integer  "sign_in_count",          default: 0,     null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -88,6 +89,7 @@ ActiveRecord::Schema.define(version: 20150426204753) do
     t.boolean  "admin"
     t.boolean  "female",                 default: true
     t.string   "phone"
+    t.boolean  "rate",                   default: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -109,6 +111,7 @@ ActiveRecord::Schema.define(version: 20150426204753) do
     t.string   "location"
     t.integer  "capacity"
     t.integer  "stars"
+    t.float    "avgprice"
   end
 
   create_table "views", force: :cascade do |t|
