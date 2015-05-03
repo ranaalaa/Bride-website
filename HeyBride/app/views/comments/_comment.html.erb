@@ -1,8 +1,14 @@
- <h4><font face ="Papyrus" size = "6" > Comments👰 </font> </h4> <br>
+
+
+<br>
+<br>
+<br>
+
  <% @comments.each do |comment| %>
    &nbsp;&nbsp;&nbsp;<font face = "Lucida Console" size = "4" color = "#E6005C"><%= comment.commenter %></font>
    <font size = "2">. <%= time_ago_in_words(comment.created_at) %> ago <br>
    &nbsp;&nbsp;&nbsp;<font size = "3"><%= comment.body %><br>
+
    <% if current_user.email == comment.commenteremail %>
      <strong><font face = "Papyrus" size = "3" color = "blue">-<%= link_to 'Delete Comment', [comment.vendor,comment],method: :delete,data: { confirm: 'Are you sure?' } %><br><br></strong>
     <% end %></font>
@@ -16,6 +22,6 @@
   <%= f.text_field :body, :required =>true, :placeholder => "write a comment..."%>
   <%= f.hidden_field :commenter, :value => current_user.username %>  
   <%= f.hidden_field :commenteremail, :value => current_user.email%>  
-  <%= image_submit_tag("comment.png",:id=> "comment") %>
+  <%= f.submit 'Comment' %>
   </p>
 <%end%>

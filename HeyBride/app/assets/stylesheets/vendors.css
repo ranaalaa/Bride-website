@@ -25,13 +25,16 @@
     to {background-color: pink;}
 }
 .box {
-    background-color: #F1E4ED;
-    width: 250px;
+   background-color: #FC6C85;
+   background-color: rgba(255,0,0,0.3);
+    width: 70%;
     padding: 25px;
     border: 25px ;
     margin: 25px;
     text-align: center;
     position: absolute;
+     border-radius: 5px;
+    
     
 }
 .samples {
