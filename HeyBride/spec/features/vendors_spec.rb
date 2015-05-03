@@ -177,7 +177,7 @@ end
    vendor = Vendor.create!(:name => "Hanan", :entry=> "Dj",:location => "Alex")
     visit 'vendors/1'
     fill_in 'write a comment...', :with => 'Hi Hanan'
-    click_button 'comment'
+    click_button 'Comment'
     expect(page).to have_content 'Hi'
    end
   end
