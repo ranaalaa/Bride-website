@@ -5,66 +5,130 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-    <link href='css/fontfamily.css' rel='stylesheet'>
-      <link href="css/vendors.css" rel="stylesheet">
-      <link rel="stylesheet" href="css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-      <meta charset="utf-8">
+  
+ 
+
+
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link href="/assets/font-awesome.min.css" rel="stylesheet">
+    <link href="/assets/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/assets/custom.css">
+  
 </head>
-<body>
+
+    
+    <body>
   <% if user_signed_in? %>
     <div class="header">
-      <div class="container0">
-        <div class="nav-top">
-          <div class="row">
-            <div class="col-md-4">
+           <div class="top-bar">
+    <div class="container">
+        <div class="row">
+        
               <a href="#" class="logo-icon">
-                <%= link_to image_tag("logo-1.png", :border => 0, :height => 50), {:action => 'HomePage', :controller => 'welcome'} %>
+                <%= link_to image_tag("logo-1.png", :border => 0), {:action => 'HomePage', :controller => 'welcome'} %>
               </a>
-            </div>
-            <div class="col-md-4 ">
-              <%= form_tag(vendors_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+            
+                  
+            <ul class="search">
+                <li>
+                    
+                  
+                    <%= form_tag(vendors_path, :method => "get", class: "navbar-form", id: "search-form") do %>
                 <%= text_field_tag :search, params[:search], class: "span2", placeholder: "Search by name" %>
                 <%= image_submit_tag("search1.png",:id=> "submit")%><br>
               <% end %>
-            </div>
-            <div class="col-md-4">
-              <ul class="nav-out">
-                <li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                    
+    
+                    
                 </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="nav-bottom">
-          <div class="nav-menu">
-            <ul class="menu">
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexDresses' %>">Dress</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexSuites' %>">Suit</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexMakeup' %>">Makeup</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexHairdressers' %>">Hairdresser</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexDjs' %>">Dj</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexPhotographers' %>">Photographer</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexSpa' %>">Spa & Beauty Center</a></li>
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Venue<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexYacht' %>">Yacht</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexVilla' %>">Villa</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexHall' %>">Hall</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexGarden' %>">Garden</a></li>
+                <li> <a href="#"><i class="glyphicon glyphicon-lock"></i> </a>
+                 <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+                </li>
                 </ul>
-              </li>
-              <% if user_signed_in? %>
+                </div>
+                </div>
+                </div>
+
+
+
+
+
+
+
+<nav class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                </div>
+                
+                <div class="collapse navbar-collapse navbar-right">
+                    <ul class="nav navbar-nav">
+
+                        <li class="active"><a href="index.html">Home</a></li>
+                        <li><a href="<%= url_for controller: 'vendors', action: 'indexDresses' %>">Dress</a></li>
+                        <li><a href="<%= url_for controller: 'vendors', action: 'indexSuites' %>">Suit</a></li>
+                        <li><a href="<%= url_for controller: 'vendors', action: 'indexDjs' %>">Dj</a></li>
+                        <li><a href="<%= url_for controller: 'vendors', action: 'indexPhotographers' %>">Photographer</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Beauty</i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= url_for controller: 'vendors', action: 'indexMakeup' %>">Makeup</a></li>
+                                <li><a href="<%= url_for controller: 'vendors', action: 'indexHairdressers' %>">Hairdresser</a></li>
+                                  <li><a href="<%= url_for controller: 'vendors', action: 'indexSpa' %>">Spa & Beauty Center</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Venue </i></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<%= url_for controller: 'vendors', action: 'indexYacht' %>">Yacht</a></li>
+                                <li><a href="<%= url_for controller: 'vendors', action: 'indexVilla' %>">Villa</a></li>
+                                <li><a href="<%= url_for controller: 'vendors', action: 'indexHall' %>">Hall</a></li>
+                                <li><a href="<%= url_for controller: 'vendors', action: 'indexGarden' %>">Garden</a></li>
+                            </ul>
+                        </li>
+                        <% if user_signed_in? %>
                 <% if current_user.admin? %>
                   <%= link_to 'New', new_vendor_path %></br>
                 <%end%>
               <%end%>
-            </ul>
-          </div>
+                                              
+                    </ul>
+                </div>
+            </div><!--/.container-->
+        </nav>
+
+
+
+
+
+
+               
+ <footer id="footer" class="text-center text-muted navbar-fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+            
+                </div>
+                <div class="col-sm-6">
+                    <ul class="pull-right">
+                       
+                        <li><a href="<%= url_for controller: 'welcome', action: 'AboutUs' %>">ABOUT US</a></li>
+             <li><a href="<%= url_for controller: 'welcome', action: 'OurPeople' %>">OUR PEOPLE</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
+    </footer>
+   
+
+
   <% end %>
 <%= yield %>
 </body>
