@@ -58,7 +58,7 @@
           <div class="row">
               <div class="col-xs-12">
               <% if user_signed_in? %> 
-                <% if current_user.admin? %>
+                <% if current_user.admin? &&  current_user.num == @vendor.num %>
                   <%= link_to 'Delete Sample', [sample.vendor, sample],
                   method: :delete,
                   data: { confirm: 'Are you sure?' } %><br><br>
@@ -101,7 +101,7 @@
                      <strong> CONTACT US!</strong>
                        <p>
                          <img src = "/assets/heartrate.png">
-                           <h>(</h><%= @vendor.avg_rating%><h>)</h>
+               
                        </p>
                        <p>
                          <%= @vendor.location %>
@@ -267,7 +267,7 @@
        <font face = "Bedrock"> <%= package.description%></font><br><br>
       </p>
       <% if user_signed_in? %>
-      <% if current_user.admin? %>
+      <% if current_user.admin? && current_user.num == @vendor.num %>
         <%= link_to 'Delete Package', [package.vendor, package], method: :delete,data: { confirm: 'Are you sure?' } %>
         <%= link_to 'Edit Package', edit_vendor_package_path(@vendor, package) %> <br><br>
       <% end %>
@@ -275,7 +275,7 @@
       <br><br>
     <% end %>
     <% if user_signed_in? %>
-      <% if current_user.admin? %>
+      <% if current_user.admin?  && current_user.num == @vendor.num %>
         <%= form_for([@vendor, @vendor.packages.build]) do |f| %>
             <p>
               <%= f.label :name %><br>
@@ -297,7 +297,7 @@
     <% end %>
  
       <% if user_signed_in? %>
-      <% if current_user.admin? %>
+      <% if current_user.admin?  && current_user.num == @vendor.num %>
         <%= form_for([@vendor, @vendor.samples.build]) do |f| %>
           <p>
             <%= f.file_field :image %>
@@ -332,14 +332,14 @@
       <strong>Designer:</strong>
       <%= brand.designer%><br>
     <% if user_signed_in? %>
-      <% if current_user.admin? %>
+      <% if current_user.admin?  && current_user.num == @vendor.num %>
         <%= link_to 'Delete Brand', [brand.vendor, brand],method: :delete,data: { confirm: 'Are you sure?' } %>
         <%= link_to 'Edit Brand', edit_vendor_brand_path(@vendor, brand) %> <br><br>
       <% end %>
     <% end %>
   <% end %>
    <% if user_signed_in? %>
-     <% if current_user.admin? %>
+     <% if current_user.admin?  && current_user.num == @vendor.num %>
        <%= form_for([@vendor, @vendor.brands.build]) do |f| %>
          <p>
            <%= f.label :name %><br>

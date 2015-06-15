@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426204753) do
+ActiveRecord::Schema.define(version: 20150615215928) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "bName"
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 20150426204753) do
     t.boolean  "female",                 default: true
     t.string   "phone"
     t.boolean  "rate",                   default: false
+    t.integer  "num"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
@@ -112,6 +113,7 @@ ActiveRecord::Schema.define(version: 20150426204753) do
     t.integer  "capacity"
     t.integer  "stars"
     t.float    "avgprice"
+    t.integer  "num"
   end
 
   create_table "views", force: :cascade do |t|
