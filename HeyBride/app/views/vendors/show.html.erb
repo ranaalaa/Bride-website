@@ -340,6 +340,7 @@
   <% end %>
    <% if user_signed_in? %>
      <% if current_user.admin? %>
+      <% if !@vendor.isadmin (current_user.email)  %>
        <%= form_for([@vendor, @vendor.brands.build]) do |f| %>
          <p>
            <%= f.label :name %><br>
@@ -356,13 +357,22 @@
      <% end %>
    <% end %>
    <% end %>
+      <% end %>
     </p>
   </div>
 
   </ul>
   </footer>
- 
- 
+   
+  <h2>Admin</h2>
+<%= form_for([@vendor, @vendor.adminsters.build]) do |f| %>
+  <p>
+    <%= f.text_field :email %>
+  </p>
+  <p>
+    <%= f.submit "is admin" %>
+  </p>
+<% end %>
 
 <script>
  $(".tab_content").hide();

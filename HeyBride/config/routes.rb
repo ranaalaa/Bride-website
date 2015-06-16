@@ -20,6 +20,7 @@ get 'welcome/HomePage'
     resources :comments
     resources :brands
     resources :ratings
+     resources :adminsters
   
     collection do
       get 'indexHairdressers'

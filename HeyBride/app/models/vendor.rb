@@ -4,6 +4,7 @@ class Vendor < ActiveRecord::Base
 	has_many :comments
 	has_many :brands
 	has_many :ratings
+	has_many :adminsters
 	  	has_attached_file :image, styles: { medium: "700x500#", small: "350x250#" }
       validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
       
@@ -97,6 +98,15 @@ end
       end
     end
       return can_rate
+   end 
+   def isadmin (email)
+    is_admin = false
+    adminsters.each do |adminster|
+      if adminster.email = email && adminster.vendor_id = id
+        is_admin = true
+      end
+    end
+      return is_admin
    end 
  end 
 

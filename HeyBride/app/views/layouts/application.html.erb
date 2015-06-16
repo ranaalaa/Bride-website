@@ -39,13 +39,9 @@
         <div class="nav-bottom">
           <div class="nav-menu">
             <ul class="menu">
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexDresses' %>">Dress</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexSuites' %>">Suit</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexMakeup' %>">Makeup</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexHairdressers' %>">Hairdresser</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexDjs' %>">Dj</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexPhotographers' %>">Photographer</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexSpa' %>">Spa & Beauty Center</a></li>
+              <li><a href="<%= url_for controller: 'vendors', action: '' %>">Details & Decor</a></li>
+            
+          
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle">Venue<b class="caret"></b></a>
                 <ul class="dropdown-menu">
@@ -55,6 +51,52 @@
                   <li><a href="<%= url_for controller: 'vendors', action: 'indexGarden' %>">Garden</a></li>
                 </ul>
               </li>
+              
+               <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Beauty<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexHairdressers' %>">Hairdresser</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexMakeup' %>">Makeup</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexSpa' %>">Spa</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action:'index' %> "> Dental Beauty</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action: 'index'%>"> Beauty</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action: '' %> "> Skin Beauty</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action: '' %> "> Viel Designer</a></li>
+                   <li><a href="<%= url_for controller: 'vendors', action: '' %>">Clinics</a></li>
+                </ul>
+              </li>
+              
+               <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Fashion and jewlery <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<%= url_for controller: 'vendors', action: 'Dress' %>">Weding dresses</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: '' %>">Soiree dresses </a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'Suit' %>">Suits</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action'' %> "> Jewlery</a></li>
+                </ul>
+              </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle"> Entertainment<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<%= url_for controller: 'vendors', action: 'DJ' %>"> DJ</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: '' %>"> Live Bands </a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: '' %>">Belly Dancers</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action'' %> "> Dance lessons</a></li>
+                </ul>
+              </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Photo & Video<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<%= url_for controller: 'vendors', action: 'Dress' %>">Weding dresses</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: '' %>">Studios</a></li>
+                <li><a href="<%= url_for controller: 'vendors', action: 'indexPhotographers' %>">Photographer</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action'' %> "> Videophotographers</a></li>
+                </ul>
+              </li>
+              
+              
               <% if user_signed_in? %>
                 <% if current_user.admin? %>
                   <%= link_to 'New', new_vendor_path %></br>
