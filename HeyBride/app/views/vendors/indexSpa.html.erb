@@ -49,7 +49,7 @@
           <%= image_tag vendor.image.url(:small), :size => "200x200" %>  <br> 
           <font size="5"><B><i><%= link_to vendor.name, vendor %></i></B></font><br>
           <% if user_signed_in? %>
-            <% if current_user.admin? %>
+            <% if current_user.admin? &&  current_user.num == vendor.num %>
               <%= link_to 'Edit', edit_vendor_path(vendor) %>
               <%= link_to 'Destroy', vendor, method: :delete, data: { confirm: 'Are you sure?' } %><br>
             <% end %>

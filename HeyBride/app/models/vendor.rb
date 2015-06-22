@@ -65,7 +65,7 @@ end
  # The user gets the average rating of the vendor desplayed and the answer is rounded up 
  # Failure:
  # The user couldn't view the average rating of the page desplayed
-  def avg_rating
+  def avg_rating(vendor=nil)
     average_rating = 0.0
     count = 0
     ratings.each do |rating| 
@@ -78,6 +78,8 @@ end
       count
     end
     end
+    
+     
  # Author:
  # Rana Alaa' 
  # Description:
