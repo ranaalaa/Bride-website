@@ -39,63 +39,83 @@
         <div class="nav-bottom">
           <div class="nav-menu">
             <ul class="menu">
-              <li><a href="<%= url_for controller: 'vendors', action: '' %>">Details & Decor</a></li>
-            
+             
+             
+               <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Beauty<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<%= url_for controller: 'vendors' , action: 'index'%>"> Beauty</a></li> 
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexExtra' %>">Clinics</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action:'index' %> "> Dental Beauty</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexHairdressers' %>">Hairdresser</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexMakeup' %>">Makeup</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action: 'indexExtra' %> "> Skin Beauty</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexSpa' %>">Spa</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action: 'indexExtra' %> "> Viel Designer</a></li>
+             
+                </ul>
+              </li>
+              
+               <li class="dropdown">
+                <a href="#" class="dropdown-toggle"> Entertainment<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexExtra' %>">Belly Dancers</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action:'indexExtra' %> "> Dance lessons</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexDjs' %>"> DJ</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexExtra' %>"> Live Bands </a></li>
+                </ul>
+              </li>
+              
+              <li><a href="<%= url_for controller: 'vendors', action: 'indexExtra' %>">Catering</a></li>
+              
+                 <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Fashion and jewlery <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<%= url_for controller: 'vendors' , action:'indexExtra' %> "> Jewlery</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexExtra' %>">Soiree dresses </a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexSuites' %>">Suits</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexDresses' %>">Weding dresses</a></li>
+                  
+                </ul>
+              </li>
+              
+               <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Photo & Video<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexPhotographers' %>">Photographer</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexExtra' %>">Studios</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action:'indexExtra' %> "> Videophotographers</a></li>
+                </ul>
+              </li>
+              
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle">Planners<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexExtra' %>">Event</a></li>
+                <li><a href="<%= url_for controller: 'vendors', action: 'indexExtra' %>">Henaah</a></li>
+                  <li><a href="<%= url_for controller: 'vendors' , action:'indexExtra' %> "> Seboo3</a></li>
+                   <li><a href="<%= url_for controller: 'vendors' , action:'indexExtra' %> "> Wedding</a></li>
+                </ul>
+              </li>
+              
           
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle">Venue<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexYacht' %>">Yacht</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexVilla' %>">Villa</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexHall' %>">Hall</a></li>
                   <li><a href="<%= url_for controller: 'vendors', action: 'indexGarden' %>">Garden</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexHall' %>">Hall</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexVilla' %>">Villa</a></li>
+                  <li><a href="<%= url_for controller: 'vendors', action: 'indexYacht' %>">Yacht</a></li>
+                
                 </ul>
               </li>
               
-               <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Beauty<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexHairdressers' %>">Hairdresser</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexMakeup' %>">Makeup</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexSpa' %>">Spa</a></li>
-                  <li><a href="<%= url_for controller: 'vendors' , action:'index' %> "> Dental Beauty</a></li>
-                  <li><a href="<%= url_for controller: 'vendors' , action: 'index'%>"> Beauty</a></li>
-                  <li><a href="<%= url_for controller: 'vendors' , action: '' %> "> Skin Beauty</a></li>
-                  <li><a href="<%= url_for controller: 'vendors' , action: '' %> "> Viel Designer</a></li>
-                   <li><a href="<%= url_for controller: 'vendors', action: '' %>">Clinics</a></li>
-                </ul>
-              </li>
+             
               
-               <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Fashion and jewlery <b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<%= url_for controller: 'vendors', action: 'Dress' %>">Weding dresses</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: '' %>">Soiree dresses </a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: 'Suit' %>">Suits</a></li>
-                  <li><a href="<%= url_for controller: 'vendors' , action'' %> "> Jewlery</a></li>
-                </ul>
-              </li>
+
+        
               
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle"> Entertainment<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<%= url_for controller: 'vendors', action: 'DJ' %>"> DJ</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: '' %>"> Live Bands </a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: '' %>">Belly Dancers</a></li>
-                  <li><a href="<%= url_for controller: 'vendors' , action'' %> "> Dance lessons</a></li>
-                </ul>
-              </li>
-              
-              <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Photo & Video<b class="caret"></b></a>
-                <ul class="dropdown-menu">
-                  <li><a href="<%= url_for controller: 'vendors', action: 'Dress' %>">Weding dresses</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: '' %>">Studios</a></li>
-                <li><a href="<%= url_for controller: 'vendors', action: 'indexPhotographers' %>">Photographer</a></li>
-                  <li><a href="<%= url_for controller: 'vendors' , action'' %> "> Videophotographers</a></li>
-                </ul>
-              </li>
-              
+             
               
               <% if user_signed_in? %>
                 <% if current_user.admin? %>

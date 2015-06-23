@@ -34,6 +34,7 @@ get 'welcome/HomePage'
       get 'indexVilla'
       get 'indexHall'
       get 'indexGarden'
+      get 'indexExtra'
     end
   end
 end
