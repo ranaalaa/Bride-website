@@ -1,18 +1,15 @@
 Rails.application.routes.draw do
+
+  root 'welcome#HomePage'
   devise_for :views
   devise_for :users,controllers: {omniauth_callbacks: "omniauth_callbacks"}
  
- devise_scope :user do
-  authenticated :user do
-    root 'welcome#HomePage', as: :authenticated_root
-  end
-   unauthenticated do
-    root 'devise/sessions#new', as: :unauthenticated_root
-  end
-end
+
 get 'welcome/AboutUs'
 get 'welcome/OurPeople'
-get 'welcome/HomePage'
+
+
+
 
   resources :vendors do
     resources :packages

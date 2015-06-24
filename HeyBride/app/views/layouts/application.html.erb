@@ -4,6 +4,7 @@
   <title>Bridewebsite</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tags %>
     <link href='css/fontfamily.css' rel='stylesheet'>
       <link href="css/vendors.css" rel="stylesheet">
@@ -12,14 +13,13 @@
       <meta charset="utf-8">
 </head>
 <body>
-  <% if user_signed_in? %>
     <div class="header">
       <div class="container0">
         <div class="nav-top">
           <div class="row">
             <div class="col-md-4">
               <a href="#" class="logo-icon">
-                <%= link_to image_tag("logo-1.png", :border => 0, :height => 50), {:action => 'HomePage', :controller => 'welcome'} %>
+                <%= link_to image_tag("logo-1.png", :border => 0, :height => 50), {:action => 'HomePage', :controller => '/welcome'} %>
               </a>
             </div>
             <div class="col-md-4 ">
@@ -29,9 +29,15 @@
               <% end %>
             </div>
             <div class="col-md-4">
-              <ul class="nav-out">
-                <li> <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-                </li>
+              <ul class="nav navbar-nav navbar-right">
+                 <ul class="nav-out">
+                   <div id="user_nav">
+              <% if user_signed_in? %>
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+    <% else %>
+        <%= link_to 'Sign up', new_user_registration_path %> | <%= link_to 'Sign in', new_user_session_path %>
+    <% end %>
+</div>
               </ul>
             </div>
           </div>
@@ -39,20 +45,20 @@
         <div class="nav-bottom">
           <div class="nav-menu">
             <ul class="menu">
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexDresses' %>">Dress</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexSuites' %>">Suit</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexMakeup' %>">Makeup</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexHairdressers' %>">Hairdresser</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexDjs' %>">Dj</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexPhotographers' %>">Photographer</a></li>
-              <li><a href="<%= url_for controller: 'vendors', action: 'indexSpa' %>">Spa & Beauty Center</a></li>
+              <li><a href="<%= url_for controller: '/vendors', action: 'indexDresses' %>">Dress</a></li>
+              <li><a href="<%= url_for controller: '/vendors', action: 'indexSuites' %>">Suit</a></li>
+              <li><a href="<%= url_for controller: '/vendors', action: 'indexMakeup' %>">Makeup</a></li>
+              <li><a href="<%= url_for controller: '/vendors', action: 'indexHairdressers' %>">Hairdresser</a></li>
+              <li><a href="<%= url_for controller: '/vendors', action: 'indexDjs' %>">Dj</a></li>
+              <li><a href="<%= url_for controller: '/vendors', action: 'indexPhotographers' %>">Photographer</a></li>
+              <li><a href="<%= url_for controller: '/vendors', action: 'indexSpa' %>">Spa & Beauty Center</a></li>
               <li class="dropdown">
                 <a href="#" class="dropdown-toggle">Venue<b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexYacht' %>">Yacht</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexVilla' %>">Villa</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexHall' %>">Hall</a></li>
-                  <li><a href="<%= url_for controller: 'vendors', action: 'indexGarden' %>">Garden</a></li>
+                  <li><a href="<%= url_for controller: '/vendors', action: 'indexYacht' %>">Yacht</a></li>
+                  <li><a href="<%= url_for controller: '/vendors', action: 'indexVilla' %>">Villa</a></li>
+                  <li><a href="<%= url_for controller: '/vendors', action: 'indexHall' %>">Hall</a></li>
+                  <li><a href="<%= url_for controller: '/vendors', action: 'indexGarden' %>">Garden</a></li>
                 </ul>
               </li>
               <% if user_signed_in? %>
@@ -65,7 +71,6 @@
         </div>
       </div>
     </div>
-  <% end %>
 <%= yield %>
 </body>
 </html>

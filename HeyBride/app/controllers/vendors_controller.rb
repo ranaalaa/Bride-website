@@ -1,7 +1,6 @@
 ##
 # This class represents the categories in the website (hairdressers,make-up,dress stores..etc)
 class VendorsController < ApplicationController
-  before_filter :authenticate_user!
   def new
   end
 
