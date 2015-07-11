@@ -1,0 +1,51 @@
+<html lang="en">
+
+    <link href='css/fontfamily.css' rel='stylesheet'>
+      <link href="css/vendors.css" rel="stylesheet">
+      <link href="css/aya.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+         <link href="css/posts.css.scss" rel="stylesheet">
+      <meta charset="utf-8">
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="newpost">
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br>
+    <%= f.text_area :body %>
+  </div>
+    <%= f.hidden_field :poster, :value => current_user.username %>  
+  <%= f.hidden_field :posteremail, :value => current_user.email%>  
+  <div class="field">
+  ...
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; <%= f.file_field :photo %>
+  ...
+
+  </div>
+    <div class="field">
+  <%= f.label :tag_list, "Tags (separated by commas)" %><br />
+
+  <%= f.text_field :tag_list %>
+</div>
+  <div class="actions">
+    <%= f.submit "Post" %>
+  </div>
+ 
+
+<% end %>
+</div>
+</html>

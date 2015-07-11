@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+<html lang="en">
+
+    <link href='css/fontfamily.css' rel='stylesheet'>
+      <link href="css/vendors.css" rel="stylesheet">
+      <link href="css/aya.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+         <link href="css/posts.css.scss" rel="stylesheet">
+      <meta charset="utf-8">
+    
+<div id="container">
+
+<header>HANGUIDE BLOG</header>
+
+      <% @posts.each do |post| %>
+<div id="content">
+
+<div id="col1"> &nbsp;&nbsp;&nbsp; <%= link_to post.title, post %></div> 
+<div id= "col2"     class="date" > &nbsp;&nbsp;&nbsp; Posted by <%= post.poster %> <%= time_ago_in_words(post.created_at) %> <span>ago</span></div> <br>
+
+<div class ="row1">
+<td class="cell1">   &nbsp;&nbsp;&nbsp;  <%= image_tag post.photo.url(:small) %> </td> &nbsp;&nbsp;&nbsp; 
+<td class="cell2"><%= post.body %></td> <br><br><br><br>
+</div>
+<div id= "col5"> &nbsp;&nbsp;&nbsp; Tags:  <%= raw post.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>  &nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;<%= image_tag("bubble.png") %> 
+ <%= link_to "Comments (#{post.commets.count})", post %> </div>
+<div id = "col6">   <% if current_user.email == post.posteremail %>
+        <td> &nbsp;&nbsp;&nbsp;  <%= link_to 'Edit', edit_post_path(post) %></td> &nbsp;&nbsp;&nbsp; |  &nbsp;&nbsp;&nbsp;
+        <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+<% end %></div>
+</div> <br> <br>
+     
+    <% end %>
+
+<div id="sidebar">
+               
+     
+
+
+  <p class= "newp"> 
+<%= link_to 'New Post', new_post_path %> <br> </p> <br> <br>
+<p>
+  <% tag_cloud Post.tag_counts, %w{s m l} do |tag, css_class| %>
+    <%= link_to tag.name, tag_path(tag.name), class: css_class %>
+  <% end %>
+
+    
+<div id="search">
+  <%= form_tag(posts_path, :method => "get", class: "navbar-form", id: "search-form") do %>
+
+ <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag "Search", :name => nil %>
+  </p>
+<% end %>
+          
+              
+</div>
+             
+           </div>
+
+
+</html>

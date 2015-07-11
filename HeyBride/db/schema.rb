@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150426204753) do
+ActiveRecord::Schema.define(version: 20150708163633) do
 
   create_table "brands", force: :cascade do |t|
     t.string   "bName"
@@ -34,6 +34,17 @@ ActiveRecord::Schema.define(version: 20150426204753) do
 
   add_index "comments", ["vendor_id"], name: "index_comments_on_vendor_id"
 
+  create_table "commets", force: :cascade do |t|
+    t.integer  "post_id"
+    t.text     "body"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "commeter"
+    t.string   "commeteremail"
+  end
+
+  add_index "commets", ["post_id"], name: "index_commets_on_post_id"
+
   create_table "packages", force: :cascade do |t|
     t.string   "name"
     t.float    "price"
@@ -44,6 +55,19 @@ ActiveRecord::Schema.define(version: 20150426204753) do
   end
 
   add_index "packages", ["vendor_id"], name: "index_packages_on_vendor_id"
+
+  create_table "posts", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "poster"
+    t.string   "posteremail"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+  end
 
   create_table "ratings", force: :cascade do |t|
     t.integer  "score"
@@ -69,6 +93,26 @@ ActiveRecord::Schema.define(version: 20150426204753) do
   end
 
   add_index "samples", ["vendor_id"], name: "index_samples_on_vendor_id"
+
+  create_table "taggings", force: :cascade do |t|
+    t.integer  "tag_id"
+    t.integer  "taggable_id"
+    t.string   "taggable_type"
+    t.integer  "tagger_id"
+    t.string   "tagger_type"
+    t.string   "context",       limit: 128
+    t.datetime "created_at"
+  end
+
+  add_index "taggings", ["tag_id", "taggable_id", "taggable_type", "context", "tagger_id", "tagger_type"], name: "taggings_idx", unique: true
+  add_index "taggings", ["taggable_id", "taggable_type", "context"], name: "index_taggings_on_taggable_id_and_taggable_type_and_context"
+
+  create_table "tags", force: :cascade do |t|
+    t.string  "name"
+    t.integer "taggings_count", default: 0
+  end
+
+  add_index "tags", ["name"], name: "index_tags_on_name", unique: true
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "",    null: false

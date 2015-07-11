@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+    get 'tags/:tag', to: 'posts#index', as: :tag
+    resources :posts do
+    resources :commets
+  end
+
   devise_for :views
   devise_for :users,controllers: {omniauth_callbacks: "omniauth_callbacks"}
  

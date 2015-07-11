@@ -1,0 +1,35 @@
+<html lang="en">
+
+    <link href='css/fontfamily.css' rel='stylesheet'>
+      <link href="css/vendors.css" rel="stylesheet">
+      <link href="css/aya.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+         <link href="css/posts.css.scss" rel="stylesheet">
+      <meta charset="utf-8">
+      
+<%  @post.commets.each do |commet| %>
+<div class="bubble-list">
+      <div class="bubble clearfix">
+    <div class="bubble-content">
+         <div class="point"></div>
+  <font face="Papyrus" size = "3" color = "pink"><b>"<%= commet.commeter %>"  &nbsp;&nbsp;&nbsp;  <%= time_ago_in_words(commet.created_at) %> ago </b></font> <br> <p> <%= commet.body %></p>
+
+     <% if current_user.email == commet.commeteremail %>
+     <strong><font face = "arial" size = "1" color = "gray">-<%= link_to 'Delete Comment', [commet.post,commet],method: :delete,data: { confirm: 'Are you sure?' } %><br><br></strong>
+    <% end %></font>
+       </div>
+</div>
+<% end %>
+
+
+
+<%= form_for([@post, @post.commets.build]) do |f| %>
+  <p>
+  <%= f.text_field :body, :required =>true %>
+  <%= f.hidden_field :commeter, :value => current_user.username %>  
+  <%= f.hidden_field :commeteremail, :value => current_user.email%>  
+  <%= f.submit 'Comment' %>
+  </p>
+<%end%>
+</html>
