@@ -109,14 +109,6 @@
                 
                 </ul>
               </li>
-              
-             
-              
-
-        
-              
-             
-              
               <% if user_signed_in? %>
                 <% if current_user.admin? %>
                   <%= link_to 'New', new_vendor_path %></br>
@@ -130,4 +122,50 @@
   <% end %>
 <%= yield %>
 </body>
-</html>
+  <br>
+  <br>
+  <br>
+<footer class="footer-distributed" >
+<div class="row" >
+  <div class="col-sm-4" style = "border-top: 1px solid #FC6C85; padding: 20px;">
+        <br>
+        <div class="footer-left" style ="margin: 40px;">
+				<h3>Company<span>logo</span></h3>
+				<p class="footer-company-name">Hanguide © 2015</p>
+			</div>
+			</div>
+  <div class="col-sm-4" style = "border-top: 1px solid #FC6C85; padding: 20px;">
+     	<div class="footer-center" style ="margin: 40px; text-inline;">
+    
+				<br>
+				<br>
+				
+					<a href="<%= url_for controller: 'welcome', action: 'AboutUs' %>">About us</a>
+					|
+					<a href="<%= url_for controller: 'welcome', action: 'OurPeople' %>">Team</a>
+					|
+				 	<a href="<%= url_for controller: 'welcome', action: 'AboutUs' %>">Terms & conditions</a>
+					|
+					<a href="<%= url_for controller: 'welcome', action: 'AboutUs' %>">FAQS</a>
+					| 
+					<a href="<%= url_for controller: 'welcome', action: 'AboutUs' %>">Careers</a>
+
+
+			</div>
+			</div>
+  <div class="col-sm-4" style = "border-top: 1px solid #FC6C85;">
+  	<div class="footer-right" style ="margin: 40px;">
+         <br>
+				
+				<p class="footer-company-about">
+					<h3>Follow us</h3> </p>
+					
+				<div class="footer-icons">
+          <img src = "/assets/facebook.jpg"> <img src = "/assets/twitter.jpg"> <img src = "/assets/Instagram.jpg">
+          <br>
+          <br>
+				</div>
+			</div>
+			</div>
+</div>
+		</footer>

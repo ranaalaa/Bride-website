@@ -193,11 +193,7 @@ min-width: 1380px;
   left: 0;
 
 }
-footer {
-  clear: both;
-  margin-bottom: 0;
 
-}
 .slide-copy h1 {
   color: #363636;  
   
@@ -418,9 +414,11 @@ ul.tabs li.active {
 		user-select: none;
 		
 	}
+	
 	.d_active {
 		background-color: #666;
 		color: #fff;
 	}
+	
 	
 }
