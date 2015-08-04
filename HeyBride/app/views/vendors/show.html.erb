@@ -39,51 +39,9 @@
      </div>
     
  
-<section>
-<div class="container">
-  <div class="slider1">
-       <h1> <%= @vendor.name %></h1>
-    <% @vendor.samples.each do |sample| %>
-      <div class="slide">
-        <div class="container">
-          <div class="row">
-            <div class="slide-copy col-xs-5">
-              <h1>Description</h1> <br>
 
-            </div>
-            <div class="slide-img col-xs-3">
-              <%= image_tag sample.image.url(:small) %>
-            </div>
-          </div>
-          <div class="row">
-              <div class="col-xs-12">
-              <% if user_signed_in? %> 
-                <% if current_user.admin? %>
-                  <%= link_to 'Delete Sample', [sample.vendor, sample],
-                  method: :delete,
-                  data: { confirm: 'Are you sure?' } %><br><br>
-                  <% end %>
-                <% end %></div>
-          </div>
-        </div>      
-      </div>
-    <% end %>
-              
             
-  </div> 
 
-  <div class="slider-nav1">
-      <a href="#" class="arrow-prev"><img src="/assets/arrow-prev.png"></a>
-      <ul class="slider-dots">
-        <li class="dot active-dot">&bull;</li>
-        <li class="dot">&bull;</li>
-        <li class="dot">&bull;</li>
-        <li class="dot">&bull;</li>
-      </ul>
-      <a href="#" class="arrow-next"><img src="/assets/arrow-next.png"></a>
-    </div> 
-       </div>      
-</section>
 
      
 
@@ -207,6 +165,8 @@
                     </div>
                  </div>
              </div>
+             
+       
      </aside>
 
 
@@ -221,29 +181,24 @@
       <% end %>
      <% end %>
 </footer>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/vvv.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-          main();
-        $(".slide").first().addClass('active-slide');
-                    });
-    </script>
+   
     </div>
   </body>
 
 
   <footer>
 <ul class="tabs">
-  <li class="active" rel="tab1"> <h4><font face ="Papyrus" size = "6" > Comments 👰 </font> </h4> </li>
+  <li class="active" rel="tab1"> <h4><font face ="Quicksand" size = "4" > ✍ Reviews and Comments </font> </h4> </li>
     <% if @vendor.entry != "Suit" %>
    <% if @vendor.entry != "Dress" %>
-  <li rel="tab2"> <h4><font face ="Papyrus" size = "6" ><%= @vendor.name %> Packages 💍 </font> </h4>  </li>
+  <li rel="tab2"> <h4><font face ="Quicksand" size = "4" ><%= @vendor.name %> Packages 💍 </font> </h4>  </li>
   <% end %>
   <% end %>
     <% if @vendor.entry == "Suit" || @vendor.entry == "Dress" %>
-  <li rel="tab3">  <h4><font face ="Papyrus" size = "6" > Brands ♛ </font> </h4> </li>
+  <li rel="tab3">  <h4><font face ="Quicksand" size = "4" > Brands ♛ </font> </h4> </li>
   <% end %>
+    <li rel="tab4"> <h4><font face ="Quicksand" size = "4" ><%= @vendor.name %> Photos </font> </h4>  </li>
+
 </ul>
 <div class="tab_container">
   <h3 class="d_active tab_drawer_heading" rel="tab1">  </h3>
@@ -296,19 +251,7 @@
       <% end %>
     <% end %>
  
-      <% if user_signed_in? %>
-      <% if current_user.admin? %>
-        <%= form_for([@vendor, @vendor.samples.build]) do |f| %>
-          <p>
-            <%= f.file_field :image %>
-          </p>    <p>
-              <%= f.label :description %><br>
-              <%= f.text_area :info %>
-            </p>
-            <%= f.submit %>
-       <% end %>
-      <% end %>
-    <% end %>
+    
     <% end %>
 <% end %>
 
@@ -358,8 +301,35 @@
    <% end %>
     </p>
   </div>
+      
+  <h3 class="tab_drawer_heading" rel="tab4"> Photos </h3>
+  
 
-  </ul>
+  <div id="tab4" class="tab_content">
+    <p>
+     <%= render 'samples/sample' %>
+          </p>
+  </div> 
+
+  
+
+  <div>
+        <% if user_signed_in? %>
+      <% if current_user.admin? %>
+        <%= form_for([@vendor, @vendor.samples.build]) do |f| %>
+          <p>
+            <%= f.file_field :image %>
+          </p>    <p>
+              <%= f.label :description %><br>
+              <%= f.text_area :info %>
+            </p>
+            <p>
+            <%= f.submit 'add photo' %>
+            </p>
+       <% end %>
+      <% end %>
+    <% end %>
+    </div>
   </footer>
  
  

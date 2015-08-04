@@ -1,0 +1,30 @@
+ <html lang="en">
+
+    <link href='css/fontfamily.css' rel='stylesheet'>
+
+      <link href="css/aya.css" rel="stylesheet">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+      <meta charset="utf-8"> 
+  
+     <div id="slider">
+
+<figure>
+     <% @vendor.samples.each do |sample| %>
+
+ <%= image_tag sample.image.url %>
+
+<% end %>
+
+</figure>
+ <ol>
+        <li></li>
+        <li></li>
+        <li></li>
+ </ol>
+</div>
+
+ 
+
+
+		</html>
